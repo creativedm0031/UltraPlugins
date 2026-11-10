@@ -19,7 +19,15 @@ from plugins import ICONS, PLUGINS
 
 RAW = "https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main"
 VERSION = "1.0.0"
-MC_VERSIONS = "1.20.4 – 1.21.4"
+MC_MIN, MC_MAX = "1.20.4", "26.3"
+MC_VERSIONS = f"{MC_MIN} – {MC_MAX}"
+# Every Minecraft release in that range, for the version pickers on Modrinth and Hangar.
+MC_LIST = ["1.20.4", "1.20.5", "1.20.6", "1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7",
+           "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2", "26.2", "26.3"]
+# Paper servers the release jars were started on (all ten plugins), and how far the test went.
+TESTED = [("1.20.4", "bot test"), ("1.20.6", "bot test"), ("1.21.1", "bot test"), ("1.21.4", "full bot test"),
+          ("1.21.8", "bot test"), ("1.21.11", "bot test"), ("26.1.2", "bot test"), ("26.3", "start + console")]
+JAVA = "Java 17+ (Minecraft 1.20.5+ needs Java 21, 26.x needs Java 25 – that is a server requirement)"
 VIOLET, CYAN, GRAY, RED, RED_SOFT, SEP = "#8B5CF6", "#22D3EE", "#94A3B8", "#F87171", "#FCA5A5", "#64748B"
 LANGS = [("en", "English"), ("de", "Deutsch"), ("fr", "Français"), ("nl", "Nederlands"), ("it", "Italiano")]
 
@@ -316,9 +324,17 @@ Every player sees {full} in the language of their Minecraft client – automatic
 | --- | --- |
 {perms}
 
+## Supported versions
+
+| | |
+| --- | --- |
+| Minecraft | **{MC_VERSIONS}** |
+| Server | {platforms} |
+| Java | 17+ (whatever your Minecraft version needs) |
+
 ## Installation
 
-1. Drop `{full}-{VERSION}.jar` into your `plugins` folder. Works on {platforms} {MC_VERSIONS.split(' ')[0]}+ (Java 17+), no dependencies needed.
+1. Drop `{full}-{VERSION}.jar` into your `plugins` folder. Works on {platforms} **{MC_VERSIONS}**, no dependencies needed.
 2. Restart your server.
 3. Adjust `config.yml` and the files in `lang/`, then run `/{low} reload`.
 
@@ -336,6 +352,8 @@ def checklist(p):
     name, full = p["name"], "Ultra" + p["name"]
     spigot_cat, modrinth_cat, hangar_cat = CATEGORIES[name]
     title, tagline = TITLES[name]
+    mc_list = ", ".join(f"`{v}`" for v in MC_LIST)
+    tested = "\n".join(f"| {v} | {t} |" for v, t in TESTED)
     gallery = "\n".join(f"   - `images/{n}.png`" for n in gallery_names(p))
     return f"""# {full} – Release-Material
 
@@ -354,7 +372,24 @@ Neu bauen mit `tools/package.sh` im Hauptordner.
 | Kanal / Release-Typ | Release |
 | Changelog | [`changelog.md`](changelog.md) |
 
-Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
+Versionsnummer, Version String und Minecraft-Versionen stehen auch in `version.txt` zum Kopieren.
+
+## Unterstützte Minecraft-Versionen
+
+**{MC_VERSIONS}** auf Spigot, Paper und Purpur, Java 17+ (Minecraft 1.20.5+ braucht ohnehin Java 21,
+26.x Java 25).
+
+Zum Ankreuzen in den Versionsfeldern:
+
+{mc_list}
+
+Getestet (alle zehn Plugins auf Paper gestartet):
+
+| Minecraft | Test |
+| --- | --- |
+{tested}
+
+Auf einem echten Spigot-Server wurde noch nicht getestet; gebaut wird gegen die Spigot-API 1.20.4.
 
 ## Projekt
 
@@ -363,8 +398,6 @@ Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
 | Titel SpigotMC / BuiltByBit | {title.replace("|", chr(92) + "|")} |
 | Name Modrinth / Hangar | {full} |
 | Tagline / Summary (alle vier) | {tagline} |
-| Minecraft-Versionen | {MC_VERSIONS} (gebaut gegen die API 1.20.4, im Test gelaufen auf 1.21.4) |
-| Java | 17+ |
 | Abhängigkeiten | keine (Vault optional) |
 | Quellcode | https://github.com/creativedm0031/UltraPlugins |
 
@@ -383,7 +416,7 @@ Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
 1. Resource-Typ: kostenlos, Datei hochladen: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
 2. Title: `spigotmc/title.txt`, Tag Line: `spigotmc/tagline.txt`
 3. Kategorie: **Spigot → {spigot_cat}**
-4. Getestete Versionen: 1.20, 1.21
+4. Unterstützte Versionen ankreuzen: **1.20, 1.21** und **26.x**, falls SpigotMC sie anbietet
 5. Icon: `images/icon-512.png`
 6. Beschreibung: Inhalt von `spigotmc/description.bbcode` einfügen (BBCode-Modus).
 7. Source-Code-Link: GitHub-Repo.
@@ -394,7 +427,7 @@ Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
 2. Title: `builtbybit/title.txt`, Tag Line: `builtbybit/tagline.txt`
 3. Icon: `images/icon-512.png`, Cover/Banner: `images/cover.png`
 4. Beschreibung: Inhalt von `builtbybit/description.bbcode` einfügen.
-5. Unterstützte Versionen: 1.20 – 1.21, Plattformen Spigot und Paper.
+5. Unterstützte Versionen: **1.20 – 1.21 und 26.x** ({MC_VERSIONS}), Plattformen Spigot und Paper.
 6. Datei: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
 
 ## Modrinth
@@ -406,7 +439,7 @@ Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
 5. Galerie (in dieser Reihenfolge, das erste als „Featured“):
    - `images/cover.png`
 {gallery}
-6. Version hochladen: Datei `{full}-{VERSION}.jar`, Versionsnummer `{VERSION}`, Name `{full} {VERSION}`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen {MC_VERSIONS}.
+6. Version hochladen: Datei `{full}-{VERSION}.jar`, Versionsnummer `{VERSION}`, Name `{full} {VERSION}`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen: alle aus der Liste oben ({MC_VERSIONS}).
 7. Lizenz und Source-Link (GitHub) eintragen.
 
 ## Hangar
@@ -414,7 +447,7 @@ Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
 1. Neues Projekt, Plattform **Paper**, Kategorie **{hangar_cat}**. Name: `hangar/title.txt`, Summary: `hangar/tagline.txt`
 2. Icon (Avatar): `images/icon-512.png`
 3. Beschreibung (Hauptseite): Inhalt von `hangar/description.md`.
-4. Version: Datei `{full}-{VERSION}.jar`, Version `{VERSION}`, Changelog aus `changelog.md`, Plattformversionen {MC_VERSIONS}, Kanal **Release**.
+4. Version: Datei `{full}-{VERSION}.jar`, Version `{VERSION}`, Changelog aus `changelog.md`, Plattform **Paper**, Versionen: alle aus der Liste oben ({MC_VERSIONS}), Kanal **Release**.
 5. Source-Link (GitHub) eintragen.
 
 > Hangar listet nur Paper-Plugins – UltraPlugins laufen auf Paper, deshalb passt es. Spigot wird dort nicht angegeben.
@@ -427,6 +460,15 @@ die PNGs bei einem Bildhoster hochladen und die Links ersetzen.
 """
 
 
+def version_txt(p):
+    return f"""Version String: {VERSION}
+Minecraft: {MC_VERSIONS}
+Minecraft (alle): {", ".join(MC_LIST)}
+Server: Spigot, Paper, Purpur
+Java: 17+
+"""
+
+
 def changelog(p):
     full = "Ultra" + p["name"]
     feats = "\n".join(f"- {f[1]}" for f in p["features"])
@@ -436,7 +478,7 @@ First release.
 
 {feats}
 - English, German, French, Dutch and Italian – picked automatically from each player's client language
-- Runs on Spigot, Paper and Purpur {MC_VERSIONS.split(' ')[0]}+ (Java 17+), no dependencies
+- Supports Minecraft {MC_VERSIONS} on Spigot, Paper and Purpur, no dependencies
 """
 
 
@@ -449,7 +491,7 @@ Titel und Taglines aller Plugins für SpigotMC, BuiltByBit, Modrinth und Hangar.
 (`release/README.md`), die fertige Jar, `version.txt` und `changelog.md`. Jede Seite hat dort
 einen eigenen Ordner mit `title.txt`, `tagline.txt` und der Beschreibung.
 
-Version String für alle Plugins und Seiten: **`{VERSION}`**. Neu bauen und die Jars in die
+Version String für alle Plugins und Seiten: **`{VERSION}`** · Minecraft: **{MC_VERSIONS}** (Spigot, Paper, Purpur). Neu bauen und die Jars in die
 `release/`-Ordner kopieren: `tools/package.sh`.
 
 | Plugin | Version | Jar | Titel SpigotMC / BuiltByBit | Name Modrinth / Hangar | Tagline (alle vier Seiten) |
@@ -477,7 +519,7 @@ def build(write, jobs, bbcode, logo_svg, defs, logo_body):
         write(f"{base}/modrinth/description.md", markdown(p, "modrinth"))
         write(f"{base}/hangar/description.md", markdown(p, "hangar"))
         write(f"{base}/README.md", checklist(p))
-        write(f"{base}/version.txt", VERSION + "\n")
+        write(f"{base}/version.txt", version_txt(p))
         write(f"{base}/changelog.md", changelog(p))
         title, tagline = TITLES[p["name"]]
         for site, site_title in (("spigotmc", title), ("builtbybit", title), ("modrinth", full), ("hangar", full)):

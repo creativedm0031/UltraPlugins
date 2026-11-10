@@ -5,7 +5,7 @@ Titel und Taglines aller Plugins für SpigotMC, BuiltByBit, Modrinth und Hangar.
 (`release/README.md`), die fertige Jar, `version.txt` und `changelog.md`. Jede Seite hat dort
 einen eigenen Ordner mit `title.txt`, `tagline.txt` und der Beschreibung.
 
-Version String für alle Plugins und Seiten: **`1.0.0`**. Neu bauen und die Jars in die
+Version String für alle Plugins und Seiten: **`1.0.0`** · Minecraft: **1.20.4 – 26.3** (Spigot, Paper, Purpur). Neu bauen und die Jars in die
 `release/`-Ordner kopieren: `tools/package.sh`.
 
 | Plugin | Version | Jar | Titel SpigotMC / BuiltByBit | Name Modrinth / Hangar | Tagline (alle vier Seiten) |

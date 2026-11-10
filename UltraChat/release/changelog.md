@@ -9,4 +9,4 @@ First release.
 - Mentions with sound, [item] to show items
 - Clear chat, mute chat and slow mode
 - English, German, French, Dutch and Italian – picked automatically from each player's client language
-- Runs on Spigot, Paper and Purpur 1.20.4+ (Java 17+), no dependencies
+- Supports Minecraft 1.20.4 – 26.3 on Spigot, Paper and Purpur, no dependencies
