@@ -15,7 +15,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 - /back zum letzten Ort oder Todespunkt
 - Random-Teleport mit asynchroner, sicherer Positionssuche pro Welt
 - Anfragen ausschalten (/tptoggle) und einzelne Spieler ignorieren
-- Warmup, Cooldown und optionale Kosten (Vault / UltraEconomy)
+- Warmup, Cooldown pro Teleport-Art und optionale RTP-Kosten (Vault / UltraEconomy)
 - Team-Befehle: /tp, /tphere, /tpall
 
 ## Befehle
@@ -28,8 +28,9 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | `/back` | Zurück zum letzten Ort | `ultrateleports.back` |
 | `/rtp [welt]` | Zufälliger Teleport | `ultrateleports.rtp` |
 | `/tptoggle` | Anfragen an/aus | `ultrateleports.toggle` |
+| `/tpignore <spieler>` | Anfragen eines Spielers ignorieren | `ultrateleports.toggle` |
 | `/tp · /tphere · /tpall` | Team-Teleports | `ultrateleports.staff` |
-| `/ultrateleports <help|reload|version>` | Verwaltung | `ultrateleports.admin` |
+| `/ultrateleports <help|reload|version|language>` | Verwaltung | `ultrateleports.admin` |
 
 ## Weitere Permissions
 
@@ -43,18 +44,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  request-sent: "Request sent to <accent>Steve</accent>."
-  rtp-searching: "Searching a safe location…"
-error:
-  requests-disabled: "Steve has teleport requests disabled."
+request-sent: "Request sent to <accent>Steve</accent>."
+rtp-searching: "Searching a safe location…"
+requests-disabled: "Steve has teleport requests disabled."
 ```
 
 Das Präfix (`✦ Teleports »` bzw. `✖ UltraTeleports »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraTeleports/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrateleports language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraTeleports-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrateleports reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraTeleports/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -64,6 +81,7 @@ Das Präfix (`✦ Teleports »` bzw. `✖ UltraTeleports »`) setzt das Plugin a
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

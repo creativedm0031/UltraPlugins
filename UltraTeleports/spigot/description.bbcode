@@ -11,7 +11,7 @@ UltraTeleports is part of the [B][COLOR=#8B5CF6]Ultra[/COLOR][COLOR=#22D3EE]Plug
 [*]/back to your last location or death point
 [*]Random teleport with async, safe location search per world
 [*]Disable requests (/tptoggle) and ignore single players
-[*]Warm-up, cooldown and optional costs (Vault / UltraEconomy)
+[*]Warm-up, cooldown per teleport type and optional RTP costs (Vault / UltraEconomy)
 [*]Staff commands: /tp, /tphere, /tpall
 [/LIST]
 [CENTER]
@@ -19,9 +19,16 @@ UltraTeleports is part of the [B][COLOR=#8B5CF6]Ultra[/COLOR][COLOR=#22D3EE]Plug
 
 No chat spam. Every confirmation, countdown and status appears in the [B]action bar[/B].
 Only [B][COLOR=#F87171]errors[/COLOR][/B] are sent to the chat, so players never miss them.
-All messages use MiniMessage and can be changed in [FONT=Courier New]messages.yml[/FONT].
+All messages use MiniMessage and can be changed in the language files.
 
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraTeleports/assets/preview.png[/IMG]
+
+[IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-languages.png[/IMG]
+
+[B]English · Deutsch · Français · Nederlands · Italiano[/B]
+Every player sees UltraTeleports in the language of their Minecraft client – automatically.
+Players with any other language get your default language, which you set in the config or with [FONT=Courier New]/ultrateleports language <code>[/FONT].
+All texts live in [FONT=Courier New]lang/<code>.yml[/FONT] and can be edited freely.
 
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-commands.png[/IMG][/CENTER]
 [LIST]
@@ -31,8 +38,9 @@ All messages use MiniMessage and can be changed in [FONT=Courier New]messages.ym
 [*][FONT=Courier New][COLOR=#22D3EE]/back[/COLOR][/FONT] – Return to your last location [COLOR=#94A3B8](ultrateleports.back)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/rtp [welt][/COLOR][/FONT] – Random teleport [COLOR=#94A3B8](ultrateleports.rtp)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/tptoggle[/COLOR][/FONT] – Toggle incoming requests [COLOR=#94A3B8](ultrateleports.toggle)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/tpignore <spieler>[/COLOR][/FONT] – Ignore one player's requests [COLOR=#94A3B8](ultrateleports.toggle)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/tp · /tphere · /tpall[/COLOR][/FONT] – Staff teleports [COLOR=#94A3B8](ultrateleports.staff)[/COLOR]
-[*][FONT=Courier New][COLOR=#22D3EE]/ultrateleports <help|reload|version>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrateleports.admin)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/ultrateleports <help|reload|version|language>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrateleports.admin)[/COLOR]
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-permissions.png[/IMG][/CENTER]
@@ -44,9 +52,9 @@ All messages use MiniMessage and can be changed in [FONT=Courier New]messages.ym
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-installation.png[/IMG][/CENTER]
 [LIST=1]
-[*]Download UltraTeleports and drop the jar into your [FONT=Courier New]plugins[/FONT] folder.
+[*]Download UltraTeleports and drop the jar into your [FONT=Courier New]plugins[/FONT] folder (Paper 1.20.4+, Java 17+).
 [*]Restart your server.
-[*]Adjust [FONT=Courier New]config.yml[/FONT] and [FONT=Courier New]messages.yml[/FONT], then run [FONT=Courier New]/ultrateleports reload[/FONT].
+[*]Adjust [FONT=Courier New]config.yml[/FONT] and the files in [FONT=Courier New]lang/[/FONT], then run [FONT=Courier New]/ultrateleports reload[/FONT].
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-series.png[/IMG][/CENTER]

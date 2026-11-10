@@ -11,7 +11,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ## Features
 
-- Warp-GUI mit Kategorien, Icons und Suche
+- Warp-GUI mit Kategorie-Filter und Icons (Item in der Hand)
 - Optionale Spieler-Warps mit Kosten und Besucherzähler
 - Permission pro Warp möglich
 - Sortierung nach Name, Beliebtheit oder Datum
@@ -24,10 +24,10 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | --- | --- | --- |
 | `/warp [name]` | Teleportiert zu einem Warp | `ultrawarps.warp` |
 | `/warps` | Öffnet die Warp-GUI | `ultrawarps.warp` |
-| `/setwarp <name>` | Erstellt einen Server-Warp | `ultrawarps.set` |
+| `/setwarp <name> [kategorie]` | Erstellt einen Server-Warp | `ultrawarps.set` |
 | `/delwarp <name>` | Löscht einen Warp | `ultrawarps.delete` |
 | `/pwarp <create|delete|list>` | Spieler-Warps | `ultrawarps.player` |
-| `/ultrawarps <help|reload|version|import>` | Verwaltung | `ultrawarps.admin` |
+| `/ultrawarps <help|reload|version|language|import>` | Verwaltung | `ultrawarps.admin` |
 
 ## Weitere Permissions
 
@@ -41,18 +41,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  warp-teleport: "Warped to <accent>shop</accent>."
-  warp-created: "Warp <accent>arena</accent> created."
-error:
-  warp-unknown: "Warp arena doesn't exist."
+warp-teleport: "Warped to <accent>shop</accent>."
+warp-created: "Warp <accent>arena</accent> created."
+warp-unknown: "Warp arena doesn't exist."
 ```
 
 Das Präfix (`✦ Warps »` bzw. `✖ UltraWarps »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraWarps/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrawarps language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraWarps-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrawarps reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraWarps/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -62,6 +78,7 @@ Das Präfix (`✦ Warps »` bzw. `✖ UltraWarps »`) setzt das Plugin automatis
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

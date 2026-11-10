@@ -31,17 +31,16 @@ Stelle (`config.yml → theme`).
 | Fehler | Chat | `<error>✖ <bold>Ultra<Modul></bold></error> <sep>»</sep> <#FCA5A5>Text` |
 
 - `<Modul>` ist der Plugin-Name ohne „Ultra" (`Spawn`, `Homes`, …).
-- Actionbar-Nachrichten bleiben 3 Sekunden stehen (`config.yml → actionbar.duration`).
 - Jede Nachricht ist ein Satz und passt in eine Zeile (Richtwert: höchstens 60 Zeichen).
 - Variable Werte stehen immer in `<accent>`.
 - Fehler stehen im Chat, damit man sie nachlesen kann und sie nicht nach drei Sekunden weg sind.
 
 **Bewusste Ausnahmen** – Inhalte, die nicht in eine Actionbar-Zeile passen:
 
-- Listen und Hilfe werden als GUI gezeigt, nicht als Chat-Text. `/ultra<name> help` in der Konsole
-  gibt Text aus.
-- Klickbare Anfragen (z. B. TPA annehmen) gehen zusätzlich als eine Chat-Zeile raus, weil die
-  Actionbar nicht klickbar ist.
+- Listen werden als GUI gezeigt. Nur `/ultra<name> help` gibt eine kurze Liste im Chat aus, weil
+  Hilfe nachlesbar sein muss.
+- Klickbare Zeilen (TPA annehmen, große Überweisung bestätigen, neuer Report fürs Team) gehen als
+  eine Chat-Zeile raus, weil die Actionbar nicht klickbar ist.
 - Spielerchat und Privatnachrichten (UltraChat) sind Chat-Inhalt, kein Plugin-Feedback.
 - Kick- und Ban-Bildschirme (UltraPunish) nutzen das Farbschema, sind aber eigene Screens.
 
@@ -69,32 +68,45 @@ Alle Sounds lassen sich in der `config.yml` einzeln abschalten.
 
 ## 5. Befehle und Permissions
 
-- Jedes Plugin hat einen Verwaltungsbefehl `/ultra<name>` mit `help`, `reload` und `version`.
-- Spielerbefehle sind kurz und üblich (`/spawn`, `/home`, `/warp`) und lassen sich einzeln
-  deaktivieren oder umbenennen, falls ein anderes Plugin sie belegt.
+- Jedes Plugin hat einen Verwaltungsbefehl `/ultra<name>` mit `help`, `reload`, `version` und `language`.
+- Spielerbefehle sind kurz und üblich (`/spawn`, `/home`, `/warp`). Belegt ein anderes Plugin
+  denselben Befehl, ist der Ultra-Befehl immer als `/ultra<name>:<befehl>` erreichbar.
 - Permissions: `ultra<name>.<aktion>`, dazu `ultra<name>.admin`, `ultra<name>.*` und
   `ultra<name>.bypass.<cooldown|warmup>`.
 - Tab-Vervollständigung für jedes Argument.
 
-## 6. Dateien
+## 6. Sprachen
+
+Jedes Plugin enthält **Englisch (`en`), Deutsch (`de`), Französisch (`fr`), Niederländisch (`nl`)
+und Italienisch (`it`)**.
+
+- Jeder Empfänger bekommt eine Nachricht in seiner Sprache: Spieler in der Sprache ihres
+  Minecraft-Clients, sonst die Standardsprache (`config.yml → language`). Das gilt auch für
+  Team-Benachrichtigungen, GUIs und den Ban-Screen.
+- `use-client-language: false` schaltet die Client-Erkennung ab, dann gilt für alle die Standardsprache.
+- `/ultra<name> language <code>` ändert die Standardsprache im Spiel und speichert sie.
+- Die Sprachdateien liegen in `plugins/Ultra<Name>/lang/`. Beim Start werden fehlende Schlüssel
+  ergänzt, angepasste Texte bleiben erhalten.
+- Gemeinsame Texte (keine Berechtigung, Spieler nicht online, GUI-Knöpfe …) kommen aus UltraCore
+  und lauten in allen Plugins gleich.
+- Quelle aller Übersetzungen: `tools/lang/*.txt`, daraus erzeugt `tools/gen_lang.py` die YAML-Dateien.
+
+## 7. Dateien und Technik
 
 ```
 plugins/Ultra<Name>/
-  config.yml      Einstellungen, theme, actionbar, sounds
-  messages.yml    Alle Texte (MiniMessage), getrennt nach actionbar / error / gui
-  lang/           en.yml (Standard), de.yml
-  data/           SQLite, falls kein MySQL eingestellt ist
+  config.yml      language, use-client-language, theme, sounds, Plugin-Einstellungen
+  lang/           en.yml, de.yml, fr.yml, nl.yml, it.yml
+  *.yml           Daten (z. B. homes.yml, warps.yml, punishments.yml)
 ```
 
-Gleiche Schlüssel heißen überall gleich (`warmup`, `cooldown`, `storage`, `theme`).
-
-## 7. Technik
-
-- Paper-API 1.20.4 bis 1.21.x, Java 17, Folia-kompatibel; Spigot über mitgelieferte Adventure-Bibliothek.
-- MiniMessage für alle Texte, PlaceholderAPI (`%ultra<name>_…%`), Vault wo sinnvoll.
-- Gemeinsamer Code (Nachrichten-Versand, Theme, GUI-Baukasten, Warmup/Cooldown, Storage) liegt in
-  einer Bibliothek **UltraCore**, die in jedes Plugin eingebunden (geshadet) wird. So bleibt jedes
-  Plugin einzeln installierbar und das Layout kann nicht auseinanderlaufen.
+- Paper 1.20.4 und neuer (inkl. Forks wie Purpur), Java 17. Spigot wird nicht unterstützt, weil
+  Actionbar, Chat und asynchrone Teleports die Paper-API nutzen.
+- Texte in MiniMessage. Vault für Kosten (Teleports, Warps, Kits) und als Schnittstelle von UltraEconomy.
+- Daten liegen in YAML-Dateien, die asynchron geschrieben werden.
+- Gemeinsamer Code (Nachrichten, Sprachen, Theme, GUI-Baukasten, Warmup/Cooldown, Datendateien)
+  liegt im Modul **UltraCore** und wird in jedes Plugin eingebettet und umbenannt (Shading). So ist
+  jedes Plugin einzeln installierbar, und das Layout kann nicht auseinanderlaufen.
 
 ## 8. Logos und Banner
 

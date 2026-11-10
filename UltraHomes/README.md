@@ -14,7 +14,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 - Homes-GUI mit frei wählbaren Icons
 - Limits per Permission (ultrahomes.limit.<anzahl>)
 - Umbenennen, verschieben und löschen mit Bestätigung
-- Homes mit Freunden teilen oder öffentlich machen
+- Homes öffentlich machen – andere besuchen sie mit /home spieler:name
 - Warmup, Cooldown und Welt-Blacklist
 - Import aus EssentialsX
 
@@ -22,11 +22,11 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 | Befehl | Beschreibung | Permission |
 | --- | --- | --- |
-| `/home [name]` | Teleportiert zu einem Home | `ultrahomes.home` |
+| `/home [name|spieler:name]` | Teleportiert zu einem Home | `ultrahomes.home` |
 | `/homes` | Öffnet die Homes-GUI | `ultrahomes.home` |
 | `/sethome [name]` | Setzt ein Home | `ultrahomes.set` |
 | `/delhome <name>` | Löscht ein Home | `ultrahomes.delete` |
-| `/ultrahomes <help|reload|version|import>` | Verwaltung | `ultrahomes.admin` |
+| `/ultrahomes <help|reload|version|language|import>` | Verwaltung | `ultrahomes.admin` |
 
 ## Weitere Permissions
 
@@ -40,18 +40,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  home-set: "Home <accent>base</accent> saved."
-  home-teleport: "Welcome home."
-error:
-  limit-reached: "Home limit reached (3/3)."
+home-set: "Home <accent>base</accent> saved."
+home-teleport: "Welcome at <accent>base</accent>."
+limit-reached: "Home limit reached (3)."
 ```
 
 Das Präfix (`✦ Homes »` bzw. `✖ UltraHomes »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraHomes/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrahomes language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraHomes-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrahomes reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraHomes/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -61,6 +77,7 @@ Das Präfix (`✦ Homes »` bzw. `✖ UltraHomes »`) setzt das Plugin automatis
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

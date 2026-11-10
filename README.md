@@ -18,19 +18,42 @@ Nachrichten-Layout, gleiche Befehlsstruktur, gleiche Logos. Jedes Plugin hat ein
 | <img src="UltraVanish/assets/logo.png" width="48"> | [**UltraVanish**](UltraVanish) | Echte Unsichtbarkeit für dein Team. |
 | <img src="UltraReports/assets/logo.png" width="48"> | [**UltraReports**](UltraReports) | Spieler-Reports mit Team-Workflow in der GUI. |
 
+Alle Plugins sprechen **Englisch, Deutsch, Französisch, Niederländisch und Italienisch**. Jeder
+Spieler bekommt automatisch die Sprache seines Minecraft-Clients; die Standardsprache stellt man mit
+`language:` in der `config.yml` oder im Spiel mit `/ultra<name> language <code>` ein.
+
+## Bauen
+
+Voraussetzungen: Java 17+ und Maven.
+
+```bash
+mvn package
+```
+
+Danach liegt jedes Plugin als eigenständige Jar in `Ultra<Name>/target/Ultra<Name>-1.0.0.jar`.
+Lauffähig auf Paper (und Forks wie Purpur) ab 1.20.4.
+
 ## Aufbau
 
 ```
+pom.xml                      Maven-Hauptprojekt, baut alle Module
+UltraCore/                   Gemeinsamer Code (Nachrichten, Sprachen, GUIs, Teleports), wird in jedes Plugin eingebettet
 Ultra<Name>/
-  README.md                  Konzept: Features, Befehle, Permissions, Nachrichten
+  README.md                  Konzept: Features, Befehle, Permissions, Sprachen
+  src/                       Quellcode, config.yml, plugin.yml, lang/*.yml
   assets/                    Logo, Banner, Ingame-Vorschau
   spigot/description.bbcode  SpigotMC-Beschreibung
 shared/assets/               Serien-Banner und Abschnitts-Header für SpigotMC
-tools/                       Generator für Assets und Texte
+tools/                       Generatoren für Assets, Texte und Sprachdateien
 DESIGN.md                    Gemeinsames Design-System
 ```
 
 Die Regeln, die für alle Plugins gelten, stehen in [DESIGN.md](DESIGN.md).
+
+## Übersetzungen ändern
+
+Die Texte aller Sprachen stehen in `tools/lang/<plugin>.txt` (je Schlüssel fünf Zeilen: en, de,
+fr, nl, it). `python3 tools/gen_lang.py` schreibt daraus die `lang/*.yml` der Plugins.
 
 ## Assets neu erzeugen
 

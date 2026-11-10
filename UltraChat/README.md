@@ -28,7 +28,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | `/mutechat` | Chat sperren / freigeben | `ultrachat.mutechat` |
 | `/slowmode <sekunden>` | Slow-Mode setzen | `ultrachat.slowmode` |
 | `/socialspy` | Privatnachrichten mitlesen | `ultrachat.socialspy` |
-| `/ultrachat <help|reload|version>` | Verwaltung | `ultrachat.admin` |
+| `/ultrachat <help|reload|version|language>` | Verwaltung | `ultrachat.admin` |
 
 ## Weitere Permissions
 
@@ -42,18 +42,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  channel-switched: "Channel switched to <accent>Staff</accent>."
-  chat-cleared: "Chat cleared by <accent>Alex</accent>."
-error:
-  slowmode: "Slow down! You can chat again in 3s."
+channel-switched: "Channel switched to <accent>staff</accent>."
+chat-cleared: "Chat cleared by <accent>Alex</accent>."
+slowmode: "Slow down! You can chat again in 3s."
 ```
 
 Das Präfix (`✦ Chat »` bzw. `✖ UltraChat »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraChat/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrachat language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraChat-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrachat reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraChat/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -63,6 +79,7 @@ Das Präfix (`✦ Chat »` bzw. `✖ UltraChat »`) setzt das Plugin automatisch
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

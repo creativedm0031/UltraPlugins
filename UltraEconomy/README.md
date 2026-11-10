@@ -16,7 +16,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 - /pay mit Bestätigung ab einstellbarem Betrag
 - Baltop-GUI mit Spielerköpfen
 - Transaktions-Log für jede Buchung
-- SQLite oder MySQL, netzwerkweit synchron
+- Bestätigung per Klick für große Überweisungen
 
 ## Befehle
 
@@ -26,7 +26,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | `/pay <spieler> <betrag>` | Geld überweisen | `ultraeconomy.pay` |
 | `/baltop` | Öffnet die Rangliste | `ultraeconomy.baltop` |
 | `/eco <give|take|set> <spieler> <betrag>` | Kontostände ändern | `ultraeconomy.eco` |
-| `/ultraeconomy <help|reload|version>` | Verwaltung | `ultraeconomy.admin` |
+| `/ultraeconomy <help|reload|version|language|log>` | Verwaltung | `ultraeconomy.admin` |
 
 ## Weitere Permissions
 
@@ -40,18 +40,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  pay-sent: "You sent <accent>$250</accent> to <accent>Steve</accent>."
-  pay-received: "<accent>+ $250</accent> from <accent>Alex</accent>"
-error:
-  insufficient-funds: "Insufficient funds – you're missing $120."
+pay-sent: "You sent <accent>$250</accent> to <accent>Steve</accent>."
+pay-received: "<accent>+ $250</accent> from <accent>Alex</accent>"
+insufficient-funds: "Insufficient funds – you're missing $120."
 ```
 
 Das Präfix (`✦ Economy »` bzw. `✖ UltraEconomy »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraEconomy/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultraeconomy language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraEconomy-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultraeconomy reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraEconomy/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -61,6 +77,7 @@ Das Präfix (`✦ Economy »` bzw. `✖ UltraEconomy »`) setzt das Plugin autom
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

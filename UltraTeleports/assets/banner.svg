@@ -34,5 +34,5 @@
 <g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4"/></g></g></g>
 <text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Teleports</tspan></text>
 <text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Requests, random teleport &amp; back in one plugin.</text>
-<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">TPA<tspan fill="#22D3EE">  •  </tspan>RTP<tspan fill="#22D3EE">  •  </tspan>Back</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">TPA<tspan fill="#22D3EE">  •  </tspan>RTP<tspan fill="#22D3EE">  •  </tspan>Back<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
 </svg>

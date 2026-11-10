@@ -76,7 +76,7 @@ def backdrop(w, h):
 
 def banner_svg(p):
     name = p["name"]
-    chips = f'<tspan fill="{CYAN}">  •  </tspan>'.join(html.escape(c) for c in p["chips"])
+    chips = f'<tspan fill="{CYAN}">  •  </tspan>'.join(html.escape(c) for c in p["chips"] + ["5 Languages"])
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480">
 {DEFS}
 {backdrop(1920, 480)}
@@ -156,7 +156,7 @@ def concept_md(p):
     feats = "\n".join(f"- {f[0]}" for f in p["features"])
     cmds = "\n".join(f"| `{c}` | {d[0]} | `{perm}` |" for c, perm, d in p["commands"])
     perms = "\n".join(f"| `{perm}` | {d[0]} |" for perm, d in p["extra_perms"])
-    msgs = "\n".join(f'  {k}: "{mm(v)}"' for k, v in p["messages"])
+    msgs = "\n".join(f'{k}: "{mm(v)}"' for k, v in p["messages"])
     return f"""<p align="center"><img src="assets/banner.png" alt="{full}"></p>
 
 # {full}
@@ -189,17 +189,33 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
 {msgs}
-error:
-  {p["error"][0]}: "{p["error"][1]}"
+{p["error"][0]}: "{p["error"][1]}"
 ```
 
 Das Präfix (`✦ {name} »` bzw. `✖ {full} »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/{full}/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/{low} language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `{full}-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/{low} reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `{full}/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -209,6 +225,7 @@ Das Präfix (`✦ {name} »` bzw. `✖ {full} »`) setzt das Plugin automatisch 
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 
@@ -241,9 +258,16 @@ def bbcode(p):
 
 No chat spam. Every confirmation, countdown and status appears in the [B]action bar[/B].
 Only [B][COLOR={RED}]errors[/COLOR][/B] are sent to the chat, so players never miss them.
-All messages use MiniMessage and can be changed in [FONT=Courier New]messages.yml[/FONT].
+All messages use MiniMessage and can be changed in the language files.
 
 [IMG]{RAW}/{full}/assets/preview.png[/IMG]
+
+[IMG]{RAW}/shared/assets/header-languages.png[/IMG]
+
+[B]English · Deutsch · Français · Nederlands · Italiano[/B]
+Every player sees {full} in the language of their Minecraft client – automatically.
+Players with any other language get your default language, which you set in the config or with [FONT=Courier New]/{low} language <code>[/FONT].
+All texts live in [FONT=Courier New]lang/<code>.yml[/FONT] and can be edited freely.
 
 [IMG]{RAW}/shared/assets/header-commands.png[/IMG][/CENTER]
 [LIST]
@@ -257,9 +281,9 @@ All messages use MiniMessage and can be changed in [FONT=Courier New]messages.ym
 [CENTER]
 [IMG]{RAW}/shared/assets/header-installation.png[/IMG][/CENTER]
 [LIST=1]
-[*]Download {full} and drop the jar into your [FONT=Courier New]plugins[/FONT] folder.
+[*]Download {full} and drop the jar into your [FONT=Courier New]plugins[/FONT] folder (Paper 1.20.4+, Java 17+).
 [*]Restart your server.
-[*]Adjust [FONT=Courier New]config.yml[/FONT] and [FONT=Courier New]messages.yml[/FONT], then run [FONT=Courier New]/{low} reload[/FONT].
+[*]Adjust [FONT=Courier New]config.yml[/FONT] and the files in [FONT=Courier New]lang/[/FONT], then run [FONT=Courier New]/{low} reload[/FONT].
 [/LIST]
 [CENTER]
 [IMG]{RAW}/shared/assets/header-series.png[/IMG][/CENTER]
@@ -292,19 +316,42 @@ Nachrichten-Layout, gleiche Befehlsstruktur, gleiche Logos. Jedes Plugin hat ein
 | --- | --- | --- |
 {rows}
 
+Alle Plugins sprechen **Englisch, Deutsch, Französisch, Niederländisch und Italienisch**. Jeder
+Spieler bekommt automatisch die Sprache seines Minecraft-Clients; die Standardsprache stellt man mit
+`language:` in der `config.yml` oder im Spiel mit `/ultra<name> language <code>` ein.
+
+## Bauen
+
+Voraussetzungen: Java 17+ und Maven.
+
+```bash
+mvn package
+```
+
+Danach liegt jedes Plugin als eigenständige Jar in `Ultra<Name>/target/Ultra<Name>-1.0.0.jar`.
+Lauffähig auf Paper (und Forks wie Purpur) ab 1.20.4.
+
 ## Aufbau
 
 ```
+pom.xml                      Maven-Hauptprojekt, baut alle Module
+UltraCore/                   Gemeinsamer Code (Nachrichten, Sprachen, GUIs, Teleports), wird in jedes Plugin eingebettet
 Ultra<Name>/
-  README.md                  Konzept: Features, Befehle, Permissions, Nachrichten
+  README.md                  Konzept: Features, Befehle, Permissions, Sprachen
+  src/                       Quellcode, config.yml, plugin.yml, lang/*.yml
   assets/                    Logo, Banner, Ingame-Vorschau
   spigot/description.bbcode  SpigotMC-Beschreibung
 shared/assets/               Serien-Banner und Abschnitts-Header für SpigotMC
-tools/                       Generator für Assets und Texte
+tools/                       Generatoren für Assets, Texte und Sprachdateien
 DESIGN.md                    Gemeinsames Design-System
 ```
 
 Die Regeln, die für alle Plugins gelten, stehen in [DESIGN.md](DESIGN.md).
+
+## Übersetzungen ändern
+
+Die Texte aller Sprachen stehen in `tools/lang/<plugin>.txt` (je Schlüssel fünf Zeilen: en, de,
+fr, nl, it). `python3 tools/gen_lang.py` schreibt daraus die `lang/*.yml` der Plugins.
 
 ## Assets neu erzeugen
 
@@ -343,7 +390,7 @@ def main():
         jobs += [(f"{d}/assets/logo.svg", f"{d}/assets/logo.png", 512, 512, True),
                  (f"{d}/assets/banner.svg", f"{d}/assets/banner.png", 1920, 480, False),
                  (f"tools/.build/{d}-preview.html", f"{d}/assets/preview.png", 1280, 420, False)]
-    for title in ["Features", "In-game Layout", "Commands", "Permissions", "Installation", "The Ultra Series", "Support"]:
+    for title in ["Features", "In-game Layout", "Languages", "Commands", "Permissions", "Installation", "The Ultra Series", "Support"]:
         slug = re.sub(r"[^a-z]+", "-", title.lower()).strip("-").replace("in-game-", "").replace("the-ultra-", "")
         write(f"shared/assets/header-{slug}.svg", header_svg(title))
         jobs.append((f"shared/assets/header-{slug}.svg", f"shared/assets/header-{slug}.png", 1920, 150, False))

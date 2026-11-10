@@ -34,5 +34,5 @@
 <g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></g></g></g>
 <text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Punish</tspan></text>
 <text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Clean moderation with GUI, templates &amp; history.</text>
-<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Ban · Mute · Warn<tspan fill="#22D3EE">  •  </tspan>Templates<tspan fill="#22D3EE">  •  </tspan>History</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Ban · Mute · Warn<tspan fill="#22D3EE">  •  </tspan>Templates<tspan fill="#22D3EE">  •  </tspan>History<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
 </svg>

@@ -11,7 +11,7 @@ UltraPunish is part of the [B][COLOR=#8B5CF6]Ultra[/COLOR][COLOR=#22D3EE]Plugins
 [*]Punish GUI with reason templates and escalating durations
 [*]Full history per player
 [*]IP bans and alt account detection
-[*]SQLite or MySQL, synced across your network
+[*]Punishments are shown in each player's language, ban screen included
 [*]Staff notifications and automatic actions after X warnings
 [/LIST]
 [CENTER]
@@ -19,20 +19,28 @@ UltraPunish is part of the [B][COLOR=#8B5CF6]Ultra[/COLOR][COLOR=#22D3EE]Plugins
 
 No chat spam. Every confirmation, countdown and status appears in the [B]action bar[/B].
 Only [B][COLOR=#F87171]errors[/COLOR][/B] are sent to the chat, so players never miss them.
-All messages use MiniMessage and can be changed in [FONT=Courier New]messages.yml[/FONT].
+All messages use MiniMessage and can be changed in the language files.
 
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraPunish/assets/preview.png[/IMG]
+
+[IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-languages.png[/IMG]
+
+[B]English · Deutsch · Français · Nederlands · Italiano[/B]
+Every player sees UltraPunish in the language of their Minecraft client – automatically.
+Players with any other language get your default language, which you set in the config or with [FONT=Courier New]/ultrapunish language <code>[/FONT].
+All texts live in [FONT=Courier New]lang/<code>.yml[/FONT] and can be edited freely.
 
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-commands.png[/IMG][/CENTER]
 [LIST]
 [*][FONT=Courier New][COLOR=#22D3EE]/punish <spieler>[/COLOR][/FONT] – Open the punish GUI [COLOR=#94A3B8](ultrapunish.gui)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/ban · /tempban <spieler> [dauer] [grund][/COLOR][/FONT] – Ban a player [COLOR=#94A3B8](ultrapunish.ban)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/mute · /tempmute <spieler> [dauer] [grund][/COLOR][/FONT] – Mute a player [COLOR=#94A3B8](ultrapunish.mute)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/banip <spieler> [grund][/COLOR][/FONT] – Ban a player and their IP [COLOR=#94A3B8](ultrapunish.ban)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/kick <spieler> [grund][/COLOR][/FONT] – Kick a player [COLOR=#94A3B8](ultrapunish.kick)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/warn <spieler> [grund][/COLOR][/FONT] – Warn a player [COLOR=#94A3B8](ultrapunish.warn)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/unban · /unmute <spieler>[/COLOR][/FONT] – Revoke a punishment [COLOR=#94A3B8](ultrapunish.revoke)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/history <spieler>[/COLOR][/FONT] – Show the history [COLOR=#94A3B8](ultrapunish.history)[/COLOR]
-[*][FONT=Courier New][COLOR=#22D3EE]/ultrapunish <help|reload|version>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrapunish.admin)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/ultrapunish <help|reload|version|language>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrapunish.admin)[/COLOR]
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-permissions.png[/IMG][/CENTER]
@@ -44,9 +52,9 @@ All messages use MiniMessage and can be changed in [FONT=Courier New]messages.ym
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-installation.png[/IMG][/CENTER]
 [LIST=1]
-[*]Download UltraPunish and drop the jar into your [FONT=Courier New]plugins[/FONT] folder.
+[*]Download UltraPunish and drop the jar into your [FONT=Courier New]plugins[/FONT] folder (Paper 1.20.4+, Java 17+).
 [*]Restart your server.
-[*]Adjust [FONT=Courier New]config.yml[/FONT] and [FONT=Courier New]messages.yml[/FONT], then run [FONT=Courier New]/ultrapunish reload[/FONT].
+[*]Adjust [FONT=Courier New]config.yml[/FONT] and the files in [FONT=Courier New]lang/[/FONT], then run [FONT=Courier New]/ultrapunish reload[/FONT].
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-series.png[/IMG][/CENTER]

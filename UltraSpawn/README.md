@@ -25,7 +25,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | `/spawn [spieler]` | Teleportiert zum Spawn (andere: ultraspawn.spawn.others) | `ultraspawn.spawn` |
 | `/setspawn [name]` | Setzt einen Spawnpunkt | `ultraspawn.set` |
 | `/delspawn <name>` | Löscht einen Spawnpunkt | `ultraspawn.delete` |
-| `/ultraspawn <help|reload|version>` | Verwaltung | `ultraspawn.admin` |
+| `/ultraspawn <help|reload|version|language>` | Verwaltung | `ultraspawn.admin` |
 
 ## Weitere Permissions
 
@@ -39,18 +39,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  teleport-warmup: "Teleporting in <accent>3s</accent> – don't move!"
-  teleport-success: "Welcome back at <accent>spawn</accent>."
-error:
-  teleport-cancelled: "You moved! Teleport cancelled."
+teleport-warmup: "Teleporting in <accent>3s</accent> – don't move!"
+spawn-teleport: "Welcome back at <accent>spawn</accent>."
+teleport-cancelled: "Teleport cancelled because you moved or took damage."
 ```
 
 Das Präfix (`✦ Spawn »` bzw. `✖ UltraSpawn »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraSpawn/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultraspawn language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraSpawn-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultraspawn reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraSpawn/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -60,6 +76,7 @@ Das Präfix (`✦ Spawn »` bzw. `✖ UltraSpawn »`) setzt das Plugin automatis
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

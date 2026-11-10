@@ -34,5 +34,5 @@
 <g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5l9-8 9 8M5.5 9.5V20.5h13V9.5M10 20.5v-6h4v6"/></g></g></g>
 <text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Homes</tspan></text>
 <text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Set, manage and share homes in one GUI.</text>
-<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Homes GUI<tspan fill="#22D3EE">  •  </tspan>Limits<tspan fill="#22D3EE">  •  </tspan>Sharing</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Homes GUI<tspan fill="#22D3EE">  •  </tspan>Limits<tspan fill="#22D3EE">  •  </tspan>Public Homes<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
 </svg>

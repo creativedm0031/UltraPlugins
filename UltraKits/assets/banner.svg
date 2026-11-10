@@ -34,5 +34,5 @@
 <g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19zM5 9V6.5A2.5 2.5 0 0 1 7.500 4h9A2.5 2.5 0 0 1 19 6.5V9M3 13h7M14 13h7"/><rect x="10" y="11.2" width="4" height="3.6" rx=".6"/></g></g></g>
 <text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Kits</tspan></text>
 <text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Kits with previews, cooldowns &amp; in-game editor.</text>
-<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Kit GUI<tspan fill="#22D3EE">  •  </tspan>Editor<tspan fill="#22D3EE">  •  </tspan>Cooldowns</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Kit GUI<tspan fill="#22D3EE">  •  </tspan>Editor<tspan fill="#22D3EE">  •  </tspan>Cooldowns<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
 </svg>

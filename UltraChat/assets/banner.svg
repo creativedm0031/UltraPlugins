@@ -34,5 +34,5 @@
 <g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01"/></g></g></g>
 <text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Chat</tspan></text>
 <text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Formatting, channels &amp; moderation for your chat.</text>
-<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Formats<tspan fill="#22D3EE">  •  </tspan>Channels<tspan fill="#22D3EE">  •  </tspan>Filter</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Formats<tspan fill="#22D3EE">  •  </tspan>Channels<tspan fill="#22D3EE">  •  </tspan>Filter<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
 </svg>

@@ -15,7 +15,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 - Punish-GUI mit Grund-Vorlagen und eskalierenden Dauern
 - Vollständige Historie pro Spieler
 - IP-Bans und Alt-Account-Erkennung
-- SQLite oder MySQL, netzwerkweit synchron
+- Strafen werden jedem Spieler in seiner Sprache angezeigt, auch auf dem Ban-Screen
 - Team-Benachrichtigungen und automatische Aktionen ab X Verwarnungen
 
 ## Befehle
@@ -25,11 +25,12 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | `/punish <spieler>` | Öffnet die Punish-GUI | `ultrapunish.gui` |
 | `/ban · /tempban <spieler> [dauer] [grund]` | Spieler bannen | `ultrapunish.ban` |
 | `/mute · /tempmute <spieler> [dauer] [grund]` | Spieler muten | `ultrapunish.mute` |
+| `/banip <spieler> [grund]` | Spieler samt IP bannen | `ultrapunish.ban` |
 | `/kick <spieler> [grund]` | Spieler kicken | `ultrapunish.kick` |
 | `/warn <spieler> [grund]` | Spieler verwarnen | `ultrapunish.warn` |
 | `/unban · /unmute <spieler>` | Strafe aufheben | `ultrapunish.revoke` |
 | `/history <spieler>` | Historie anzeigen | `ultrapunish.history` |
-| `/ultrapunish <help|reload|version>` | Verwaltung | `ultrapunish.admin` |
+| `/ultrapunish <help|reload|version|language>` | Verwaltung | `ultrapunish.admin` |
 
 ## Weitere Permissions
 
@@ -43,18 +44,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  mute-applied: "<accent>Steve</accent> was muted for <accent>1h</accent> · Spam"
-  ban-revoked: "<accent>Steve</accent> was unbanned."
-error:
-  target-exempt: "You can't punish Steve – higher rank."
+notify-mute: "<accent>Steve</accent> was muted by <accent>Alex</accent> · 1h · Spam"
+notify-unban: "<accent>Steve</accent> was unbanned by <accent>Alex</accent>."
+target-exempt: "You can't punish Steve."
 ```
 
 Das Präfix (`✦ Punish »` bzw. `✖ UltraPunish »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraPunish/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrapunish language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraPunish-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrapunish reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraPunish/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -64,6 +81,7 @@ Das Präfix (`✦ Punish »` bzw. `✖ UltraPunish »`) setzt das Plugin automat
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 

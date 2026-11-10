@@ -19,18 +19,25 @@ UltraKits is part of the [B][COLOR=#8B5CF6]Ultra[/COLOR][COLOR=#22D3EE]Plugins[/
 
 No chat spam. Every confirmation, countdown and status appears in the [B]action bar[/B].
 Only [B][COLOR=#F87171]errors[/COLOR][/B] are sent to the chat, so players never miss them.
-All messages use MiniMessage and can be changed in [FONT=Courier New]messages.yml[/FONT].
+All messages use MiniMessage and can be changed in the language files.
 
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraKits/assets/preview.png[/IMG]
 
+[IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-languages.png[/IMG]
+
+[B]English · Deutsch · Français · Nederlands · Italiano[/B]
+Every player sees UltraKits in the language of their Minecraft client – automatically.
+Players with any other language get your default language, which you set in the config or with [FONT=Courier New]/ultrakits language <code>[/FONT].
+All texts live in [FONT=Courier New]lang/<code>.yml[/FONT] and can be edited freely.
+
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-commands.png[/IMG][/CENTER]
 [LIST]
-[*][FONT=Courier New][COLOR=#22D3EE]/kit [name][/COLOR][/FONT] – Claim a kit [COLOR=#94A3B8](ultrakits.kit)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/kit [name] [spieler][/COLOR][/FONT] – Claim a kit (give to others: ultrakits.give) [COLOR=#94A3B8](ultrakits.kit)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/kits[/COLOR][/FONT] – Open the kit GUI [COLOR=#94A3B8](ultrakits.kit)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/createkit <name>[/COLOR][/FONT] – Create a kit from your inventory [COLOR=#94A3B8](ultrakits.create)[/COLOR]
-[*][FONT=Courier New][COLOR=#22D3EE]/editkit <name>[/COLOR][/FONT] – Edit a kit [COLOR=#94A3B8](ultrakits.edit)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/editkit <name> <items|cooldown|cost|onetime|firstjoin|icon>[/COLOR][/FONT] – Edit a kit [COLOR=#94A3B8](ultrakits.edit)[/COLOR]
 [*][FONT=Courier New][COLOR=#22D3EE]/delkit <name>[/COLOR][/FONT] – Delete a kit [COLOR=#94A3B8](ultrakits.delete)[/COLOR]
-[*][FONT=Courier New][COLOR=#22D3EE]/ultrakits <help|reload|version>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrakits.admin)[/COLOR]
+[*][FONT=Courier New][COLOR=#22D3EE]/ultrakits <help|reload|version|language>[/COLOR][/FONT] – Administration [COLOR=#94A3B8](ultrakits.admin)[/COLOR]
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-permissions.png[/IMG][/CENTER]
@@ -42,9 +49,9 @@ All messages use MiniMessage and can be changed in [FONT=Courier New]messages.ym
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-installation.png[/IMG][/CENTER]
 [LIST=1]
-[*]Download UltraKits and drop the jar into your [FONT=Courier New]plugins[/FONT] folder.
+[*]Download UltraKits and drop the jar into your [FONT=Courier New]plugins[/FONT] folder (Paper 1.20.4+, Java 17+).
 [*]Restart your server.
-[*]Adjust [FONT=Courier New]config.yml[/FONT] and [FONT=Courier New]messages.yml[/FONT], then run [FONT=Courier New]/ultrakits reload[/FONT].
+[*]Adjust [FONT=Courier New]config.yml[/FONT] and the files in [FONT=Courier New]lang/[/FONT], then run [FONT=Courier New]/ultrakits reload[/FONT].
 [/LIST]
 [CENTER]
 [IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/shared/assets/header-series.png[/IMG][/CENTER]

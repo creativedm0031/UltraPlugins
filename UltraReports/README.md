@@ -15,7 +15,7 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 - Team-Posteingang mit Status: offen, in Bearbeitung, erledigt
 - Report übernehmen und direkt zum Spieler teleportieren
 - Cooldown und Schutz vor Missbrauch
-- Discord-Webhook und netzwerkweite Synchronisation
+- Discord-Webhook für neue Reports
 - Mit UltraPunish direkt aus dem Report bestrafen
 
 ## Befehle
@@ -23,8 +23,8 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 | Befehl | Beschreibung | Permission |
 | --- | --- | --- |
 | `/report <spieler> [grund]` | Spieler melden | `ultrareports.report` |
-| `/reports` | Öffnet den Team-Posteingang | `ultrareports.staff` |
-| `/ultrareports <help|reload|version>` | Verwaltung | `ultrareports.admin` |
+| `/reports [id]` | Öffnet den Team-Posteingang oder einen Report | `ultrareports.staff` |
+| `/ultrareports <help|reload|version|language>` | Verwaltung | `ultrareports.admin` |
 
 ## Weitere Permissions
 
@@ -38,18 +38,34 @@ Teil der [Ultra-Serie](../README.md). Layout, Farben und Verhalten folgen dem ge
 
 ![Ingame-Vorschau](assets/preview.png)
 
-Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus der `messages.yml`
-(Standard: Englisch, `lang/de.yml` liegt bei):
+Rückmeldungen erscheinen in der Actionbar, Fehler im Chat. Auszug aus `lang/en.yml`:
 
 ```yaml
-actionbar:
-  report-sent: "Thanks! Your report on <accent>Steve</accent> was submitted."
-  report-claimed: "You claimed report <accent>#42</accent>."
-error:
-  already-reported: "You already reported Steve recently."
+report-sent: "Thanks! Your report on <accent>Steve</accent> was submitted."
+report-claimed: "You claimed report <accent>#42</accent>."
+already-reported: "You already reported Steve – staff is on it."
 ```
 
 Das Präfix (`✦ Reports »` bzw. `✖ UltraReports »`) setzt das Plugin automatisch davor.
+
+## Sprachen
+
+Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
+(`plugins/UltraReports/lang/en.yml`, `de.yml`, `fr.yml`, `nl.yml`, `it.yml`).
+
+- Jeder Spieler bekommt das Plugin in der Sprache seines Minecraft-Clients
+  (`use-client-language: true`). Andere Client-Sprachen erhalten die Standardsprache.
+- Standardsprache ändern: `language: de` in der `config.yml` oder im Spiel `/ultrareports language de`.
+- Texte lassen sich in den Sprachdateien frei anpassen (MiniMessage). Neue Schlüssel aus Updates
+  werden automatisch ergänzt, eigene Änderungen bleiben erhalten.
+
+## Installation
+
+1. `UltraReports-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+2. Server neu starten.
+3. `config.yml` und die Sprachdateien anpassen, dann `/ultrareports reload`.
+
+Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `UltraReports/target/`.
 
 ## Dateien in diesem Ordner
 
@@ -59,6 +75,7 @@ Das Präfix (`✦ Reports »` bzw. `✖ UltraReports »`) setzt das Plugin autom
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
 | `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
 
