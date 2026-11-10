@@ -1,0 +1,23 @@
+name: UltraHomes
+version: '${project.version}'
+main: de.creativedm.ultra.homes.UltraHomes
+api-version: '1.20'
+author: creativedm
+description: Set, manage and share homes in one GUI.
+commands:
+  home: {usage: "/<command> [name|player:name]", description: Teleport to a home}
+  homes: {usage: "/<command>", description: Open the homes GUI}
+  sethome: {usage: "/<command> [name]", description: Set a home}
+  delhome: {usage: "/<command> <name>", description: Delete a home}
+  ultrahomes: {usage: "/<command> <help|reload|version|language|import>", description: Administration}
+permissions:
+  ultrahomes.home: {default: true}
+  ultrahomes.set: {default: true}
+  ultrahomes.delete: {default: true}
+  ultrahomes.others: {default: op}
+  ultrahomes.admin: {default: op}
+  ultrahomes.bypass.warmup: {default: op}
+  ultrahomes.bypass.cooldown: {default: op}
+  ultrahomes.*:
+    default: op
+    children: {ultrahomes.home: true, ultrahomes.set: true, ultrahomes.delete: true, ultrahomes.others: true, ultrahomes.admin: true, ultrahomes.bypass.warmup: true, ultrahomes.bypass.cooldown: true}

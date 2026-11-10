@@ -1,0 +1,108 @@
+vanish-status
+  VANISHED · invisible to <accent><count></accent> players
+  UNSICHTBAR · für <accent><count></accent> Spieler unsichtbar
+  INVISIBLE · caché pour <accent><count></accent> joueurs
+  ONZICHTBAAR · onzichtbaar voor <accent><count></accent> spelers
+  INVISIBILE · nascosto a <accent><count></accent> giocatori
+vanish-on
+  You are now <accent>invisible</accent>.
+  Du bist jetzt <accent>unsichtbar</accent>.
+  Tu es maintenant <accent>invisible</accent>.
+  Je bent nu <accent>onzichtbaar</accent>.
+  Ora sei <accent>invisibile</accent>.
+vanish-off
+  You are visible again.
+  Du bist wieder sichtbar.
+  Tu es de nouveau visible.
+  Je bent weer zichtbaar.
+  Sei di nuovo visibile.
+vanish-other-on
+  <accent><player></accent> is now invisible.
+  <accent><player></accent> ist jetzt unsichtbar.
+  <accent><player></accent> est maintenant invisible.
+  <accent><player></accent> is nu onzichtbaar.
+  <accent><player></accent> è ora invisibile.
+vanish-other-off
+  <accent><player></accent> is visible again.
+  <accent><player></accent> ist wieder sichtbar.
+  <accent><player></accent> est de nouveau visible.
+  <accent><player></accent> is weer zichtbaar.
+  <accent><player></accent> è di nuovo visibile.
+vanish-join
+  You joined <accent>invisibly</accent>.
+  Du bist <accent>unsichtbar</accent> beigetreten.
+  Tu t'es connecté <accent>invisible</accent>.
+  Je bent <accent>onzichtbaar</accent> binnengekomen.
+  Sei entrato <accent>invisibile</accent>.
+list
+  Vanished (<accent><count></accent>): <accent><players></accent>
+  Unsichtbar (<accent><count></accent>): <accent><players></accent>
+  Invisibles (<accent><count></accent>) : <accent><players></accent>
+  Onzichtbaar (<accent><count></accent>): <accent><players></accent>
+  Invisibili (<accent><count></accent>): <accent><players></accent>
+list-empty
+  Nobody is vanished.
+  Niemand ist unsichtbar.
+  Personne n'est invisible.
+  Niemand is onzichtbaar.
+  Nessuno è invisibile.
+fake-join-sent
+  Fake join message sent.
+  Fake-Join-Nachricht gesendet.
+  Faux message de connexion envoyé.
+  Nep-joinbericht verstuurd.
+  Messaggio di accesso finto inviato.
+fake-quit-sent
+  Fake quit message sent.
+  Fake-Quit-Nachricht gesendet.
+  Faux message de déconnexion envoyé.
+  Nep-quitbericht verstuurd.
+  Messaggio di uscita finto inviato.
+silent-chest
+  Opened <accent>silently</accent>.
+  <accent>Lautlos</accent> geöffnet.
+  Ouvert <accent>en silence</accent>.
+  <accent>Stil</accent> geopend.
+  Aperto <accent>in silenzio</accent>.
+silent-chest-title
+  Silent
+  Lautlos
+  Silencieux
+  Stil
+  Silenzioso
+target-higher-level
+  You can't vanish <player> – higher vanish level.
+  Du kannst <player> nicht unsichtbar machen – höheres Vanish-Level.
+  Tu ne peux pas rendre <player> invisible – niveau supérieur.
+  Je kunt <player> niet onzichtbaar maken – hoger vanish-niveau.
+  Non puoi rendere invisibile <player> – livello superiore.
+help-vanish
+  Turn vanish on or off
+  Vanish an- oder ausschalten
+  Activer ou désactiver l'invisibilité
+  Vanish aan- of uitzetten
+  Attiva o disattiva l'invisibilità
+help-vanishlist
+  List vanished players
+  Unsichtbare Spieler anzeigen
+  Lister les joueurs invisibles
+  Onzichtbare spelers tonen
+  Elenca i giocatori invisibili
+help-fakejoin
+  Send a fake join message
+  Fake-Join-Nachricht senden
+  Envoyer un faux message de connexion
+  Een nep-joinbericht sturen
+  Invia un messaggio di accesso finto
+help-fakequit
+  Send a fake quit message
+  Fake-Quit-Nachricht senden
+  Envoyer un faux message de déconnexion
+  Een nep-quitbericht sturen
+  Invia un messaggio di uscita finto
+help-ultravanish
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

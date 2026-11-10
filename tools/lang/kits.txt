@@ -1,0 +1,192 @@
+kit-received
+  Kit <accent><name></accent> received.
+  Kit <accent><name></accent> erhalten.
+  Kit <accent><name></accent> reçu.
+  Kit <accent><name></accent> ontvangen.
+  Kit <accent><name></accent> ricevuto.
+kit-given
+  Gave kit <accent><name></accent> to <accent><player></accent>.
+  Kit <accent><name></accent> an <accent><player></accent> gegeben.
+  Kit <accent><name></accent> donné à <accent><player></accent>.
+  Kit <accent><name></accent> gegeven aan <accent><player></accent>.
+  Kit <accent><name></accent> dato a <accent><player></accent>.
+kit-created
+  Kit <accent><name></accent> created with <accent><items></accent> items.
+  Kit <accent><name></accent> mit <accent><items></accent> Items erstellt.
+  Kit <accent><name></accent> créé avec <accent><items></accent> objets.
+  Kit <accent><name></accent> aangemaakt met <accent><items></accent> items.
+  Kit <accent><name></accent> creato con <accent><items></accent> oggetti.
+kit-updated
+  Kit <accent><name></accent> saved.
+  Kit <accent><name></accent> gespeichert.
+  Kit <accent><name></accent> enregistré.
+  Kit <accent><name></accent> opgeslagen.
+  Kit <accent><name></accent> salvato.
+kit-deleted
+  Kit <accent><name></accent> deleted.
+  Kit <accent><name></accent> gelöscht.
+  Kit <accent><name></accent> supprimé.
+  Kit <accent><name></accent> verwijderd.
+  Kit <accent><name></accent> eliminato.
+editor-hint
+  Put the items in, then close the inventory to save.
+  Lege die Items hinein und schließe das Inventar zum Speichern.
+  Place les objets puis ferme l'inventaire pour enregistrer.
+  Leg de items erin en sluit de inventaris om op te slaan.
+  Inserisci gli oggetti e chiudi l'inventario per salvare.
+kit-unknown
+  Kit <name> doesn't exist.
+  Das Kit <name> gibt es nicht.
+  Le kit <name> n'existe pas.
+  Kit <name> bestaat niet.
+  Il kit <name> non esiste.
+kit-exists
+  A kit named <name> already exists.
+  Ein Kit namens <name> gibt es bereits.
+  Un kit nommé <name> existe déjà.
+  Er bestaat al een kit met de naam <name>.
+  Esiste già un kit chiamato <name>.
+kit-cooldown
+  Kit <name> is on cooldown – <time> left.
+  Kit <name> hat noch Cooldown – <time> übrig.
+  Le kit <name> est en recharge – encore <time>.
+  Kit <name> heeft nog cooldown – nog <time>.
+  Il kit <name> è in ricarica – mancano <time>.
+kit-one-time
+  You already claimed kit <name>.
+  Du hast das Kit <name> bereits abgeholt.
+  Tu as déjà récupéré le kit <name>.
+  Je hebt kit <name> al opgehaald.
+  Hai già riscattato il kit <name>.
+kit-invalid-name
+  Names may only contain letters, numbers, - and _.
+  Namen dürfen nur Buchstaben, Zahlen, - und _ enthalten.
+  Les noms ne peuvent contenir que des lettres, des chiffres, - et _.
+  Namen mogen alleen letters, cijfers, - en _ bevatten.
+  I nomi possono contenere solo lettere, numeri, - e _.
+kit-empty-inventory
+  Your inventory is empty – fill it with the kit items first.
+  Dein Inventar ist leer – fülle es zuerst mit den Kit-Items.
+  Ton inventaire est vide – remplis-le d'abord avec les objets du kit.
+  Je inventaris is leeg – vul het eerst met de kit-items.
+  Il tuo inventario è vuoto – riempilo prima con gli oggetti del kit.
+kits-none
+  There are no kits available.
+  Es sind keine Kits verfügbar.
+  Aucun kit n'est disponible.
+  Er zijn geen kits beschikbaar.
+  Non ci sono kit disponibili.
+inventory-full
+  Your inventory was full, some items were dropped.
+  Dein Inventar war voll, einige Items wurden fallen gelassen.
+  Ton inventaire était plein, certains objets sont tombés au sol.
+  Je inventaris was vol, sommige items zijn gevallen.
+  Il tuo inventario era pieno, alcuni oggetti sono caduti.
+invalid-duration
+  <value> is not a duration. Examples: 30m, 12h, 7d
+  <value> ist keine Dauer. Beispiele: 30m, 12h, 7d
+  <value> n'est pas une durée. Exemples : 30m, 12h, 7d
+  <value> is geen duur. Voorbeelden: 30m, 12h, 7d
+  <value> non è una durata. Esempi: 30m, 12h, 7d
+icon-empty-hand
+  Hold the item you want as icon in your hand.
+  Halte das Item, das du als Icon möchtest, in der Hand.
+  Tiens en main l'objet que tu veux comme icône.
+  Houd het item dat je als icoon wilt in je hand.
+  Tieni in mano l'oggetto che vuoi come icona.
+kits-title
+  Kits
+  Kits
+  Kits
+  Kits
+  Kit
+preview-title
+  Preview · <name>
+  Vorschau · <name>
+  Aperçu · <name>
+  Voorbeeld · <name>
+  Anteprima · <name>
+editor-title
+  Editor · <name>
+  Editor · <name>
+  Éditeur · <name>
+  Editor · <name>
+  Editor · <name>
+delete-title
+  Delete <name>?
+  <name> löschen?
+  Supprimer <name> ?
+  <name> verwijderen?
+  Eliminare <name>?
+preview-claim
+  <green>Claim kit</green>
+  <green>Kit abholen</green>
+  <green>Récupérer le kit</green>
+  <green>Kit ophalen</green>
+  <green>Riscatta kit</green>
+kit-lore
+  Status: <white><status>\nItems: <white><items>\nPrice: <white><cost>\n\n<accent>▸</accent> Left click: claim\n<accent>▸</accent> Right click: preview
+  Status: <white><status>\nItems: <white><items>\nPreis: <white><cost>\n\n<accent>▸</accent> Linksklick: abholen\n<accent>▸</accent> Rechtsklick: Vorschau
+  Statut : <white><status>\nObjets : <white><items>\nPrix : <white><cost>\n\n<accent>▸</accent> Clic gauche : récupérer\n<accent>▸</accent> Clic droit : aperçu
+  Status: <white><status>\nItems: <white><items>\nPrijs: <white><cost>\n\n<accent>▸</accent> Linkermuisknop: ophalen\n<accent>▸</accent> Rechtermuisknop: voorbeeld
+  Stato: <white><status>\nOggetti: <white><items>\nPrezzo: <white><cost>\n\n<accent>▸</accent> Clic sinistro: riscatta\n<accent>▸</accent> Clic destro: anteprima
+status-ready
+  ready
+  bereit
+  disponible
+  klaar
+  pronto
+status-claimed
+  already claimed
+  bereits abgeholt
+  déjà récupéré
+  al opgehaald
+  già riscattato
+status-locked
+  locked
+  gesperrt
+  verrouillé
+  vergrendeld
+  bloccato
+free
+  free
+  kostenlos
+  gratuit
+  gratis
+  gratis
+help-kit
+  Claim a kit or give it to a player
+  Ein Kit abholen oder einem Spieler geben
+  Récupérer un kit ou le donner à un joueur
+  Een kit ophalen of aan een speler geven
+  Riscatta un kit o dallo a un giocatore
+help-kits
+  Open the kit list
+  Die Kit-Liste öffnen
+  Ouvrir la liste des kits
+  De kitlijst openen
+  Apri l'elenco dei kit
+help-createkit
+  Create a kit from your inventory
+  Ein Kit aus deinem Inventar erstellen
+  Créer un kit à partir de ton inventaire
+  Een kit maken van je inventaris
+  Crea un kit dal tuo inventario
+help-editkit
+  Change items, cooldown, price, one-time, first join or icon
+  Items, Cooldown, Preis, Einmalig, First Join oder Icon ändern
+  Modifier objets, recharge, prix, usage unique, première connexion ou icône
+  Items, cooldown, prijs, eenmalig, eerste keer of icoon wijzigen
+  Modifica oggetti, ricarica, prezzo, uso unico, primo accesso o icona
+help-delkit
+  Delete a kit
+  Ein Kit löschen
+  Supprimer un kit
+  Een kit verwijderen
+  Elimina un kit
+help-ultrakits
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

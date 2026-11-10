@@ -1,0 +1,192 @@
+report-sent
+  Thanks! Your report on <accent><player></accent> was submitted.
+  Danke! Deine Meldung zu <accent><player></accent> wurde gesendet.
+  Merci ! Ton signalement de <accent><player></accent> a été envoyé.
+  Bedankt! Je melding over <accent><player></accent> is verstuurd.
+  Grazie! La tua segnalazione su <accent><player></accent> è stata inviata.
+notify-new
+  New report <accent><click:run_command:'/reports <id>'><hover:show_text:'/reports <id>'>#<id></hover></click></accent>: <accent><player></accent> by <reporter> · <reason>
+  Neuer Report <accent><click:run_command:'/reports <id>'><hover:show_text:'/reports <id>'>#<id></hover></click></accent>: <accent><player></accent> von <reporter> · <reason>
+  Nouveau signalement <accent><click:run_command:'/reports <id>'><hover:show_text:'/reports <id>'>#<id></hover></click></accent> : <accent><player></accent> par <reporter> · <reason>
+  Nieuwe melding <accent><click:run_command:'/reports <id>'><hover:show_text:'/reports <id>'>#<id></hover></click></accent>: <accent><player></accent> door <reporter> · <reason>
+  Nuova segnalazione <accent><click:run_command:'/reports <id>'><hover:show_text:'/reports <id>'>#<id></hover></click></accent>: <accent><player></accent> da <reporter> · <reason>
+report-claimed
+  You claimed report <accent>#<id></accent>.
+  Du hast Report <accent>#<id></accent> übernommen.
+  Tu as pris en charge le signalement <accent>#<id></accent>.
+  Je hebt melding <accent>#<id></accent> opgepakt.
+  Hai preso in carico la segnalazione <accent>#<id></accent>.
+report-closed
+  Report <accent>#<id></accent> closed.
+  Report <accent>#<id></accent> abgeschlossen.
+  Signalement <accent>#<id></accent> clôturé.
+  Melding <accent>#<id></accent> gesloten.
+  Segnalazione <accent>#<id></accent> chiusa.
+report-handled
+  Your report on <accent><player></accent> was handled. Thank you!
+  Deine Meldung zu <accent><player></accent> wurde bearbeitet. Danke!
+  Ton signalement de <accent><player></accent> a été traité. Merci !
+  Je melding over <accent><player></accent> is afgehandeld. Bedankt!
+  La tua segnalazione su <accent><player></accent> è stata gestita. Grazie!
+teleported
+  Teleported to <accent><player></accent>.
+  Zu <accent><player></accent> teleportiert.
+  Téléporté vers <accent><player></accent>.
+  Geteleporteerd naar <accent><player></accent>.
+  Teletrasportato da <accent><player></accent>.
+report-self
+  You can't report yourself.
+  Du kannst dich nicht selbst melden.
+  Tu ne peux pas te signaler toi-même.
+  Je kunt jezelf niet melden.
+  Non puoi segnalare te stesso.
+report-exempt
+  <player> can't be reported.
+  <player> kann nicht gemeldet werden.
+  <player> ne peut pas être signalé.
+  <player> kan niet gemeld worden.
+  <player> non può essere segnalato.
+already-reported
+  You already reported <player> – staff is on it.
+  Du hast <player> bereits gemeldet – das Team kümmert sich.
+  Tu as déjà signalé <player> – l'équipe s'en occupe.
+  Je hebt <player> al gemeld – het team is ermee bezig.
+  Hai già segnalato <player> – lo staff se ne sta occupando.
+report-unknown
+  This report doesn't exist.
+  Diesen Report gibt es nicht.
+  Ce signalement n'existe pas.
+  Deze melding bestaat niet.
+  Questa segnalazione non esiste.
+reason-title
+  Report · <player>
+  Melden · <player>
+  Signaler · <player>
+  Melden · <player>
+  Segnala · <player>
+reason-lore
+  <accent>▸</accent> Click to report
+  <accent>▸</accent> Klicken zum Melden
+  <accent>▸</accent> Clique pour signaler
+  <accent>▸</accent> Klik om te melden
+  <accent>▸</accent> Clicca per segnalare
+inbox-title
+  Reports · <state>
+  Reports · <state>
+  Signalements · <state>
+  Meldingen · <state>
+  Segnalazioni · <state>
+report-title
+  Report #<id>
+  Report #<id>
+  Signalement #<id>
+  Melding #<id>
+  Segnalazione #<id>
+report-lore
+  Reason: <white><reason>\nReporter: <white><reporter>\nDate: <white><date>\nHandled by: <white><handler>\nPlayer: <white><online>\n\n<accent>▸</accent> Click to open
+  Grund: <white><reason>\nGemeldet von: <white><reporter>\nDatum: <white><date>\nBearbeiter: <white><handler>\nSpieler: <white><online>\n\n<accent>▸</accent> Klicken zum Öffnen
+  Raison : <white><reason>\nSignalé par : <white><reporter>\nDate : <white><date>\nTraité par : <white><handler>\nJoueur : <white><online>\n\n<accent>▸</accent> Clique pour ouvrir
+  Reden: <white><reason>\nGemeld door: <white><reporter>\nDatum: <white><date>\nBehandeld door: <white><handler>\nSpeler: <white><online>\n\n<accent>▸</accent> Klik om te openen
+  Motivo: <white><reason>\nSegnalato da: <white><reporter>\nData: <white><date>\nGestito da: <white><handler>\nGiocatore: <white><online>\n\n<accent>▸</accent> Clicca per aprire
+report-detail
+  Reason: <white><reason>\nReporter: <white><reporter>
+  Grund: <white><reason>\nGemeldet von: <white><reporter>
+  Raison : <white><reason>\nSignalé par : <white><reporter>
+  Reden: <white><reason>\nGemeld door: <white><reporter>
+  Motivo: <white><reason>\nSegnalato da: <white><reporter>
+online
+  online
+  online
+  en ligne
+  online
+  online
+offline
+  offline
+  offline
+  hors ligne
+  offline
+  offline
+state-open
+  open
+  offen
+  ouverts
+  open
+  aperte
+state-claimed
+  in progress
+  in Bearbeitung
+  en cours
+  in behandeling
+  in corso
+state-closed
+  closed
+  erledigt
+  clôturés
+  gesloten
+  chiuse
+filter-button
+  <brand>Status</brand>
+  <brand>Status</brand>
+  <brand>Statut</brand>
+  <brand>Status</brand>
+  <brand>Stato</brand>
+filter-lore
+  Showing: <white><state>\n\n<accent>▸</accent> Click to switch
+  Angezeigt: <white><state>\n\n<accent>▸</accent> Klicken zum Wechseln
+  Affichés : <white><state>\n\n<accent>▸</accent> Clique pour changer
+  Getoond: <white><state>\n\n<accent>▸</accent> Klik om te wisselen
+  Mostrate: <white><state>\n\n<accent>▸</accent> Clicca per cambiare
+action-claim
+  <brand>Claim</brand>
+  <brand>Übernehmen</brand>
+  <brand>Prendre en charge</brand>
+  <brand>Oppakken</brand>
+  <brand>Prendi in carico</brand>
+action-claim-lore
+  Marks the report as yours.
+  Markiert den Report als deinen.
+  Marque le signalement comme le tien.
+  Markeert de melding als de jouwe.
+  Segna la segnalazione come tua.
+action-teleport
+  <brand>Teleport to player</brand>
+  <brand>Zum Spieler teleportieren</brand>
+  <brand>Se téléporter au joueur</brand>
+  <brand>Naar speler teleporteren</brand>
+  <brand>Teletrasportati dal giocatore</brand>
+action-punish
+  <brand>Punish</brand>
+  <brand>Bestrafen</brand>
+  <brand>Sanctionner</brand>
+  <brand>Straffen</brand>
+  <brand>Punisci</brand>
+action-punish-lore
+  Opens UltraPunish for this player.
+  Öffnet UltraPunish für diesen Spieler.
+  Ouvre UltraPunish pour ce joueur.
+  Opent UltraPunish voor deze speler.
+  Apre UltraPunish per questo giocatore.
+action-close
+  <green>Close report</green>
+  <green>Report abschließen</green>
+  <green>Clôturer le signalement</green>
+  <green>Melding sluiten</green>
+  <green>Chiudi segnalazione</green>
+help-report
+  Report a player to the staff
+  Einen Spieler beim Team melden
+  Signaler un joueur à l'équipe
+  Een speler bij het team melden
+  Segnala un giocatore allo staff
+help-reports
+  Open the staff inbox
+  Den Team-Posteingang öffnen
+  Ouvrir la boîte de réception de l'équipe
+  De team-inbox openen
+  Apri la casella dello staff
+help-ultrareports
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

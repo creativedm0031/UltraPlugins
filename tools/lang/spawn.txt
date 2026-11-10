@@ -1,0 +1,72 @@
+spawn-teleport
+  Welcome back at <accent>spawn</accent>.
+  Willkommen zurück am <accent>Spawn</accent>.
+  Te revoilà au <accent>spawn</accent>.
+  Welkom terug bij de <accent>spawn</accent>.
+  Bentornato allo <accent>spawn</accent>.
+spawn-other
+  <accent><player></accent> was sent to spawn.
+  <accent><player></accent> wurde zum Spawn geschickt.
+  <accent><player></accent> a été envoyé au spawn.
+  <accent><player></accent> is naar de spawn gestuurd.
+  <accent><player></accent> è stato mandato allo spawn.
+spawn-set
+  Spawn <accent><name></accent> set to your position.
+  Spawn <accent><name></accent> auf deine Position gesetzt.
+  Spawn <accent><name></accent> défini sur ta position.
+  Spawn <accent><name></accent> ingesteld op jouw positie.
+  Spawn <accent><name></accent> impostato sulla tua posizione.
+spawn-deleted
+  Spawn <accent><name></accent> deleted.
+  Spawn <accent><name></accent> gelöscht.
+  Spawn <accent><name></accent> supprimé.
+  Spawn <accent><name></accent> verwijderd.
+  Spawn <accent><name></accent> eliminato.
+void-rescued
+  Saved from the void.
+  Aus dem Void gerettet.
+  Sauvé du vide.
+  Gered uit de void.
+  Salvato dal vuoto.
+spawn-not-set
+  No spawn has been set yet.
+  Es wurde noch kein Spawn gesetzt.
+  Aucun spawn n'a encore été défini.
+  Er is nog geen spawn ingesteld.
+  Non è ancora stato impostato alcuno spawn.
+spawn-unknown
+  Spawn <name> doesn't exist.
+  Den Spawn <name> gibt es nicht.
+  Le spawn <name> n'existe pas.
+  Spawn <name> bestaat niet.
+  Lo spawn <name> non esiste.
+spawn-invalid-name
+  Names may only contain letters, numbers, - and _.
+  Namen dürfen nur Buchstaben, Zahlen, - und _ enthalten.
+  Les noms ne peuvent contenir que des lettres, des chiffres, - et _.
+  Namen mogen alleen letters, cijfers, - en _ bevatten.
+  I nomi possono contenere solo lettere, numeri, - e _.
+help-spawn
+  Teleport to spawn
+  Zum Spawn teleportieren
+  Se téléporter au spawn
+  Naar de spawn teleporteren
+  Teletrasportati allo spawn
+help-setspawn
+  Set a spawn point (default, firstjoin, a world or a rank)
+  Spawnpunkt setzen (default, firstjoin, eine Welt oder ein Rang)
+  Définir un point de spawn (default, firstjoin, un monde ou un rang)
+  Spawnpunt instellen (default, firstjoin, een wereld of een rang)
+  Imposta un punto di spawn (default, firstjoin, un mondo o un rango)
+help-delspawn
+  Delete a spawn point
+  Spawnpunkt löschen
+  Supprimer un point de spawn
+  Spawnpunt verwijderen
+  Elimina un punto di spawn
+help-ultraspawn
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

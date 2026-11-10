@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 480" width="1920" height="480">
+<defs>
+  <linearGradient id="brand" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#161D3F"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <linearGradient id="word" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="1300" y2="0">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1920" height="480" fill="url(#bg)"/>
+<rect width="1920" height="480" fill="url(#grid)"/>
+<circle cx="230" cy="0" r="336" fill="#8B5CF6" opacity=".28" filter="url(#blur)"/>
+<circle cx="1728" cy="480" r="336" fill="#22D3EE" opacity=".20" filter="url(#blur)"/>
+<rect y="472" width="1920" height="8" fill="url(#edge)"/>
+<g transform="translate(1440 40) scale(16.5)" opacity=".10"><g fill="none" stroke="url(#brand)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21.500V3.500M5 4.500h13l-2.500 4.500 2.500 4.500H5"/></g></g>
+<g transform="translate(120 116) scale(.484375)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21.500V3.500M5 4.500h13l-2.500 4.500 2.500 4.500H5"/></g></g></g>
+<text x="420" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Reports</tspan></text>
+<text x="424" y="298" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Player reports with a staff GUI workflow.</text>
+<text x="424" y="368" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" xml:space="preserve">Report GUI<tspan fill="#22D3EE">  •  </tspan>Staff Inbox<tspan fill="#22D3EE">  •  </tspan>Discord<tspan fill="#22D3EE">  •  </tspan>5 Languages</text>
+</svg>

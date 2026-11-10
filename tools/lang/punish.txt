@@ -1,0 +1,264 @@
+notify-ban
+  <accent><player></accent> was banned by <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> wurde von <accent><staff></accent> gebannt · <duration> · <reason>
+  <accent><player></accent> a été banni par <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> is verbannen door <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> è stato bannato da <accent><staff></accent> · <duration> · <reason>
+notify-mute
+  <accent><player></accent> was muted by <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> wurde von <accent><staff></accent> gemutet · <duration> · <reason>
+  <accent><player></accent> a été réduit au silence par <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> is gedempt door <accent><staff></accent> · <duration> · <reason>
+  <accent><player></accent> è stato silenziato da <accent><staff></accent> · <duration> · <reason>
+notify-kick
+  <accent><player></accent> was kicked by <accent><staff></accent> · <reason>
+  <accent><player></accent> wurde von <accent><staff></accent> gekickt · <reason>
+  <accent><player></accent> a été expulsé par <accent><staff></accent> · <reason>
+  <accent><player></accent> is gekickt door <accent><staff></accent> · <reason>
+  <accent><player></accent> è stato espulso da <accent><staff></accent> · <reason>
+notify-warn
+  <accent><player></accent> was warned by <accent><staff></accent> · <reason>
+  <accent><player></accent> wurde von <accent><staff></accent> verwarnt · <reason>
+  <accent><player></accent> a été averti par <accent><staff></accent> · <reason>
+  <accent><player></accent> is gewaarschuwd door <accent><staff></accent> · <reason>
+  <accent><player></accent> è stato ammonito da <accent><staff></accent> · <reason>
+notify-unban
+  <accent><player></accent> was unbanned by <accent><staff></accent>.
+  <accent><player></accent> wurde von <accent><staff></accent> entbannt.
+  <accent><player></accent> a été débanni par <accent><staff></accent>.
+  De ban van <accent><player></accent> is opgeheven door <accent><staff></accent>.
+  Il ban di <accent><player></accent> è stato rimosso da <accent><staff></accent>.
+notify-unmute
+  <accent><player></accent> was unmuted by <accent><staff></accent>.
+  <accent><player></accent> wurde von <accent><staff></accent> entmutet.
+  <accent><player></accent> peut de nouveau parler (levé par <accent><staff></accent>).
+  De mute van <accent><player></accent> is opgeheven door <accent><staff></accent>.
+  Il silenzio di <accent><player></accent> è stato rimosso da <accent><staff></accent>.
+notify-alt
+  <accent><player></accent> joined from the same address as the banned account <accent><alt></accent>.
+  <accent><player></accent> nutzt dieselbe Adresse wie der gebannte Account <accent><alt></accent>.
+  <accent><player></accent> utilise la même adresse que le compte banni <accent><alt></accent>.
+  <accent><player></accent> gebruikt hetzelfde adres als het verbannen account <accent><alt></accent>.
+  <accent><player></accent> usa lo stesso indirizzo dell'account bannato <accent><alt></accent>.
+permanent
+  permanent
+  permanent
+  permanent
+  permanent
+  permanente
+no-reason
+  No reason given
+  Kein Grund angegeben
+  Aucune raison indiquée
+  Geen reden opgegeven
+  Nessun motivo indicato
+ban-screen
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>You are banned from this server.\n\n<muted>Reason: <white><reason>\n<muted>Remaining: <white><duration>\n<muted>ID: <white>#<id>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Du wurdest von diesem Server gebannt.\n\n<muted>Grund: <white><reason>\n<muted>Verbleibend: <white><duration>\n<muted>ID: <white>#<id>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Tu es banni de ce serveur.\n\n<muted>Raison : <white><reason>\n<muted>Temps restant : <white><duration>\n<muted>ID : <white>#<id>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Je bent verbannen van deze server.\n\n<muted>Reden: <white><reason>\n<muted>Resterend: <white><duration>\n<muted>ID: <white>#<id>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Sei stato bannato da questo server.\n\n<muted>Motivo: <white><reason>\n<muted>Rimanente: <white><duration>\n<muted>ID: <white>#<id>
+kick-screen
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>You were kicked from the server.\n\n<muted>Reason: <white><reason>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Du wurdest vom Server gekickt.\n\n<muted>Grund: <white><reason>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Tu as été expulsé du serveur.\n\n<muted>Raison : <white><reason>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Je bent van de server gekickt.\n\n<muted>Reden: <white><reason>
+  <brand><bold>UltraPunish</bold></brand>\n\n<errortext>Sei stato espulso dal server.\n\n<muted>Motivo: <white><reason>
+you-were-muted
+  You were muted (<duration>). Reason: <reason>
+  Du wurdest gemutet (<duration>). Grund: <reason>
+  Tu as été réduit au silence (<duration>). Raison : <reason>
+  Je bent gedempt (<duration>). Reden: <reason>
+  Sei stato silenziato (<duration>). Motivo: <reason>
+you-are-muted
+  You are muted for another <duration>. Reason: <reason>
+  Du bist noch <duration> gemutet. Grund: <reason>
+  Tu es encore réduit au silence pendant <duration>. Raison : <reason>
+  Je bent nog <duration> gedempt. Reden: <reason>
+  Sei silenziato ancora per <duration>. Motivo: <reason>
+you-were-unmuted
+  You can chat again.
+  Du kannst wieder schreiben.
+  Tu peux de nouveau écrire.
+  Je kunt weer chatten.
+  Puoi di nuovo scrivere.
+you-were-warned
+  You received a warning (<count>). Reason: <reason>
+  Du hast eine Verwarnung erhalten (<count>). Grund: <reason>
+  Tu as reçu un avertissement (<count>). Raison : <reason>
+  Je hebt een waarschuwing gekregen (<count>). Reden: <reason>
+  Hai ricevuto un'ammonizione (<count>). Motivo: <reason>
+target-exempt
+  You can't punish <player>.
+  Du kannst <player> nicht bestrafen.
+  Tu ne peux pas sanctionner <player>.
+  Je kunt <player> niet straffen.
+  Non puoi punire <player>.
+player-never-joined
+  <player> has never been on this server.
+  <player> war noch nie auf diesem Server.
+  <player> n'est jamais venu sur ce serveur.
+  <player> is nog nooit op deze server geweest.
+  <player> non è mai stato su questo server.
+not-banned
+  <player> is not banned.
+  <player> ist nicht gebannt.
+  <player> n'est pas banni.
+  <player> is niet verbannen.
+  <player> non è bannato.
+not-muted
+  <player> is not muted.
+  <player> ist nicht gemutet.
+  <player> n'est pas réduit au silence.
+  <player> is niet gedempt.
+  <player> non è silenziato.
+invalid-duration
+  <value> is not a duration. Examples: 30m, 2h, 7d
+  <value> ist keine Dauer. Beispiele: 30m, 2h, 7d
+  <value> n'est pas une durée. Exemples : 30m, 2h, 7d
+  <value> is geen duur. Voorbeelden: 30m, 2h, 7d
+  <value> non è una durata. Esempi: 30m, 2h, 7d
+history-empty
+  <player> has no entries.
+  <player> hat keine Einträge.
+  <player> n'a aucune entrée.
+  <player> heeft geen vermeldingen.
+  <player> non ha alcuna voce.
+history-title
+  History · <player>
+  Historie · <player>
+  Historique · <player>
+  Geschiedenis · <player>
+  Cronologia · <player>
+history-lore
+  Reason: <white><reason>\nBy: <white><staff>\nDate: <white><date>\nDuration: <white><duration>\nStatus: <accent><status>
+  Grund: <white><reason>\nVon: <white><staff>\nDatum: <white><date>\nDauer: <white><duration>\nStatus: <accent><status>
+  Raison : <white><reason>\nPar : <white><staff>\nDate : <white><date>\nDurée : <white><duration>\nStatut : <accent><status>
+  Reden: <white><reason>\nDoor: <white><staff>\nDatum: <white><date>\nDuur: <white><duration>\nStatus: <accent><status>
+  Motivo: <white><reason>\nDa: <white><staff>\nData: <white><date>\nDurata: <white><duration>\nStato: <accent><status>
+history-button
+  <brand>Show history</brand>
+  <brand>Historie anzeigen</brand>
+  <brand>Afficher l'historique</brand>
+  <brand>Geschiedenis tonen</brand>
+  <brand>Mostra cronologia</brand>
+punish-title
+  Punish · <player>
+  Bestrafen · <player>
+  Sanctionner · <player>
+  Straffen · <player>
+  Punisci · <player>
+template-lore
+  Type: <white><type>\nDuration: <white><duration>\n\n<accent>▸</accent> Click to apply
+  Art: <white><type>\nDauer: <white><duration>\n\n<accent>▸</accent> Klicken zum Anwenden
+  Type : <white><type>\nDurée : <white><duration>\n\n<accent>▸</accent> Clique pour appliquer
+  Type: <white><type>\nDuur: <white><duration>\n\n<accent>▸</accent> Klik om toe te passen
+  Tipo: <white><type>\nDurata: <white><duration>\n\n<accent>▸</accent> Clicca per applicare
+type-ban
+  Ban
+  Ban
+  Bannissement
+  Ban
+  Ban
+type-mute
+  Mute
+  Mute
+  Silence
+  Mute
+  Silenzio
+type-kick
+  Kick
+  Kick
+  Expulsion
+  Kick
+  Espulsione
+type-warn
+  Warning
+  Verwarnung
+  Avertissement
+  Waarschuwing
+  Ammonizione
+status-active
+  active
+  aktiv
+  actif
+  actief
+  attivo
+status-inactive
+  expired or revoked
+  abgelaufen oder aufgehoben
+  expiré ou levé
+  verlopen of opgeheven
+  scaduto o revocato
+help-punish
+  Open the punish GUI for a player
+  Punish-GUI für einen Spieler öffnen
+  Ouvrir le menu de sanctions pour un joueur
+  Strafmenu voor een speler openen
+  Apri il menu punizioni per un giocatore
+help-ban
+  Ban a player permanently
+  Einen Spieler dauerhaft bannen
+  Bannir un joueur définitivement
+  Een speler permanent verbannen
+  Banna un giocatore in modo permanente
+help-tempban
+  Ban a player for a time
+  Einen Spieler auf Zeit bannen
+  Bannir un joueur temporairement
+  Een speler tijdelijk verbannen
+  Banna un giocatore temporaneamente
+help-banip
+  Ban a player and their address
+  Einen Spieler samt Adresse bannen
+  Bannir un joueur et son adresse
+  Een speler en diens adres verbannen
+  Banna un giocatore e il suo indirizzo
+help-mute
+  Mute a player permanently
+  Einen Spieler dauerhaft muten
+  Réduire un joueur au silence définitivement
+  Een speler permanent dempen
+  Silenzia un giocatore in modo permanente
+help-tempmute
+  Mute a player for a time
+  Einen Spieler auf Zeit muten
+  Réduire un joueur au silence temporairement
+  Een speler tijdelijk dempen
+  Silenzia un giocatore temporaneamente
+help-kick
+  Kick a player
+  Einen Spieler kicken
+  Expulser un joueur
+  Een speler kicken
+  Espelli un giocatore
+help-warn
+  Warn a player
+  Einen Spieler verwarnen
+  Avertir un joueur
+  Een speler waarschuwen
+  Ammonisci un giocatore
+help-unban
+  Lift a ban
+  Einen Bann aufheben
+  Lever un bannissement
+  Een ban opheffen
+  Rimuovi un ban
+help-unmute
+  Lift a mute
+  Einen Mute aufheben
+  Lever un silence
+  Een mute opheffen
+  Rimuovi un silenzio
+help-history
+  Show the history of a player
+  Historie eines Spielers anzeigen
+  Afficher l'historique d'un joueur
+  Geschiedenis van een speler tonen
+  Mostra la cronologia di un giocatore
+help-ultrapunish
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

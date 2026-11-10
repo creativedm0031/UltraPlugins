@@ -1,0 +1,21 @@
+name: UltraReports
+version: '${project.version}'
+main: de.creativedm.ultra.reports.UltraReports
+api-version: '1.20'
+author: creativedm
+description: Player reports with a staff GUI workflow.
+softdepend: [UltraPunish]
+commands:
+  report: {usage: "/<command> <player> [reason]", description: Report a player}
+  reports: {usage: "/<command> [id]", description: Open the staff inbox}
+  ultrareports: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultrareports.report: {default: true}
+  ultrareports.staff: {default: op}
+  ultrareports.notify: {default: op}
+  ultrareports.exempt: {default: false}
+  ultrareports.bypass.cooldown: {default: op}
+  ultrareports.admin: {default: op}
+  ultrareports.*:
+    default: op
+    children: {ultrareports.report: true, ultrareports.staff: true, ultrareports.notify: true, ultrareports.bypass.cooldown: true, ultrareports.admin: true}

@@ -1,0 +1,25 @@
+name: UltraKits
+version: '${project.version}'
+main: de.creativedm.ultra.kits.UltraKits
+api-version: '1.20'
+author: creativedm
+description: Kits with previews, cooldowns & in-game editor.
+softdepend: [Vault]
+commands:
+  kit: {usage: "/<command> [name] [player]", description: Claim a kit}
+  kits: {usage: "/<command>", description: Open the kit GUI}
+  createkit: {usage: "/<command> <name>", description: Create a kit from your inventory}
+  editkit: {usage: "/<command> <name> <items|cooldown|cost|onetime|firstjoin|icon> [value]", description: Edit a kit}
+  delkit: {usage: "/<command> <name>", description: Delete a kit}
+  ultrakits: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultrakits.kit: {default: true}
+  ultrakits.give: {default: op}
+  ultrakits.create: {default: op}
+  ultrakits.edit: {default: op}
+  ultrakits.delete: {default: op}
+  ultrakits.admin: {default: op}
+  ultrakits.bypass.cooldown: {default: op}
+  ultrakits.*:
+    default: op
+    children: {ultrakits.kit: true, ultrakits.kit.*: true, ultrakits.give: true, ultrakits.create: true, ultrakits.edit: true, ultrakits.delete: true, ultrakits.admin: true, ultrakits.bypass.cooldown: true}

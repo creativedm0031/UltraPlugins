@@ -1,0 +1,168 @@
+warp-teleport
+  Warped to <accent><name></accent>.
+  Zu <accent><name></accent> gewarpt.
+  Téléporté au warp <accent><name></accent>.
+  Gewarpt naar <accent><name></accent>.
+  Teletrasportato al warp <accent><name></accent>.
+warp-created
+  Warp <accent><name></accent> created.
+  Warp <accent><name></accent> erstellt.
+  Warp <accent><name></accent> créé.
+  Warp <accent><name></accent> aangemaakt.
+  Warp <accent><name></accent> creato.
+warp-deleted
+  Warp <accent><name></accent> deleted.
+  Warp <accent><name></accent> gelöscht.
+  Warp <accent><name></accent> supprimé.
+  Warp <accent><name></accent> verwijderd.
+  Warp <accent><name></accent> eliminato.
+import-done
+  Imported <accent><count></accent> warps from Essentials.
+  <accent><count></accent> Warps aus Essentials importiert.
+  <accent><count></accent> warps importés depuis Essentials.
+  <accent><count></accent> warps geïmporteerd uit Essentials.
+  <accent><count></accent> warp importati da Essentials.
+warp-unknown
+  Warp <name> doesn't exist.
+  Den Warp <name> gibt es nicht.
+  Le warp <name> n'existe pas.
+  Warp <name> bestaat niet.
+  Il warp <name> non esiste.
+warp-exists
+  A warp named <name> already exists.
+  Einen Warp namens <name> gibt es bereits.
+  Un warp nommé <name> existe déjà.
+  Er bestaat al een warp met de naam <name>.
+  Esiste già un warp chiamato <name>.
+warp-invalid-name
+  Names may only contain letters, numbers, - and _.
+  Namen dürfen nur Buchstaben, Zahlen, - und _ enthalten.
+  Les noms ne peuvent contenir que des lettres, des chiffres, - et _.
+  Namen mogen alleen letters, cijfers, - en _ bevatten.
+  I nomi possono contenere solo lettere, numeri, - e _.
+warps-none
+  There are no warps yet.
+  Es gibt noch keine Warps.
+  Il n'y a pas encore de warps.
+  Er zijn nog geen warps.
+  Non ci sono ancora warp.
+pwarp-disabled
+  Player warps are disabled.
+  Spieler-Warps sind deaktiviert.
+  Les warps de joueurs sont désactivés.
+  Spelerwarps zijn uitgeschakeld.
+  I warp dei giocatori sono disattivati.
+pwarp-limit
+  You reached your warp limit (<limit>).
+  Du hast dein Warp-Limit erreicht (<limit>).
+  Tu as atteint ta limite de warps (<limit>).
+  Je hebt je warp-limiet bereikt (<limit>).
+  Hai raggiunto il tuo limite di warp (<limit>).
+pwarp-not-yours
+  <name> is not your warp.
+  <name> ist nicht dein Warp.
+  <name> n'est pas ton warp.
+  <name> is niet jouw warp.
+  <name> non è un tuo warp.
+import-missing
+  No Essentials warps found.
+  Keine Essentials-Warps gefunden.
+  Aucun warp Essentials trouvé.
+  Geen Essentials-warps gevonden.
+  Nessun warp di Essentials trovato.
+warps-title
+  Warps
+  Warps
+  Warps
+  Warps
+  Warp
+warp-lore
+  Category: <white><category>\nOwner: <white><owner>\nVisits: <white><visits>\n\n<accent>▸</accent> Click: teleport
+  Kategorie: <white><category>\nBesitzer: <white><owner>\nBesuche: <white><visits>\n\n<accent>▸</accent> Klick: teleportieren
+  Catégorie : <white><category>\nPropriétaire : <white><owner>\nVisites : <white><visits>\n\n<accent>▸</accent> Clic : se téléporter
+  Categorie: <white><category>\nEigenaar: <white><owner>\nBezoeken: <white><visits>\n\n<accent>▸</accent> Klik: teleporteren
+  Categoria: <white><category>\nProprietario: <white><owner>\nVisite: <white><visits>\n\n<accent>▸</accent> Clic: teletrasporto
+filter-button
+  <brand>Category</brand>
+  <brand>Kategorie</brand>
+  <brand>Catégorie</brand>
+  <brand>Categorie</brand>
+  <brand>Categoria</brand>
+filter-lore
+  Showing: <white><category>\n\n<accent>▸</accent> Click to switch
+  Angezeigt: <white><category>\n\n<accent>▸</accent> Klicken zum Wechseln
+  Affiché : <white><category>\n\n<accent>▸</accent> Clique pour changer
+  Getoond: <white><category>\n\n<accent>▸</accent> Klik om te wisselen
+  Mostrati: <white><category>\n\n<accent>▸</accent> Clicca per cambiare
+all-categories
+  all
+  alle
+  toutes
+  alle
+  tutte
+sort-button
+  <brand>Sorting</brand>
+  <brand>Sortierung</brand>
+  <brand>Tri</brand>
+  <brand>Sortering</brand>
+  <brand>Ordinamento</brand>
+sort-lore
+  Sorted by: <white><sort>\n\n<accent>▸</accent> Click to switch
+  Sortiert nach: <white><sort>\n\n<accent>▸</accent> Klicken zum Wechseln
+  Trié par : <white><sort>\n\n<accent>▸</accent> Clique pour changer
+  Gesorteerd op: <white><sort>\n\n<accent>▸</accent> Klik om te wisselen
+  Ordinati per: <white><sort>\n\n<accent>▸</accent> Clicca per cambiare
+sort-name
+  name
+  Name
+  nom
+  naam
+  nome
+sort-visits
+  popularity
+  Beliebtheit
+  popularité
+  populariteit
+  popolarità
+sort-newest
+  newest first
+  Neueste zuerst
+  les plus récents
+  nieuwste eerst
+  più recenti
+help-warp
+  Teleport to a warp
+  Zu einem Warp teleportieren
+  Se téléporter à un warp
+  Naar een warp teleporteren
+  Teletrasportati a un warp
+help-warps
+  Open the warp list
+  Warp-Liste öffnen
+  Ouvrir la liste des warps
+  Warplijst openen
+  Apri l'elenco dei warp
+help-setwarp
+  Create a server warp (item in hand = icon)
+  Server-Warp erstellen (Item in der Hand = Icon)
+  Créer un warp serveur (objet en main = icône)
+  Serverwarp aanmaken (item in hand = icoon)
+  Crea un warp del server (oggetto in mano = icona)
+help-delwarp
+  Delete a warp
+  Einen Warp löschen
+  Supprimer un warp
+  Een warp verwijderen
+  Elimina un warp
+help-pwarp
+  Create, delete or list player warps
+  Spieler-Warps erstellen, löschen oder auflisten
+  Créer, supprimer ou lister les warps de joueurs
+  Spelerwarps aanmaken, verwijderen of bekijken
+  Crea, elimina o elenca i warp dei giocatori
+help-ultrawarps
+  Help, reload, version, language and Essentials import
+  Hilfe, Reload, Version, Sprache und Essentials-Import
+  Aide, rechargement, version, langue et import Essentials
+  Help, herladen, versie, taal en Essentials-import
+  Aiuto, ricarica, versione, lingua e importazione da Essentials

@@ -1,0 +1,25 @@
+name: UltraWarps
+version: '${project.version}'
+main: de.creativedm.ultra.warps.UltraWarps
+api-version: '1.20'
+author: creativedm
+description: Server & player warps with categories.
+softdepend: [Vault]
+commands:
+  warp: {usage: "/<command> [name]", description: Teleport to a warp}
+  warps: {usage: "/<command>", description: Open the warp GUI}
+  setwarp: {usage: "/<command> <name> [category]", description: Create a server warp}
+  delwarp: {usage: "/<command> <name>", description: Delete a warp}
+  pwarp: {usage: "/<command> <create|delete|list> [name]", description: Player warps}
+  ultrawarps: {usage: "/<command> <help|reload|version|language|import>", description: Administration}
+permissions:
+  ultrawarps.warp: {default: true}
+  ultrawarps.player: {default: true}
+  ultrawarps.set: {default: op}
+  ultrawarps.delete: {default: op}
+  ultrawarps.admin: {default: op}
+  ultrawarps.bypass.warmup: {default: op}
+  ultrawarps.bypass.cooldown: {default: op}
+  ultrawarps.*:
+    default: op
+    children: {ultrawarps.warp: true, ultrawarps.player: true, ultrawarps.set: true, ultrawarps.delete: true, ultrawarps.admin: true, ultrawarps.bypass.warmup: true, ultrawarps.bypass.cooldown: true}

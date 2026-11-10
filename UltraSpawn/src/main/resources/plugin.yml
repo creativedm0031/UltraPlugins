@@ -1,0 +1,22 @@
+name: UltraSpawn
+version: '${project.version}'
+main: de.creativedm.ultra.spawn.UltraSpawn
+api-version: '1.20'
+author: creativedm
+description: Spawn management done right.
+commands:
+  spawn: {usage: "/<command> [player]", description: Teleport to spawn}
+  setspawn: {usage: "/<command> [name]", description: Set a spawn point}
+  delspawn: {usage: "/<command> <name>", description: Delete a spawn point}
+  ultraspawn: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultraspawn.spawn: {default: true}
+  ultraspawn.spawn.others: {default: op}
+  ultraspawn.set: {default: op}
+  ultraspawn.delete: {default: op}
+  ultraspawn.admin: {default: op}
+  ultraspawn.bypass.warmup: {default: op}
+  ultraspawn.bypass.cooldown: {default: op}
+  ultraspawn.*:
+    default: op
+    children: {ultraspawn.spawn: true, ultraspawn.spawn.others: true, ultraspawn.set: true, ultraspawn.delete: true, ultraspawn.admin: true, ultraspawn.bypass.warmup: true, ultraspawn.bypass.cooldown: true}

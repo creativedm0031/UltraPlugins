@@ -1,0 +1,48 @@
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraeconomy language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Currencies. The first one is the main currency: Vault and other plugins use it,
+# and it is used when a command names no currency.
+# symbol-before: true = "$100", false = "100 Gems"   start: balance of new players
+currencies:
+  coins:
+    symbol: "$"
+    symbol-before: true
+    decimals: 2
+    start: 100
+  gems:
+    symbol: " Gems"
+    symbol-before: false
+    decimals: 0
+    start: 0
+
+pay:
+  # Smallest amount that can be sent.
+  minimum: 1
+  # Payments from this amount on have to be confirmed. 0 = never.
+  confirm-above: 10000
+
+# Number of players in /baltop.
+baltop-size: 56

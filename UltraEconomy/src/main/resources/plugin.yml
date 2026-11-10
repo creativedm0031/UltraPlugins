@@ -1,0 +1,24 @@
+name: UltraEconomy
+version: '${project.version}'
+main: de.creativedm.ultra.economy.UltraEconomy
+api-version: '1.20'
+author: creativedm
+description: Fast, Vault-ready economy with multiple currencies.
+softdepend: [Vault]
+commands:
+  balance: {usage: "/<command> [player]", description: Show a balance, aliases: [bal, money]}
+  pay: {usage: "/<command> <player> <amount> [currency]", description: Send money}
+  baltop: {usage: "/<command>", description: Open the leaderboard}
+  eco: {usage: "/<command> <give|take|set> <player> <amount> [currency]", description: Modify balances}
+  ultraeconomy: {usage: "/<command> <help|reload|version|language|log>", description: Administration}
+permissions:
+  ultraeconomy.balance: {default: true}
+  ultraeconomy.balance.others: {default: op}
+  ultraeconomy.pay: {default: true}
+  ultraeconomy.baltop: {default: true}
+  ultraeconomy.eco: {default: op}
+  ultraeconomy.log: {default: op}
+  ultraeconomy.admin: {default: op}
+  ultraeconomy.*:
+    default: op
+    children: {ultraeconomy.balance: true, ultraeconomy.balance.others: true, ultraeconomy.pay: true, ultraeconomy.baltop: true, ultraeconomy.eco: true, ultraeconomy.log: true, ultraeconomy.admin: true}
