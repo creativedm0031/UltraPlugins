@@ -1,0 +1,22 @@
+name: UltraVanish
+version: '${project.version}'
+main: de.creativedm.ultra.vanish.UltraVanish
+api-version: '1.20'
+author: creativedm
+description: True invisibility for your staff team.
+commands:
+  vanish: {usage: "/<command> [player]", description: Toggle vanish, aliases: [v]}
+  vanishlist: {usage: "/<command>", description: List vanished players}
+  fakejoin: {usage: "/<command>", description: Send a fake join message}
+  fakequit: {usage: "/<command>", description: Send a fake quit message}
+  ultravanish: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultravanish.vanish: {default: op}
+  ultravanish.vanish.others: {default: op}
+  ultravanish.see: {default: op}
+  ultravanish.list: {default: op}
+  ultravanish.fake: {default: op}
+  ultravanish.admin: {default: op}
+  ultravanish.*:
+    default: op
+    children: {ultravanish.vanish: true, ultravanish.vanish.others: true, ultravanish.see: true, ultravanish.list: true, ultravanish.fake: true, ultravanish.admin: true}
