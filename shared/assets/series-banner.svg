@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 520" width="1920" height="520">
+<defs>
+  <linearGradient id="brand" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#161D3F"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <linearGradient id="word" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="1300" y2="0">
+    <stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="2"/>
+  </pattern>
+</defs>
+<rect width="1920" height="520" fill="url(#bg)"/>
+<rect width="1920" height="520" fill="url(#grid)"/>
+<circle cx="230" cy="0" r="364" fill="#8B5CF6" opacity=".28" filter="url(#blur)"/>
+<circle cx="1728" cy="520" r="364" fill="#22D3EE" opacity=".20" filter="url(#blur)"/>
+<rect y="512" width="1920" height="8" fill="url(#edge)"/>
+<text x="120" y="170" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Ultra<tspan fill="url(#word)">Plugins</tspan></text>
+<text x="124" y="236" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="500" fill="#94A3B8">Ten plugins. One look. One feel.</text>
+<g transform="translate(120 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile0"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile0)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></g></g></g><g transform="translate(292 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile1"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile1)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4"/></g></g></g><g transform="translate(464 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile2"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile2)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></g></g></g><g transform="translate(636 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile3"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile3)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5l9-8 9 8M5.5 9.5V20.5h13V9.5M10 20.5v-6h4v6"/></g></g></g><g transform="translate(808 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile4"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile4)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g></g></g><g transform="translate(980 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile5"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile5)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01"/></g></g></g><g transform="translate(1152 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile6"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile6)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.6c0-1.3-1.3-2.3-3-2.3s-3 1-3 2.3 1.2 2 3 2.4 3 1.1 3 2.4-1.3 2.3-3 2.3-3-1-3-2.3M12 5.5v13"/></g></g></g><g transform="translate(1324 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile7"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile7)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19zM5 9V6.5A2.5 2.5 0 0 1 7.500 4h9A2.5 2.5 0 0 1 19 6.5V9M3 13h7M14 13h7"/><rect x="10" y="11.2" width="4" height="3.6" rx=".6"/></g></g></g><g transform="translate(1496 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile8"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile8)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.600 6.500-10 6.500S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4.500 3.500l15 17"/></g></g></g><g transform="translate(1668 300) scale(.28125)"><rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<clipPath id="tile9"><rect width="512" height="512" rx="116"/></clipPath>
+<g clip-path="url(#tile9)">
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <circle cx="150" cy="140" r="130" fill="#8B5CF6" opacity=".30" filter="url(#blur)"/>
+  <circle cx="380" cy="390" r="130" fill="#22D3EE" opacity=".22" filter="url(#blur)"/>
+</g>
+<rect x="9" y="9" width="494" height="494" rx="107" fill="none" stroke="url(#edge)" stroke-width="8"/>
+<g transform="translate(112 112) scale(12)"><g fill="none" stroke="url(#brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21.500V3.500M5 4.500h13l-2.500 4.500 2.500 4.500H5"/></g></g></g>
+</svg>
