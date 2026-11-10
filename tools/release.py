@@ -339,15 +339,30 @@ def checklist(p):
     gallery = "\n".join(f"   - `images/{n}.png`" for n in gallery_names(p))
     return f"""# {full} – Release-Material
 
-Alles, was zum Hochladen auf den vier Seiten gebraucht wird. Die Jar entsteht mit `mvn package`
-im Hauptordner: `{full}/target/{full}-{VERSION}.jar`.
+Alles, was zum Hochladen auf den vier Seiten gebraucht wird.
+
+**Datei zum Hochladen:** [`{full}-{VERSION}.jar`]({full}-{VERSION}.jar) (liegt in diesem Ordner).
+Neu bauen mit `tools/package.sh` im Hauptordner.
+
+## Version
 
 | Feld | Wert |
 | --- | --- |
-| Titel SpigotMC / BuiltByBit | {title} |
+| Versionsnummer | `{VERSION}` |
+| Version String (SpigotMC, BuiltByBit) | `{VERSION}` |
+| Versionsname (Modrinth, Hangar) | `{full} {VERSION}` |
+| Kanal / Release-Typ | Release |
+| Changelog | [`changelog.md`](changelog.md) |
+
+Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
+
+## Projekt
+
+| Feld | Wert |
+| --- | --- |
+| Titel SpigotMC / BuiltByBit | {title.replace("|", chr(92) + "|")} |
 | Name Modrinth / Hangar | {full} |
 | Tagline / Summary (alle vier) | {tagline} |
-| Version | {VERSION} |
 | Minecraft-Versionen | {MC_VERSIONS} (gebaut gegen die API 1.20.4, im Test gelaufen auf 1.21.4) |
 | Java | 17+ |
 | Abhängigkeiten | keine (Vault optional) |
@@ -365,7 +380,7 @@ im Hauptordner: `{full}/target/{full}-{VERSION}.jar`.
 
 ## SpigotMC
 
-1. Resource-Typ: kostenlos, Datei hochladen (die Jar).
+1. Resource-Typ: kostenlos, Datei hochladen: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
 2. Title: `spigotmc/title.txt`, Tag Line: `spigotmc/tagline.txt`
 3. Kategorie: **Spigot → {spigot_cat}**
 4. Getestete Versionen: 1.20, 1.21
@@ -380,7 +395,7 @@ im Hauptordner: `{full}/target/{full}-{VERSION}.jar`.
 3. Icon: `images/icon-512.png`, Cover/Banner: `images/cover.png`
 4. Beschreibung: Inhalt von `builtbybit/description.bbcode` einfügen.
 5. Unterstützte Versionen: 1.20 – 1.21, Plattformen Spigot und Paper.
-6. Datei: die Jar.
+6. Datei: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
 
 ## Modrinth
 
@@ -391,7 +406,7 @@ im Hauptordner: `{full}/target/{full}-{VERSION}.jar`.
 5. Galerie (in dieser Reihenfolge, das erste als „Featured“):
    - `images/cover.png`
 {gallery}
-6. Version {VERSION} hochladen: Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen {MC_VERSIONS}.
+6. Version hochladen: Datei `{full}-{VERSION}.jar`, Versionsnummer `{VERSION}`, Name `{full} {VERSION}`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen {MC_VERSIONS}.
 7. Lizenz und Source-Link (GitHub) eintragen.
 
 ## Hangar
@@ -399,7 +414,7 @@ im Hauptordner: `{full}/target/{full}-{VERSION}.jar`.
 1. Neues Projekt, Plattform **Paper**, Kategorie **{hangar_cat}**. Name: `hangar/title.txt`, Summary: `hangar/tagline.txt`
 2. Icon (Avatar): `images/icon-512.png`
 3. Beschreibung (Hauptseite): Inhalt von `hangar/description.md`.
-4. Version {VERSION}: Jar hochladen, Plattformversionen {MC_VERSIONS}, Kanal **Release**.
+4. Version: Datei `{full}-{VERSION}.jar`, Version `{VERSION}`, Changelog aus `changelog.md`, Plattformversionen {MC_VERSIONS}, Kanal **Release**.
 5. Source-Link (GitHub) eintragen.
 
 > Hangar listet nur Paper-Plugins – UltraPlugins laufen auf Paper, deshalb passt es. Spigot wird dort nicht angegeben.
@@ -412,17 +427,33 @@ die PNGs bei einem Bildhoster hochladen und die Links ersetzen.
 """
 
 
+def changelog(p):
+    full = "Ultra" + p["name"]
+    feats = "\n".join(f"- {f[1]}" for f in p["features"])
+    return f"""## {full} {VERSION}
+
+First release.
+
+{feats}
+- English, German, French, Dutch and Italian – picked automatically from each player's client language
+- Runs on Spigot, Paper and Purpur {MC_VERSIONS.split(' ')[0]}+ (Java 17+), no dependencies
+"""
+
+
 def overview():
-    rows = "\n".join(f"| [Ultra{p['name']}](Ultra{p['name']}/release) | {TITLES[p['name']][0]} | Ultra{p['name']} | {TITLES[p['name']][1]} |" for p in PLUGINS)
+    rows = "\n".join(f"| [Ultra{p['name']}](Ultra{p['name']}/release) | `{VERSION}` | [Ultra{p['name']}-{VERSION}.jar](Ultra{p['name']}/release/Ultra{p['name']}-{VERSION}.jar) | {TITLES[p['name']][0].replace('|', chr(92) + '|')} | Ultra{p['name']} | {TITLES[p['name']][1]} |" for p in PLUGINS)
     return f"""# Release-Übersicht
 
 Titel und Taglines aller Plugins für SpigotMC, BuiltByBit, Modrinth und Hangar. Pro Plugin liegt in
 `Ultra<Name>/release/` alles zum Hochladen: Beschreibungen, Bilder und eine Checkliste
-(`release/README.md`). Jede Seite hat dort einen eigenen Ordner mit `title.txt`, `tagline.txt`
-und der Beschreibung.
+(`release/README.md`), die fertige Jar, `version.txt` und `changelog.md`. Jede Seite hat dort
+einen eigenen Ordner mit `title.txt`, `tagline.txt` und der Beschreibung.
 
-| Plugin | Titel SpigotMC / BuiltByBit | Name Modrinth / Hangar | Tagline (alle vier Seiten) |
-| --- | --- | --- | --- |
+Version String für alle Plugins und Seiten: **`{VERSION}`**. Neu bauen und die Jars in die
+`release/`-Ordner kopieren: `tools/package.sh`.
+
+| Plugin | Version | Jar | Titel SpigotMC / BuiltByBit | Name Modrinth / Hangar | Tagline (alle vier Seiten) |
+| --- | --- | --- | --- | --- | --- |
 {rows}
 """
 
@@ -446,6 +477,8 @@ def build(write, jobs, bbcode, logo_svg, defs, logo_body):
         write(f"{base}/modrinth/description.md", markdown(p, "modrinth"))
         write(f"{base}/hangar/description.md", markdown(p, "hangar"))
         write(f"{base}/README.md", checklist(p))
+        write(f"{base}/version.txt", VERSION + "\n")
+        write(f"{base}/changelog.md", changelog(p))
         title, tagline = TITLES[p["name"]]
         for site, site_title in (("spigotmc", title), ("builtbybit", title), ("modrinth", full), ("hangar", full)):
             write(f"{base}/{site}/title.txt", site_title + "\n")

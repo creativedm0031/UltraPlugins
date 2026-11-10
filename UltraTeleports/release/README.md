@@ -1,14 +1,29 @@
 # UltraTeleports – Release-Material
 
-Alles, was zum Hochladen auf den vier Seiten gebraucht wird. Die Jar entsteht mit `mvn package`
-im Hauptordner: `UltraTeleports/target/UltraTeleports-1.0.0.jar`.
+Alles, was zum Hochladen auf den vier Seiten gebraucht wird.
+
+**Datei zum Hochladen:** [`UltraTeleports-1.0.0.jar`](UltraTeleports-1.0.0.jar) (liegt in diesem Ordner).
+Neu bauen mit `tools/package.sh` im Hauptordner.
+
+## Version
 
 | Feld | Wert |
 | --- | --- |
-| Titel SpigotMC / BuiltByBit | UltraTeleports | TPA, RTP & Back |
+| Versionsnummer | `1.0.0` |
+| Version String (SpigotMC, BuiltByBit) | `1.0.0` |
+| Versionsname (Modrinth, Hangar) | `UltraTeleports 1.0.0` |
+| Kanal / Release-Typ | Release |
+| Changelog | [`changelog.md`](changelog.md) |
+
+Versionsnummer und Version String stehen auch in `version.txt` zum Kopieren.
+
+## Projekt
+
+| Feld | Wert |
+| --- | --- |
+| Titel SpigotMC / BuiltByBit | UltraTeleports \| TPA, RTP & Back |
 | Name Modrinth / Hangar | UltraTeleports |
 | Tagline / Summary (alle vier) | TPA requests, safe random teleport and /back with warm-ups. Action-bar messages in 5 languages. |
-| Version | 1.0.0 |
 | Minecraft-Versionen | 1.20.4 – 1.21.4 (gebaut gegen die API 1.20.4, im Test gelaufen auf 1.21.4) |
 | Java | 17+ |
 | Abhängigkeiten | keine (Vault optional) |
@@ -26,7 +41,7 @@ im Hauptordner: `UltraTeleports/target/UltraTeleports-1.0.0.jar`.
 
 ## SpigotMC
 
-1. Resource-Typ: kostenlos, Datei hochladen (die Jar).
+1. Resource-Typ: kostenlos, Datei hochladen: `UltraTeleports-1.0.0.jar`, Version String: `1.0.0`.
 2. Title: `spigotmc/title.txt`, Tag Line: `spigotmc/tagline.txt`
 3. Kategorie: **Spigot → Tools and Utilities**
 4. Getestete Versionen: 1.20, 1.21
@@ -41,7 +56,7 @@ im Hauptordner: `UltraTeleports/target/UltraTeleports-1.0.0.jar`.
 3. Icon: `images/icon-512.png`, Cover/Banner: `images/cover.png`
 4. Beschreibung: Inhalt von `builtbybit/description.bbcode` einfügen.
 5. Unterstützte Versionen: 1.20 – 1.21, Plattformen Spigot und Paper.
-6. Datei: die Jar.
+6. Datei: `UltraTeleports-1.0.0.jar`, Version String: `1.0.0`.
 
 ## Modrinth
 
@@ -54,7 +69,7 @@ im Hauptordner: `UltraTeleports/target/UltraTeleports-1.0.0.jar`.
    - `images/gallery-1-layout.png`
    - `images/gallery-2-languages.png`
    - `images/gallery-3-commands.png`
-6. Version 1.0.0 hochladen: Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen 1.20.4 – 1.21.4.
+6. Version hochladen: Datei `UltraTeleports-1.0.0.jar`, Versionsnummer `1.0.0`, Name `UltraTeleports 1.0.0`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen 1.20.4 – 1.21.4.
 7. Lizenz und Source-Link (GitHub) eintragen.
 
 ## Hangar
@@ -62,7 +77,7 @@ im Hauptordner: `UltraTeleports/target/UltraTeleports-1.0.0.jar`.
 1. Neues Projekt, Plattform **Paper**, Kategorie **Gameplay**. Name: `hangar/title.txt`, Summary: `hangar/tagline.txt`
 2. Icon (Avatar): `images/icon-512.png`
 3. Beschreibung (Hauptseite): Inhalt von `hangar/description.md`.
-4. Version 1.0.0: Jar hochladen, Plattformversionen 1.20.4 – 1.21.4, Kanal **Release**.
+4. Version: Datei `UltraTeleports-1.0.0.jar`, Version `1.0.0`, Changelog aus `changelog.md`, Plattformversionen 1.20.4 – 1.21.4, Kanal **Release**.
 5. Source-Link (GitHub) eintragen.
 
 > Hangar listet nur Paper-Plugins – UltraPlugins laufen auf Paper, deshalb passt es. Spigot wird dort nicht angegeben.
