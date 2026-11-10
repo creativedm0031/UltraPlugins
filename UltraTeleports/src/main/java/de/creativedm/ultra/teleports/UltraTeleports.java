@@ -189,7 +189,9 @@ public final class UltraTeleports extends UltraPlugin implements Listener {
         Location center = world.getWorldBorder().getCenter();
         int x = (int) Math.floor(center.getX() + Math.cos(angle) * distance);
         int z = (int) Math.floor(center.getZ() + Math.sin(angle) * distance);
-        world.getChunkAtAsync(x >> 4, z >> 4).thenAccept(chunk -> {
+        // One attempt per tick, so loading new chunks never freezes the server for long.
+        getServer().getScheduler().runTask(this, () -> {
+            world.getChunkAt(x >> 4, z >> 4);
             Location location = safeLocation(world, x, z);
             if (location == null || !world.getWorldBorder().isInside(location)) {
                 search(player, world, attemptsLeft - 1, cost);
@@ -237,10 +239,9 @@ public final class UltraTeleports extends UltraPlugin implements Listener {
         Player mover = args.length == 1 ? (Player) sender : player(sender, args[0]);
         Player target = mover == null ? null : player(sender, args[args.length == 1 ? 0 : 1]);
         if (mover == null || target == null) return;
-        mover.teleportAsync(target.getLocation()).thenAccept(done -> {
-            if (mover != sender) msg().status(mover, "teleported-to", "player", target.getName());
-            msg().info(sender, "staff-teleported", "player", mover.getName(), "target", target.getName());
-        });
+        mover.teleport(target.getLocation());
+        if (mover != sender) msg().status(mover, "teleported-to", "player", target.getName());
+        msg().info(sender, "staff-teleported", "player", mover.getName(), "target", target.getName());
     }
 
     private void staffHere(Player sender, String[] args) {
@@ -250,17 +251,16 @@ public final class UltraTeleports extends UltraPlugin implements Listener {
         }
         Player target = player(sender, args[0]);
         if (target == null) return;
-        target.teleportAsync(sender.getLocation()).thenAccept(done -> {
-            msg().status(target, "teleported-to", "player", sender.getName());
-            msg().info(sender, "staff-teleported", "player", target.getName(), "target", sender.getName());
-        });
+        target.teleport(sender.getLocation());
+        msg().status(target, "teleported-to", "player", sender.getName());
+        msg().info(sender, "staff-teleported", "player", target.getName(), "target", sender.getName());
     }
 
     private void staffAll(Player sender) {
         int count = 0;
         for (Player target : Bukkit.getOnlinePlayers()) {
             if (target.equals(sender)) continue;
-            target.teleportAsync(sender.getLocation());
+            target.teleport(sender.getLocation());
             msg().status(target, "teleported-to", "player", sender.getName());
             count++;
         }

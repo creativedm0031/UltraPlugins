@@ -211,7 +211,8 @@ Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
 
 ## Installation
 
-1. `{full}-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+1. `{full}-1.0.0.jar` in den Ordner `plugins` legen (Spigot, Paper oder Purpur ab 1.20.4, Java 17+).
+   Weitere Plugins oder Bibliotheken werden nicht benötigt.
 2. Server neu starten.
 3. `config.yml` und die Sprachdateien anpassen, dann `/{low} reload`.
 
@@ -281,7 +282,7 @@ All texts live in [FONT=Courier New]lang/<code>.yml[/FONT] and can be edited fre
 [CENTER]
 [IMG]{RAW}/shared/assets/header-installation.png[/IMG][/CENTER]
 [LIST=1]
-[*]Download {full} and drop the jar into your [FONT=Courier New]plugins[/FONT] folder (Paper 1.20.4+, Java 17+).
+[*]Download {full} and drop the jar into your [FONT=Courier New]plugins[/FONT] folder. Works on [B]Spigot, Paper and Purpur 1.20.4+[/B] (Java 17+), no dependencies needed.
 [*]Restart your server.
 [*]Adjust [FONT=Courier New]config.yml[/FONT] and the files in [FONT=Courier New]lang/[/FONT], then run [FONT=Courier New]/{low} reload[/FONT].
 [/LIST]
@@ -329,7 +330,8 @@ mvn package
 ```
 
 Danach liegt jedes Plugin als eigenständige Jar in `Ultra<Name>/target/Ultra<Name>-1.0.0.jar`.
-Lauffähig auf Paper (und Forks wie Purpur) ab 1.20.4.
+Lauffähig auf Spigot, Paper und Purpur ab 1.20.4. Jede Jar ist eigenständig, es werden keine
+weiteren Plugins benötigt (Vault ist optional für Kosten und die Economy-Schnittstelle).
 
 ## Aufbau
 

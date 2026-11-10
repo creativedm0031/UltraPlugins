@@ -31,7 +31,8 @@ mvn package
 ```
 
 Danach liegt jedes Plugin als eigenständige Jar in `Ultra<Name>/target/Ultra<Name>-1.0.0.jar`.
-Lauffähig auf Paper (und Forks wie Purpur) ab 1.20.4.
+Lauffähig auf Spigot, Paper und Purpur ab 1.20.4. Jede Jar ist eigenständig, es werden keine
+weiteren Plugins benötigt (Vault ist optional für Kosten und die Economy-Schnittstelle).
 
 ## Aufbau
 

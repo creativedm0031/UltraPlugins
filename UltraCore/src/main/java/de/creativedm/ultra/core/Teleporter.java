@@ -63,13 +63,13 @@ public final class Teleporter implements Listener {
     }
 
     private void go(Player player, Location target, String key, String cooldownKey, Runnable arrived) {
-        player.teleportAsync(target).thenAccept(success -> {
-            if (!success) return;
+        {
+            if (!player.teleport(target)) return;
             int cooldown = plugin.getConfig().getInt("cooldowns." + cooldownKey, plugin.getConfig().getInt("cooldown", 0));
             if (cooldownKey != null && cooldown > 0) cooldowns.put(key, System.currentTimeMillis() + cooldown * 1000L);
             plugin.msg().sound(player, "teleport");
             if (arrived != null) arrived.run();
-        });
+        }
     }
 
     private boolean cancel(Player player) {
@@ -80,7 +80,9 @@ public final class Teleporter implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onMove(PlayerMoveEvent event) {
-        if (pending.isEmpty() || !event.hasChangedBlock()) return;
+        if (pending.isEmpty() || event.getTo() == null) return;
+        if (event.getFrom().getBlockX() == event.getTo().getBlockX() && event.getFrom().getBlockY() == event.getTo().getBlockY()
+                && event.getFrom().getBlockZ() == event.getTo().getBlockZ()) return;
         if (cancel(event.getPlayer())) plugin.msg().error(event.getPlayer(), "teleport-cancelled");
     }
 

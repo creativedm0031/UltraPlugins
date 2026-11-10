@@ -67,7 +67,8 @@ Englisch, Deutsch, Französisch, Niederländisch und Italienisch sind eingebaut
 
 ## Installation
 
-1. `UltraPunish-1.0.0.jar` in den Ordner `plugins` legen (Paper 1.20.4 oder neuer, Java 17+).
+1. `UltraPunish-1.0.0.jar` in den Ordner `plugins` legen (Spigot, Paper oder Purpur ab 1.20.4, Java 17+).
+   Weitere Plugins oder Bibliotheken werden nicht benötigt.
 2. Server neu starten.
 3. `config.yml` und die Sprachdateien anpassen, dann `/ultrapunish reload`.
 

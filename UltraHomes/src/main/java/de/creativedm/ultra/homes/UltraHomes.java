@@ -76,7 +76,15 @@ public final class UltraHomes extends UltraPlugin {
         // "player:home" visits a public home (or any home with ultrahomes.others)
         String ownerName = args[0].substring(0, args[0].indexOf(':'));
         String name = arg.substring(arg.indexOf(':') + 1);
-        OfflinePlayer owner = Bukkit.getOfflinePlayerIfCached(ownerName);
+        OfflinePlayer owner = Bukkit.getPlayerExact(ownerName);
+        if (owner == null) {
+            for (OfflinePlayer known : Bukkit.getOfflinePlayers()) {
+                if (ownerName.equalsIgnoreCase(known.getName())) {
+                    owner = known;
+                    break;
+                }
+            }
+        }
         String path = owner == null ? null : owner.getUniqueId() + "." + name;
         if (path == null || !data.yaml().contains(path)) {
             msg().error(player, "home-unknown", "name", args[0]);

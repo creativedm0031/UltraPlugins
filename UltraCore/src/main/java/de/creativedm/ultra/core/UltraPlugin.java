@@ -22,6 +22,7 @@ public abstract class UltraPlugin extends JavaPlugin {
     }
 
     private Messages messages;
+    private net.kyori.adventure.platform.bukkit.BukkitAudiences audiences;
     private Teleporter teleporter;
     /** Checked by us instead of Bukkit, so a missing permission is answered in the Ultra layout. */
     private final java.util.Map<String, String> permissions = new java.util.HashMap<>();
@@ -60,7 +61,8 @@ public abstract class UltraPlugin extends JavaPlugin {
     @Override
     public final void onEnable() {
         saveDefaultConfig();
-        messages = new Messages(this);
+        audiences = net.kyori.adventure.platform.bukkit.BukkitAudiences.create(this);
+        messages = new Messages(this, audiences);
         teleporter = new Teleporter(this);
         getServer().getPluginManager().registerEvents(new Menu.Clicks(), this);
         command(id(), id() + ".admin", false, this::admin, (sender, args) -> {
@@ -77,6 +79,7 @@ public abstract class UltraPlugin extends JavaPlugin {
     @Override
     public final void onDisable() {
         disable();
+        if (audiences != null) audiences.close();
     }
 
     private void admin(CommandSender sender, String[] args) {
@@ -88,7 +91,7 @@ public abstract class UltraPlugin extends JavaPlugin {
                 reloaded();
                 messages.info(sender, "reloaded");
             }
-            case "version" -> messages.info(sender, "version", "version", getPluginMeta().getVersion());
+            case "version" -> messages.info(sender, "version", "version", getDescription().getVersion());
             case "language" -> {
                 if (args.length < 2) {
                     messages.info(sender, "language-current", "language", messages.defaultLanguage());
@@ -110,12 +113,12 @@ public abstract class UltraPlugin extends JavaPlugin {
 
     /** Help is a list, so it is the one piece of feedback that is printed to the chat. */
     private void help(CommandSender sender) {
-        sender.sendMessage(messages.parse("<brand><bold>Ultra" + module() + "</bold></brand> <sep>»</sep> <muted>v" + getPluginMeta().getVersion()));
+        messages.send(sender, messages.parse("<brand><bold>Ultra" + module() + "</bold></brand> <sep>»</sep> <muted>v" + getDescription().getVersion()));
         for (String name : getDescription().getCommands().keySet()) {
             PluginCommand command = getCommand(name);
             String permission = permissions.get(name);
             if (command == null || (permission != null && !sender.hasPermission(permission))) continue;
-            sender.sendMessage(messages.parse("<sep>▸</sep> <accent><usage></accent> <sep>–</sep> <muted>" + messages.raw(sender, "help-" + name),
+            messages.send(sender, messages.parse("<sep>▸</sep> <accent><usage></accent> <sep>–</sep> <muted>" + messages.raw(sender, "help-" + name),
                     "usage", command.getUsage().replace("<command>", name)));
         }
     }

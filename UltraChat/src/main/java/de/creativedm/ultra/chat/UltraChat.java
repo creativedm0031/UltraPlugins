@@ -2,7 +2,6 @@ package de.creativedm.ultra.chat;
 
 import de.creativedm.ultra.core.Durations;
 import de.creativedm.ultra.core.UltraPlugin;
-import io.papermc.paper.event.player.AsyncChatEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +15,6 @@ import java.util.regex.Pattern;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextReplacementConfig;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
@@ -24,6 +22,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -61,10 +60,10 @@ public final class UltraChat extends UltraPlugin implements Listener {
     // ---- chat -----------------------------------------------------------------------------------------------
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
-    public void onChat(AsyncChatEvent event) {
+    public void onChat(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
         UUID id = player.getUniqueId();
-        String text = PlainTextComponentSerializer.plainText().serialize(event.message());
+        String text = event.getMessage();
 
         if (locked && !player.hasPermission("ultrachat.bypass.mutechat")) {
             event.setCancelled(true);
@@ -99,7 +98,7 @@ public final class UltraChat extends UltraPlugin implements Listener {
                 ? LegacyComponentSerializer.legacyAmpersand().deserialize(text) : Component.text(text);
         ItemStack hand = player.getInventory().getItemInMainHand();
         if (getConfig().getBoolean("show-item") && text.contains("[item]") && !hand.getType().isAir()) {
-            message = message.replaceText(TextReplacementConfig.builder().matchLiteral("[item]").replacement(hand.displayName()).once().build());
+            message = message.replaceText(TextReplacementConfig.builder().matchLiteral("[item]").replacement(itemName(hand)).once().build());
         }
         if (getConfig().getBoolean("mentions")) {
             for (Player other : Bukkit.getOnlinePlayers()) {
@@ -107,7 +106,7 @@ public final class UltraChat extends UltraPlugin implements Listener {
                 message = message.replaceText(TextReplacementConfig.builder()
                         .match(Pattern.compile("@" + Pattern.quote(other.getName()), Pattern.CASE_INSENSITIVE))
                         .replacement(msg().parse("<accent>@<name></accent>", "name", other.getName())).build());
-                msg().info(other, "mentioned", "player", player.getName());
+                getServer().getScheduler().runTask(this, () -> msg().info(other, "mentioned", "player", player.getName()));
             }
         }
 
@@ -115,14 +114,35 @@ public final class UltraChat extends UltraPlugin implements Listener {
         ConfigurationSection settings = getConfig().getConfigurationSection("channels." + channel);
         String permission = settings == null ? "" : settings.getString("permission", "");
         int radius = settings == null ? 0 : settings.getInt("radius");
-        event.viewers().removeIf(viewer -> viewer instanceof Player other && other != player
-                && ((!permission.isEmpty() && !other.hasPermission(permission))
-                || (radius > 0 && (other.getWorld() != player.getWorld() || other.getLocation().distanceSquared(player.getLocation()) > (double) radius * radius))));
+        List<Player> receivers = new ArrayList<>();
+        for (Player other : event.getRecipients()) {
+            boolean blocked = other != player && ((!permission.isEmpty() && !other.hasPermission(permission))
+                    || (radius > 0 && (other.getWorld() != player.getWorld()
+                    || other.getLocation().distanceSquared(player.getLocation()) > (double) radius * radius)));
+            if (!blocked) receivers.add(other);
+        }
 
         String format = (settings == null ? "" : settings.getString("prefix", "")) + format(player);
-        Component finalMessage = message;
-        event.renderer((source, displayName, ignored, viewer) ->
-                msg().parse(format, "player", displayName, "name", source.getName(), "world", source.getWorld().getName(), "message", finalMessage));
+        Component line = msg().parse(format, "player", de.creativedm.ultra.core.Messages.fromLegacy(player.getDisplayName()),
+                "name", player.getName(), "world", player.getWorld().getName(), "message", message);
+        // Spigot's chat cannot carry hover/click text, so we deliver the formatted line ourselves.
+        // The event stays alive (with no recipients) so the console log and other plugins still see it.
+        for (Player receiver : receivers) msg().send(receiver, line);
+        event.getRecipients().clear();
+        event.setMessage(text);
+        event.setFormat("[" + channel + "] %1$s: %2$s");
+    }
+
+    /** "[Name ×amount]" with the item tooltip on hover. */
+    private Component itemName(ItemStack item) {
+        org.bukkit.inventory.meta.ItemMeta meta = item.getItemMeta();
+        Component name = meta != null && meta.hasDisplayName()
+                ? de.creativedm.ultra.core.Messages.fromLegacy(meta.getDisplayName())
+                : Component.translatable(item.getType().getTranslationKey());
+        Component shown = Component.text("[").append(name).append(Component.text(item.getAmount() > 1 ? " ×" + item.getAmount() + "]" : "]"));
+        return shown.color(net.kyori.adventure.text.format.TextColor.fromHexString(getConfig().getString("theme.accent", "#22D3EE")))
+                .hoverEvent(net.kyori.adventure.text.event.HoverEvent.showItem(
+                        net.kyori.adventure.key.Key.key(item.getType().getKey().toString()), item.getAmount()));
     }
 
     /** First format the player has ultrachat.format.&lt;name&gt; for, otherwise "default". */
@@ -206,8 +226,8 @@ public final class UltraChat extends UltraPlugin implements Listener {
             }
             text = filter(text);
         }
-        sender.sendMessage(msg().text(sender, "pm-out", "player", target.getName(), "message", text));
-        target.sendMessage(msg().text(target, "pm-in", "player", sender.getName(), "message", text));
+        msg().send(sender, msg().text(sender, "pm-out", "player", target.getName(), "message", text));
+        msg().send(target, msg().text(target, "pm-in", "player", sender.getName(), "message", text));
         msg().sound(target, "success");
         if (sender instanceof Player player) {
             lastPartner.put(player.getUniqueId(), target.getUniqueId());
@@ -216,7 +236,7 @@ public final class UltraChat extends UltraPlugin implements Listener {
         for (UUID id : spies) {
             Player spy = Bukkit.getPlayer(id);
             if (spy != null && spy != sender && spy != target) {
-                spy.sendMessage(msg().text(spy, "pm-spy", "from", sender.getName(), "to", target.getName(), "message", text));
+                msg().send(spy, msg().text(spy, "pm-spy", "from", sender.getName(), "to", target.getName(), "message", text));
             }
         }
     }
@@ -255,7 +275,7 @@ public final class UltraChat extends UltraPlugin implements Listener {
     }
 
     private void clear(CommandSender sender) {
-        Component blank = Component.text(" ");
+        String blank = " ";
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (!player.hasPermission("ultrachat.bypass.clear")) for (int i = 0; i < 100; i++) player.sendMessage(blank);
             msg().status(player, "chat-cleared", "player", sender.getName());

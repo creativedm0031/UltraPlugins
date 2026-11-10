@@ -1,7 +1,6 @@
 package de.creativedm.ultra.vanish;
 
 import de.creativedm.ultra.core.UltraPlugin;
-import com.destroystokyo.paper.event.server.PaperServerListPingEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +20,7 @@ import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitTask;
@@ -161,8 +161,8 @@ public final class UltraVanish extends UltraPlugin implements Listener {
     /** Vanilla style join/quit line, translated by the client itself. */
     private void broadcast(Player player, boolean join) {
         Component line = Component.translatable(join ? "multiplayer.player.joined" : "multiplayer.player.left",
-                net.kyori.adventure.text.format.NamedTextColor.YELLOW, player.displayName());
-        Bukkit.getServer().sendMessage(line);
+                net.kyori.adventure.text.format.NamedTextColor.YELLOW, de.creativedm.ultra.core.Messages.fromLegacy(player.getDisplayName()));
+        msg().broadcast(line);
     }
 
     // ---- events ---------------------------------------------------------------------------------------------
@@ -174,7 +174,7 @@ public final class UltraVanish extends UltraPlugin implements Listener {
             vanished.add(player.getUniqueId());
         }
         if (vanished.contains(player.getUniqueId())) {
-            event.joinMessage(null);
+            event.setJoinMessage(null);
             msg().status(player, "vanish-join");
         }
         refresh(player);
@@ -187,15 +187,19 @@ public final class UltraVanish extends UltraPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onQuit(PlayerQuitEvent event) {
-        if (vanished.contains(event.getPlayer().getUniqueId())) event.quitMessage(null);
+        if (vanished.contains(event.getPlayer().getUniqueId())) event.setQuitMessage(null);
     }
 
     @EventHandler
-    public void onPing(PaperServerListPingEvent event) {
+    public void onPing(ServerListPingEvent event) {
         if (!getConfig().getBoolean("hide-from-player-count")) return;
-        event.getPlayerSample().removeIf(profile -> profile.getId() != null && vanished.contains(profile.getId()));
-        long hidden = Bukkit.getOnlinePlayers().stream().filter(p -> vanished.contains(p.getUniqueId())).count();
-        event.setNumPlayers((int) Math.max(0, event.getNumPlayers() - hidden));
+        // Removing a player here hides them from the sample and lowers the online count.
+        try {
+            var iterator = event.iterator();
+            while (iterator.hasNext()) if (vanished.contains(iterator.next().getUniqueId())) iterator.remove();
+        } catch (UnsupportedOperationException ignored) {
+            // some server forks do not allow changing the list
+        }
     }
 
     @EventHandler(ignoreCancelled = true)
@@ -225,7 +229,7 @@ public final class UltraVanish extends UltraPlugin implements Listener {
         event.setCancelled(true);
         Inventory real = container.getInventory();
         int size = Math.max(9, (real.getSize() + 8) / 9 * 9);
-        Inventory copy = Bukkit.createInventory(null, Math.min(54, size), msg().title(player, "silent-chest-title"));
+        Inventory copy = Bukkit.createInventory(null, Math.min(54, size), de.creativedm.ultra.core.Messages.legacy(msg().title(player, "silent-chest-title")));
         for (int i = 0; i < Math.min(real.getSize(), copy.getSize()); i++) {
             org.bukkit.inventory.ItemStack item = real.getItem(i);
             copy.setItem(i, item == null ? null : item.clone());

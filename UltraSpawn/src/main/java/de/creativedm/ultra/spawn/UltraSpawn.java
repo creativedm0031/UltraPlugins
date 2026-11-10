@@ -77,11 +77,10 @@ public final class UltraSpawn extends UltraPlugin implements Listener {
                 msg().error(sender, "spawn-not-set");
                 return;
             }
-            target.teleportAsync(location).thenAccept(done -> {
-                msg().sound(target, "teleport");
-                msg().status(target, "spawn-teleport");
-                msg().info(sender, "spawn-other", "player", target.getName());
-            });
+            target.teleport(location);
+            msg().sound(target, "teleport");
+            msg().status(target, "spawn-teleport");
+            msg().info(sender, "spawn-other", "player", target.getName());
             return;
         }
         if (!(sender instanceof Player player)) {

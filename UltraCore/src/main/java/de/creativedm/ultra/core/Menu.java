@@ -33,7 +33,7 @@ public final class Menu implements InventoryHolder {
     private final Map<Integer, Consumer<InventoryClickEvent>> actions = new HashMap<>();
 
     public Menu(Component title, int rows) {
-        inventory = Bukkit.createInventory(this, rows * 9, title);
+        inventory = Bukkit.createInventory(this, rows * 9, Messages.legacy(title));
     }
 
     @Override
@@ -69,8 +69,11 @@ public final class Menu implements InventoryHolder {
     public static ItemStack decorate(ItemStack item, Component name, List<Component> lore) {
         ItemMeta meta = item.getItemMeta();
         if (meta == null) return item;
-        meta.displayName(name);
-        meta.lore(lore);
+        String text = Messages.legacy(name);
+        meta.setDisplayName(text.isEmpty() ? " " : text);
+        List<String> lines = new java.util.ArrayList<>();
+        for (Component line : lore) lines.add(Messages.legacy(line));
+        meta.setLore(lines);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         return item;

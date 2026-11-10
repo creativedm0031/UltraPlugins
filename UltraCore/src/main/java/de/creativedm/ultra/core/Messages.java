@@ -10,8 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import net.kyori.adventure.key.Key;
-import net.kyori.adventure.sound.Sound;
+import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -19,6 +18,8 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.Tag;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import org.bukkit.SoundCategory;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -32,15 +33,29 @@ public final class Messages {
 
     public static final List<String> LANGUAGES = List.of("en", "de", "fr", "nl", "it");
 
+    /** Section-sign text with hex colours, for item names, lore, inventory titles and kick screens (Spigot needs Strings there). */
+    private static final LegacyComponentSerializer LEGACY = LegacyComponentSerializer.builder()
+            .character(LegacyComponentSerializer.SECTION_CHAR).hexColors().useUnusualXRepeatedCharacterHexFormat().build();
+
+    public static String legacy(Component component) {
+        return LEGACY.serialize(component);
+    }
+
+    public static Component fromLegacy(String text) {
+        return LEGACY.deserialize(text == null ? "" : text);
+    }
+
     private final UltraPlugin plugin;
+    private final BukkitAudiences audiences;
     private final Map<String, YamlConfiguration> languages = new HashMap<>();
     private MiniMessage mini = MiniMessage.miniMessage();
     private String fallback = "en";
     private boolean clientLanguage = true;
     private String gradient = "<gradient:#8B5CF6:#22D3EE>";
 
-    Messages(UltraPlugin plugin) {
+    Messages(UltraPlugin plugin, BukkitAudiences audiences) {
         this.plugin = plugin;
+        this.audiences = audiences;
         load();
     }
 
@@ -103,7 +118,8 @@ public final class Messages {
     /** Language code used for this receiver. */
     public String language(CommandSender sender) {
         if (clientLanguage && sender instanceof Player player) {
-            String code = player.locale().getLanguage();
+            String locale = player.getLocale();
+            String code = locale == null ? "" : locale.toLowerCase(Locale.ROOT).split("_")[0];
             if (LANGUAGES.contains(code)) return code;
         }
         return fallback;
@@ -167,18 +183,18 @@ public final class Messages {
     /** Silent action bar line, for countdowns and permanent status. */
     public void status(CommandSender sender, String key, Object... pairs) {
         Component line = infoLine(sender, key, pairs);
-        if (sender instanceof Player player) player.sendActionBar(line);
-        else sender.sendMessage(line);
+        if (sender instanceof Player player) audiences.player(player).sendActionBar(line);
+        else send(sender, line);
     }
 
     /** A line in the chat with the normal prefix. Only for content that has to be clickable or re-readable. */
     public void chat(CommandSender sender, String key, Object... pairs) {
-        sender.sendMessage(infoLine(sender, key, pairs));
+        send(sender, infoLine(sender, key, pairs));
     }
 
     /** Errors are the only plugin feedback that goes to the chat. */
     public void error(CommandSender sender, String key, Object... pairs) {
-        sender.sendMessage(parse("<error>✖ <bold>Ultra" + plugin.module() + "</bold></error> <sep>»</sep> <errortext>" + raw(sender, key), pairs));
+        send(sender, parse("<error>✖ <bold>Ultra" + plugin.module() + "</bold></error> <sep>»</sep> <errortext>" + raw(sender, key), pairs));
         if (sender instanceof Player player) sound(player, "error");
     }
 
@@ -187,7 +203,17 @@ public final class Messages {
         FileConfiguration config = plugin.getConfig();
         if (!config.getBoolean("sounds.enabled", true)) return;
         String key = config.getString("sounds." + type + ".key", "");
-        if (key.isEmpty() || !Key.parseable(key)) return;
-        player.playSound(Sound.sound(Key.key(key), Sound.Source.MASTER, 1f, (float) config.getDouble("sounds." + type + ".pitch", 1.0)));
+        if (key.isEmpty()) return;
+        player.playSound(player.getLocation(), key, SoundCategory.MASTER, 1f, (float) config.getDouble("sounds." + type + ".pitch", 1.0));
+    }
+
+    /** Sends any component to a player or the console. */
+    public void send(CommandSender sender, Component component) {
+        audiences.sender(sender).sendMessage(component);
+    }
+
+    /** Sends a component to everyone online and the console. */
+    public void broadcast(Component component) {
+        audiences.all().sendMessage(component);
     }
 }

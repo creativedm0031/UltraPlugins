@@ -260,7 +260,7 @@ public final class UltraKits extends UltraPlugin implements Listener {
         switch (field) {
             case "items" -> {
                 Editor editor = new Editor(kit);
-                editor.inventory = Bukkit.createInventory(editor, 54, msg().title(player, "editor-title", "name", kit));
+                editor.inventory = Bukkit.createInventory(editor, 54, de.creativedm.ultra.core.Messages.legacy(msg().title(player, "editor-title", "name", kit)));
                 items(kit).stream().limit(54).forEach(editor.inventory::addItem);
                 player.openInventory(editor.inventory);
                 msg().status(player, "editor-hint");

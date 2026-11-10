@@ -4,7 +4,6 @@ import de.creativedm.ultra.core.DataFile;
 import de.creativedm.ultra.core.Durations;
 import de.creativedm.ultra.core.Menu;
 import de.creativedm.ultra.core.UltraPlugin;
-import io.papermc.paper.event.player.AsyncChatEvent;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -16,7 +15,6 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -25,6 +23,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -191,10 +190,10 @@ public final class UltraPunish extends UltraPlugin implements Listener {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     boolean sameAddress = ip && address != null && player.getAddress() != null
                             && address.equals(player.getAddress().getAddress().getHostAddress());
-                    if (player.getUniqueId().equals(target.id()) || sameAddress) player.kick(screen(player, "ban-screen", e));
+                    if (player.getUniqueId().equals(target.id()) || sameAddress) player.kickPlayer(screen(player, "ban-screen", e));
                 }
             }
-            case KICK -> online.kick(screen(online, "kick-screen", e));
+            case KICK -> online.kickPlayer(screen(online, "kick-screen", e));
             case MUTE -> {
                 if (online != null) msg().error(online, "you-were-muted", "duration", duration(online, e), "reason", reason(online, e));
             }
@@ -248,9 +247,10 @@ public final class UltraPunish extends UltraPlugin implements Listener {
         return e.until == 0 ? msg().raw(viewer, "permanent") : Durations.format(e.until - e.time);
     }
 
-    private Component screen(CommandSender viewer, String key, Entry e) {
+    /** Kick and ban screens are Strings on Spigot. */
+    private String screen(CommandSender viewer, String key, Entry e) {
         String left = e.until == 0 ? msg().raw(viewer, "permanent") : Durations.format(e.until - System.currentTimeMillis());
-        return msg().text(viewer, key, "reason", reason(viewer, e), "duration", left, "staff", e.staff, "id", e.id);
+        return de.creativedm.ultra.core.Messages.legacy(msg().text(viewer, key, "reason", reason(viewer, e), "duration", left, "staff", e.staff, "id", e.id));
     }
 
     // ---- history and GUI ------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ public final class UltraPunish extends UltraPlugin implements Listener {
     }
 
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
-    public void onChat(AsyncChatEvent event) {
+    public void onChat(AsyncPlayerChatEvent event) {
         Entry mute = running(event.getPlayer().getUniqueId(), Type.MUTE);
         if (mute == null) return;
         event.setCancelled(true);

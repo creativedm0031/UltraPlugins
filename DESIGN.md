@@ -100,9 +100,13 @@ plugins/Ultra<Name>/
   *.yml           Daten (z. B. homes.yml, warps.yml, punishments.yml)
 ```
 
-- Paper 1.20.4 und neuer (inkl. Forks wie Purpur), Java 17. Spigot wird nicht unterstützt, weil
-  Actionbar, Chat und asynchrone Teleports die Paper-API nutzen.
-- Texte in MiniMessage. Vault für Kosten (Teleports, Warps, Kits) und als Schnittstelle von UltraEconomy.
+- Spigot, Paper und Purpur ab 1.20.4, Java 17. Gebaut wird gegen die Spigot-API; Paper-eigene
+  Funktionen werden nicht benutzt.
+- Texte in MiniMessage. Die Text-Bibliothek Adventure ist in jede Jar eingebettet und umbenannt
+  (`de.creativedm.ultra.<name>.lib.kyori`), damit Farbverläufe, Hover-Texte und die Actionbar auch
+  auf Spigot funktionieren und sich nicht mit anderen Plugins beißen.
+- Itemnamen, Lore, Inventar-Titel und Kick-Screens verlangen auf Spigot Text statt Komponenten; sie
+  werden aus MiniMessage in Farbcodes mit Hex-Farben umgewandelt (`Messages.legacy`). Vault für Kosten (Teleports, Warps, Kits) und als Schnittstelle von UltraEconomy.
 - Daten liegen in YAML-Dateien, die asynchron geschrieben werden.
 - Gemeinsamer Code (Nachrichten, Sprachen, Theme, GUI-Baukasten, Warmup/Cooldown, Datendateien)
   liegt im Modul **UltraCore** und wird in jedes Plugin eingebettet und umbenannt (Shading). So ist

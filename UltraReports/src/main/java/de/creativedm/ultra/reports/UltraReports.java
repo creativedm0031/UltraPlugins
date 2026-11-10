@@ -187,7 +187,7 @@ public final class UltraReports extends UltraPlugin {
                 data.save();
                 msg().info(staff, "report-claimed", "id", id);
                 Player target = Bukkit.getPlayer(targetId);
-                if (target != null && getConfig().getBoolean("teleport-on-claim")) staff.teleportAsync(target.getLocation());
+                if (target != null && getConfig().getBoolean("teleport-on-claim")) staff.teleport(target.getLocation());
                 openReport(staff, id);
             });
         }
@@ -198,7 +198,8 @@ public final class UltraReports extends UltraPlugin {
                 return;
             }
             staff.closeInventory();
-            staff.teleportAsync(target.getLocation()).thenAccept(done -> msg().info(staff, "teleported", "player", targetName));
+            staff.teleport(target.getLocation());
+            msg().info(staff, "teleported", "player", targetName);
         });
         if (Bukkit.getPluginManager().isPluginEnabled("UltraPunish")) {
             menu.set(14, Menu.item(Material.IRON_SWORD, msg().text(staff, "action-punish"), msg().lore(staff, "action-punish-lore")), click -> {
