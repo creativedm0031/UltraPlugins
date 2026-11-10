@@ -27,3 +27,6 @@ replay_pid*
 tools/.build/
 __pycache__/
 target/
+
+# Release jars are committed on purpose
+!Ultra*/release/*.jar

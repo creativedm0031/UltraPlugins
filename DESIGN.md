@@ -100,7 +100,8 @@ plugins/Ultra<Name>/
   *.yml           Daten (z. B. homes.yml, warps.yml, punishments.yml)
 ```
 
-- Spigot, Paper und Purpur ab 1.20.4, Java 17. Gebaut wird gegen die Spigot-API; Paper-eigene
+- Spigot, Paper und Purpur, Minecraft 1.20.4 bis 26.3 (getestet auf 1.20.4, 1.20.6, 1.21.1, 1.21.4, 1.21.8,
+  1.21.11, 26.1.2 und 26.3), Java 17+. Gebaut wird gegen die Spigot-API; Paper-eigene
   Funktionen werden nicht benutzt.
 - Texte in MiniMessage. Die Text-Bibliothek Adventure ist in jede Jar eingebettet und umbenannt
   (`de.creativedm.ultra.<name>.lib.kyori`), damit Farbverläufe, Hover-Texte und die Actionbar auch

@@ -31,7 +31,7 @@ mvn package
 ```
 
 Danach liegt jedes Plugin als eigenständige Jar in `Ultra<Name>/target/Ultra<Name>-1.0.0.jar`.
-Lauffähig auf Spigot, Paper und Purpur ab 1.20.4. Jede Jar ist eigenständig, es werden keine
+Lauffähig auf Spigot, Paper und Purpur, Minecraft 1.20.4 – 26.3. Jede Jar ist eigenständig, es werden keine
 weiteren Plugins benötigt (Vault ist optional für Kosten und die Economy-Schnittstelle).
 
 ## Aufbau

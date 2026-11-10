@@ -50,9 +50,17 @@ Every player sees UltraKits in the language of their Minecraft client – automa
 | `ultrakits.bypass.cooldown` | Skip the cooldown |
 | `ultrakits.*` | Everything |
 
+## Supported versions
+
+| | |
+| --- | --- |
+| Minecraft | **1.20.4 – 26.3** |
+| Server | Paper and Purpur |
+| Java | 17+ (whatever your Minecraft version needs) |
+
 ## Installation
 
-1. Drop `UltraKits-1.0.0.jar` into your `plugins` folder. Works on Paper and Purpur 1.20.4+ (Java 17+), no dependencies needed.
+1. Drop `UltraKits-1.0.0.jar` into your `plugins` folder. Works on Paper and Purpur **1.20.4 – 26.3**, no dependencies needed.
 2. Restart your server.
 3. Adjust `config.yml` and the files in `lang/`, then run `/ultrakits reload`.
 

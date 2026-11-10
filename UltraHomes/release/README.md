@@ -1,16 +1,53 @@
 # UltraHomes – Release-Material
 
-Alles, was zum Hochladen auf den vier Seiten gebraucht wird. Die Jar entsteht mit `mvn package`
-im Hauptordner: `UltraHomes/target/UltraHomes-1.0.0.jar`.
+Alles, was zum Hochladen auf den vier Seiten gebraucht wird.
+
+**Datei zum Hochladen:** [`UltraHomes-1.0.0.jar`](UltraHomes-1.0.0.jar) (liegt in diesem Ordner).
+Neu bauen mit `tools/package.sh` im Hauptordner.
+
+## Version
 
 | Feld | Wert |
 | --- | --- |
-| Titel SpigotMC / BuiltByBit | UltraHomes | Homes GUI with Limits |
+| Versionsnummer | `1.0.0` |
+| Version String (SpigotMC, BuiltByBit) | `1.0.0` |
+| Versionsname (Modrinth, Hangar) | `UltraHomes 1.0.0` |
+| Kanal / Release-Typ | Release |
+| Changelog | [`changelog.md`](changelog.md) |
+
+Versionsnummer, Version String und Minecraft-Versionen stehen auch in `version.txt` zum Kopieren.
+
+## Unterstützte Minecraft-Versionen
+
+**1.20.4 – 26.3** auf Spigot, Paper und Purpur, Java 17+ (Minecraft 1.20.5+ braucht ohnehin Java 21,
+26.x Java 25).
+
+Zum Ankreuzen in den Versionsfeldern:
+
+`1.20.4`, `1.20.5`, `1.20.6`, `1.21`, `1.21.1`, `1.21.2`, `1.21.3`, `1.21.4`, `1.21.5`, `1.21.6`, `1.21.7`, `1.21.8`, `1.21.9`, `1.21.10`, `1.21.11`, `26.1`, `26.1.1`, `26.1.2`, `26.2`, `26.3`
+
+Getestet (alle zehn Plugins auf Paper gestartet):
+
+| Minecraft | Test |
+| --- | --- |
+| 1.20.4 | bot test |
+| 1.20.6 | bot test |
+| 1.21.1 | bot test |
+| 1.21.4 | full bot test |
+| 1.21.8 | bot test |
+| 1.21.11 | bot test |
+| 26.1.2 | bot test |
+| 26.3 | start + console |
+
+Auf einem echten Spigot-Server wurde noch nicht getestet; gebaut wird gegen die Spigot-API 1.20.4.
+
+## Projekt
+
+| Feld | Wert |
+| --- | --- |
+| Titel SpigotMC / BuiltByBit | UltraHomes \| Homes GUI with Limits |
 | Name Modrinth / Hangar | UltraHomes |
 | Tagline / Summary (alle vier) | Set, manage and publish homes in a clean GUI with permission limits. Available in 5 languages. |
-| Version | 1.0.0 |
-| Minecraft-Versionen | 1.20.4 – 1.21.4 (gebaut gegen die API 1.20.4, im Test gelaufen auf 1.21.4) |
-| Java | 17+ |
 | Abhängigkeiten | keine (Vault optional) |
 | Quellcode | https://github.com/creativedm0031/UltraPlugins |
 
@@ -26,10 +63,10 @@ im Hauptordner: `UltraHomes/target/UltraHomes-1.0.0.jar`.
 
 ## SpigotMC
 
-1. Resource-Typ: kostenlos, Datei hochladen (die Jar).
+1. Resource-Typ: kostenlos, Datei hochladen: `UltraHomes-1.0.0.jar`, Version String: `1.0.0`.
 2. Title: `spigotmc/title.txt`, Tag Line: `spigotmc/tagline.txt`
 3. Kategorie: **Spigot → Tools and Utilities**
-4. Getestete Versionen: 1.20, 1.21
+4. Unterstützte Versionen ankreuzen: **1.20, 1.21** und **26.x**, falls SpigotMC sie anbietet
 5. Icon: `images/icon-512.png`
 6. Beschreibung: Inhalt von `spigotmc/description.bbcode` einfügen (BBCode-Modus).
 7. Source-Code-Link: GitHub-Repo.
@@ -40,8 +77,8 @@ im Hauptordner: `UltraHomes/target/UltraHomes-1.0.0.jar`.
 2. Title: `builtbybit/title.txt`, Tag Line: `builtbybit/tagline.txt`
 3. Icon: `images/icon-512.png`, Cover/Banner: `images/cover.png`
 4. Beschreibung: Inhalt von `builtbybit/description.bbcode` einfügen.
-5. Unterstützte Versionen: 1.20 – 1.21, Plattformen Spigot und Paper.
-6. Datei: die Jar.
+5. Unterstützte Versionen: **1.20 – 1.21 und 26.x** (1.20.4 – 26.3), Plattformen Spigot und Paper.
+6. Datei: `UltraHomes-1.0.0.jar`, Version String: `1.0.0`.
 
 ## Modrinth
 
@@ -55,7 +92,7 @@ im Hauptordner: `UltraHomes/target/UltraHomes-1.0.0.jar`.
    - `images/gallery-2-languages.png`
    - `images/gallery-3-gui.png`
    - `images/gallery-4-commands.png`
-6. Version 1.0.0 hochladen: Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen 1.20.4 – 1.21.4.
+6. Version hochladen: Datei `UltraHomes-1.0.0.jar`, Versionsnummer `1.0.0`, Name `UltraHomes 1.0.0`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen: alle aus der Liste oben (1.20.4 – 26.3).
 7. Lizenz und Source-Link (GitHub) eintragen.
 
 ## Hangar
@@ -63,7 +100,7 @@ im Hauptordner: `UltraHomes/target/UltraHomes-1.0.0.jar`.
 1. Neues Projekt, Plattform **Paper**, Kategorie **Gameplay**. Name: `hangar/title.txt`, Summary: `hangar/tagline.txt`
 2. Icon (Avatar): `images/icon-512.png`
 3. Beschreibung (Hauptseite): Inhalt von `hangar/description.md`.
-4. Version 1.0.0: Jar hochladen, Plattformversionen 1.20.4 – 1.21.4, Kanal **Release**.
+4. Version: Datei `UltraHomes-1.0.0.jar`, Version `1.0.0`, Changelog aus `changelog.md`, Plattform **Paper**, Versionen: alle aus der Liste oben (1.20.4 – 26.3), Kanal **Release**.
 5. Source-Link (GitHub) eintragen.
 
 > Hangar listet nur Paper-Plugins – UltraPlugins laufen auf Paper, deshalb passt es. Spigot wird dort nicht angegeben.

@@ -47,9 +47,17 @@ Every player sees UltraWarps in the language of their Minecraft client – autom
 | `ultrawarps.player.limit.<n>` | Maximum number of player warps |
 | `ultrawarps.*` | Everything |
 
+## Supported versions
+
+| | |
+| --- | --- |
+| Minecraft | **1.20.4 – 26.3** |
+| Server | Spigot, Paper and Purpur |
+| Java | 17+ (whatever your Minecraft version needs) |
+
 ## Installation
 
-1. Drop `UltraWarps-1.0.0.jar` into your `plugins` folder. Works on Spigot, Paper and Purpur 1.20.4+ (Java 17+), no dependencies needed.
+1. Drop `UltraWarps-1.0.0.jar` into your `plugins` folder. Works on Spigot, Paper and Purpur **1.20.4 – 26.3**, no dependencies needed.
 2. Restart your server.
 3. Adjust `config.yml` and the files in `lang/`, then run `/ultrawarps reload`.
 
