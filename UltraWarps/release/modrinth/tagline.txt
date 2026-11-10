@@ -1,0 +1,1 @@
+Server and player warps with categories, icons and visit counter in one GUI. 5 languages.

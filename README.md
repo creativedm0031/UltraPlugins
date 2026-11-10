@@ -43,7 +43,7 @@ Ultra<Name>/
   README.md                  Konzept: Features, Befehle, Permissions, Sprachen
   src/                       Quellcode, config.yml, plugin.yml, lang/*.yml
   assets/                    Logo, Banner, Ingame-Vorschau
-  spigot/description.bbcode  SpigotMC-Beschreibung
+  release/                   Upload-Material für SpigotMC, BuiltByBit, Modrinth und Hangar
 shared/assets/               Serien-Banner und Abschnitts-Header für SpigotMC
 tools/                       Generatoren für Assets, Texte und Sprachdateien
 DESIGN.md                    Gemeinsames Design-System
@@ -67,8 +67,11 @@ python3 tools/generate.py && node tools/render.js
 `render.js` braucht Node mit Playwright und die Schrift Inter. Die erzeugten Dateien werden
 überschrieben – Änderungen also in `tools/plugins.py` machen, nicht in den Ausgaben.
 
-## SpigotMC
+## Veröffentlichen
+
+Titel und Taglines aller Plugins stehen in [RELEASE.md](RELEASE.md). Pro Plugin liegt in
+`Ultra<Name>/release/` alles für SpigotMC, BuiltByBit, Modrinth und Hangar, inklusive Checkliste.
 
 Die Bilder in den Beschreibungen verweisen auf `raw.githubusercontent.com/.../main/...`. Sie werden
 erst angezeigt, wenn dieses Repository öffentlich ist und die Dateien auf `main` liegen. Sonst die
-PNGs bei einem Bildhoster hochladen und die Links in den `.bbcode`-Dateien ersetzen.
+PNGs bei einem Bildhoster hochladen und die Links in den Beschreibungen ersetzen.

@@ -12,6 +12,7 @@ import re
 from pathlib import Path
 
 from plugins import ICONS, PLUGINS
+import release
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = "https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main"
@@ -225,7 +226,7 @@ Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `
 | `assets/logo.svg` · `logo.png` | Logo (512 × 512, Resource-Icon auf SpigotMC) |
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
-| `spigot/description.bbcode` | Fertige SpigotMC-Beschreibung |
+| `release/` | Upload-Material für SpigotMC, BuiltByBit, Modrinth und Hangar (Titel, Tagline, Beschreibungen, Icons, Banner, Beispielbilder, Checkliste) |
 | `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
@@ -342,7 +343,7 @@ Ultra<Name>/
   README.md                  Konzept: Features, Befehle, Permissions, Sprachen
   src/                       Quellcode, config.yml, plugin.yml, lang/*.yml
   assets/                    Logo, Banner, Ingame-Vorschau
-  spigot/description.bbcode  SpigotMC-Beschreibung
+  release/                   Upload-Material für SpigotMC, BuiltByBit, Modrinth und Hangar
 shared/assets/               Serien-Banner und Abschnitts-Header für SpigotMC
 tools/                       Generatoren für Assets, Texte und Sprachdateien
 DESIGN.md                    Gemeinsames Design-System
@@ -366,11 +367,14 @@ python3 tools/generate.py && node tools/render.js
 `render.js` braucht Node mit Playwright und die Schrift Inter. Die erzeugten Dateien werden
 überschrieben – Änderungen also in `tools/plugins.py` machen, nicht in den Ausgaben.
 
-## SpigotMC
+## Veröffentlichen
+
+Titel und Taglines aller Plugins stehen in [RELEASE.md](RELEASE.md). Pro Plugin liegt in
+`Ultra<Name>/release/` alles für SpigotMC, BuiltByBit, Modrinth und Hangar, inklusive Checkliste.
 
 Die Bilder in den Beschreibungen verweisen auf `raw.githubusercontent.com/.../main/...`. Sie werden
 erst angezeigt, wenn dieses Repository öffentlich ist und die Dateien auf `main` liegen. Sonst die
-PNGs bei einem Bildhoster hochladen und die Links in den `.bbcode`-Dateien ersetzen.
+PNGs bei einem Bildhoster hochladen und die Links in den Beschreibungen ersetzen.
 """
 
 
@@ -388,7 +392,6 @@ def main():
         write(f"{d}/assets/banner.svg", banner_svg(p))
         write(f"tools/.build/{d}-preview.html", preview_html(p))
         write(f"{d}/README.md", concept_md(p))
-        write(f"{d}/spigot/description.bbcode", bbcode(p))
         jobs += [(f"{d}/assets/logo.svg", f"{d}/assets/logo.png", 512, 512, True),
                  (f"{d}/assets/banner.svg", f"{d}/assets/banner.png", 1920, 480, False),
                  (f"tools/.build/{d}-preview.html", f"{d}/assets/preview.png", 1280, 420, False)]
@@ -398,6 +401,7 @@ def main():
         jobs.append((f"shared/assets/header-{slug}.svg", f"shared/assets/header-{slug}.png", 1920, 150, False))
     write("shared/assets/series-banner.svg", series_svg())
     jobs.append(("shared/assets/series-banner.svg", "shared/assets/series-banner.png", 1920, 520, False))
+    release.build(write, jobs, bbcode, logo_svg, DEFS, logo_body)
     write("README.md", root_readme())
     write("tools/.build/jobs.json", json.dumps(jobs))
     print(f"{len(jobs)} render jobs written")
