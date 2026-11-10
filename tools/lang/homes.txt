@@ -1,0 +1,198 @@
+home-set
+  Home <accent><name></accent> saved.
+  Home <accent><name></accent> gespeichert.
+  Home <accent><name></accent> enregistré.
+  Home <accent><name></accent> opgeslagen.
+  Home <accent><name></accent> salvata.
+home-teleport
+  Welcome at <accent><name></accent>.
+  Willkommen bei <accent><name></accent>.
+  Bienvenue à <accent><name></accent>.
+  Welkom bij <accent><name></accent>.
+  Benvenuto a <accent><name></accent>.
+home-deleted
+  Home <accent><name></accent> deleted.
+  Home <accent><name></accent> gelöscht.
+  Home <accent><name></accent> supprimé.
+  Home <accent><name></accent> verwijderd.
+  Home <accent><name></accent> eliminata.
+icon-set
+  Icon of <accent><name></accent> changed.
+  Icon von <accent><name></accent> geändert.
+  Icône de <accent><name></accent> modifiée.
+  Icoon van <accent><name></accent> gewijzigd.
+  Icona di <accent><name></accent> modificata.
+public-on
+  <accent><name></accent> is now public.
+  <accent><name></accent> ist jetzt öffentlich.
+  <accent><name></accent> est maintenant public.
+  <accent><name></accent> is nu openbaar.
+  <accent><name></accent> è ora pubblica.
+public-off
+  <accent><name></accent> is now private.
+  <accent><name></accent> ist jetzt privat.
+  <accent><name></accent> est maintenant privé.
+  <accent><name></accent> is nu privé.
+  <accent><name></accent> è ora privata.
+import-done
+  Imported <accent><count></accent> homes from Essentials.
+  <accent><count></accent> Homes aus Essentials importiert.
+  <accent><count></accent> homes importés depuis Essentials.
+  <accent><count></accent> homes geïmporteerd uit Essentials.
+  <accent><count></accent> home importate da Essentials.
+home-unknown
+  Home <name> doesn't exist.
+  Das Home <name> gibt es nicht.
+  Le home <name> n'existe pas.
+  Home <name> bestaat niet.
+  La home <name> non esiste.
+home-none
+  You have no homes yet. Set one with /sethome.
+  Du hast noch keine Homes. Setze eins mit /sethome.
+  Tu n'as pas encore de home. Crées-en un avec /sethome.
+  Je hebt nog geen homes. Maak er een met /sethome.
+  Non hai ancora nessuna home. Creane una con /sethome.
+home-not-public
+  Home <name> is not public.
+  Das Home <name> ist nicht öffentlich.
+  Le home <name> n'est pas public.
+  Home <name> is niet openbaar.
+  La home <name> non è pubblica.
+home-invalid-name
+  Names may only contain letters, numbers, - and _.
+  Namen dürfen nur Buchstaben, Zahlen, - und _ enthalten.
+  Les noms ne peuvent contenir que des lettres, des chiffres, - et _.
+  Namen mogen alleen letters, cijfers, - en _ bevatten.
+  I nomi possono contenere solo lettere, numeri, - e _.
+limit-reached
+  Home limit reached (<limit>).
+  Home-Limit erreicht (<limit>).
+  Limite de homes atteinte (<limit>).
+  Home-limiet bereikt (<limit>).
+  Limite di home raggiunto (<limit>).
+world-blocked
+  You can't set a home in this world.
+  In dieser Welt kannst du kein Home setzen.
+  Tu ne peux pas créer de home dans ce monde.
+  Je kunt in deze wereld geen home instellen.
+  Non puoi impostare una home in questo mondo.
+icon-empty-hand
+  Hold the item you want as icon in your hand.
+  Halte das Item, das du als Icon möchtest, in der Hand.
+  Tiens en main l'objet que tu veux comme icône.
+  Houd het item dat je als icoon wilt in je hand.
+  Tieni in mano l'oggetto che vuoi come icona.
+import-missing
+  No Essentials user data found.
+  Keine Essentials-Spielerdaten gefunden.
+  Aucune donnée Essentials trouvée.
+  Geen Essentials-gegevens gevonden.
+  Nessun dato di Essentials trovato.
+homes-title
+  Homes <count>/<limit>
+  Homes <count>/<limit>
+  Homes <count>/<limit>
+  Homes <count>/<limit>
+  Home <count>/<limit>
+edit-title
+  Home · <name>
+  Home · <name>
+  Home · <name>
+  Home · <name>
+  Home · <name>
+delete-title
+  Delete <name>?
+  <name> löschen?
+  Supprimer <name> ?
+  <name> verwijderen?
+  Eliminare <name>?
+home-lore
+  World: <white><world>\nPosition: <white><x>, <y>, <z>\nPublic: <white><public>\n\n<accent>▸</accent> Left click: teleport\n<accent>▸</accent> Right click: edit
+  Welt: <white><world>\nPosition: <white><x>, <y>, <z>\nÖffentlich: <white><public>\n\n<accent>▸</accent> Linksklick: teleportieren\n<accent>▸</accent> Rechtsklick: bearbeiten
+  Monde : <white><world>\nPosition : <white><x>, <y>, <z>\nPublic : <white><public>\n\n<accent>▸</accent> Clic gauche : se téléporter\n<accent>▸</accent> Clic droit : modifier
+  Wereld: <white><world>\nPositie: <white><x>, <y>, <z>\nOpenbaar: <white><public>\n\n<accent>▸</accent> Linkermuisknop: teleporteren\n<accent>▸</accent> Rechtermuisknop: bewerken
+  Mondo: <white><world>\nPosizione: <white><x>, <y>, <z>\nPubblica: <white><public>\n\n<accent>▸</accent> Clic sinistro: teletrasporto\n<accent>▸</accent> Clic destro: modifica
+yes
+  yes
+  ja
+  oui
+  ja
+  sì
+no
+  no
+  nein
+  non
+  nee
+  no
+edit-icon
+  <brand>Change icon</brand>
+  <brand>Icon ändern</brand>
+  <brand>Changer l'icône</brand>
+  <brand>Icoon wijzigen</brand>
+  <brand>Cambia icona</brand>
+edit-icon-lore
+  Uses the item in your hand.
+  Nimmt das Item in deiner Hand.
+  Utilise l'objet dans ta main.
+  Gebruikt het item in je hand.
+  Usa l'oggetto che hai in mano.
+edit-relocate
+  <brand>Move here</brand>
+  <brand>Hierher verschieben</brand>
+  <brand>Déplacer ici</brand>
+  <brand>Hierheen verplaatsen</brand>
+  <brand>Sposta qui</brand>
+edit-relocate-lore
+  Sets the home to your position.
+  Setzt das Home auf deine Position.
+  Place le home à ta position.
+  Zet de home op jouw positie.
+  Imposta la home sulla tua posizione.
+edit-public
+  <brand>Public</brand>
+  <brand>Öffentlich</brand>
+  <brand>Public</brand>
+  <brand>Openbaar</brand>
+  <brand>Pubblica</brand>
+edit-public-lore
+  Currently: <white><public>\nOthers visit with <accent>/home <player>:<name>
+  Aktuell: <white><public>\nAndere kommen mit <accent>/home <player>:<name>
+  Actuellement : <white><public>\nLes autres viennent avec <accent>/home <player>:<name>
+  Nu: <white><public>\nAnderen komen met <accent>/home <player>:<name>
+  Attualmente: <white><public>\nGli altri arrivano con <accent>/home <player>:<name>
+edit-delete
+  <error>Delete</error>
+  <error>Löschen</error>
+  <error>Supprimer</error>
+  <error>Verwijderen</error>
+  <error>Elimina</error>
+help-home
+  Teleport to one of your homes
+  Zu einem deiner Homes teleportieren
+  Se téléporter à l'un de tes homes
+  Naar een van je homes teleporteren
+  Teletrasportati a una delle tue home
+help-homes
+  Open your homes
+  Deine Homes öffnen
+  Ouvrir tes homes
+  Je homes openen
+  Apri le tue home
+help-sethome
+  Set a home at your position
+  Ein Home an deiner Position setzen
+  Créer un home à ta position
+  Een home op jouw positie instellen
+  Imposta una home nella tua posizione
+help-delhome
+  Delete a home
+  Ein Home löschen
+  Supprimer un home
+  Een home verwijderen
+  Elimina una home
+help-ultrahomes
+  Help, reload, version, language and Essentials import
+  Hilfe, Reload, Version, Sprache und Essentials-Import
+  Aide, rechargement, version, langue et import Essentials
+  Help, herladen, versie, taal en Essentials-import
+  Aiuto, ricarica, versione, lingua e importazione da Essentials

@@ -1,0 +1,33 @@
+name: UltraTeleports
+version: '${project.version}'
+main: de.creativedm.ultra.teleports.UltraTeleports
+api-version: '1.20'
+author: creativedm
+description: Requests, random teleport & back in one plugin.
+softdepend: [Vault]
+commands:
+  tpa: {usage: "/<command> <player>", description: Send a teleport request}
+  tpahere: {usage: "/<command> <player>", description: Ask a player to come to you}
+  tpaccept: {usage: "/<command>", description: Accept a request}
+  tpdeny: {usage: "/<command>", description: Deny a request}
+  back: {usage: "/<command>", description: Return to your last location}
+  rtp: {usage: "/<command> [world]", description: Random teleport}
+  tptoggle: {usage: "/<command>", description: Toggle incoming requests}
+  tpignore: {usage: "/<command> <player>", description: Ignore requests of a player}
+  tp: {usage: "/<command> <player> [target]", description: Teleport to a player}
+  tphere: {usage: "/<command> <player>", description: Teleport a player to you}
+  tpall: {usage: "/<command>", description: Teleport everyone to you}
+  ultrateleports: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultrateleports.tpa: {default: true}
+  ultrateleports.tpahere: {default: true}
+  ultrateleports.back: {default: true}
+  ultrateleports.rtp: {default: true}
+  ultrateleports.toggle: {default: true}
+  ultrateleports.staff: {default: op}
+  ultrateleports.admin: {default: op}
+  ultrateleports.bypass.warmup: {default: op}
+  ultrateleports.bypass.cooldown: {default: op}
+  ultrateleports.*:
+    default: op
+    children: {ultrateleports.tpa: true, ultrateleports.tpahere: true, ultrateleports.back: true, ultrateleports.rtp: true, ultrateleports.toggle: true, ultrateleports.staff: true, ultrateleports.admin: true, ultrateleports.bypass.warmup: true, ultrateleports.bypass.cooldown: true}

@@ -1,0 +1,33 @@
+name: UltraPunish
+version: '${project.version}'
+main: de.creativedm.ultra.punish.UltraPunish
+api-version: '1.20'
+author: creativedm
+description: Clean moderation with GUI, templates & history.
+commands:
+  punish: {usage: "/<command> <player>", description: Open the punish GUI}
+  ban: {usage: "/<command> <player> [reason]", description: Ban a player}
+  tempban: {usage: "/<command> <player> <duration> [reason]", description: Ban a player for a time}
+  banip: {usage: "/<command> <player> [reason]", description: Ban a player and their address}
+  mute: {usage: "/<command> <player> [reason]", description: Mute a player}
+  tempmute: {usage: "/<command> <player> <duration> [reason]", description: Mute a player for a time}
+  kick: {usage: "/<command> <player> [reason]", description: Kick a player}
+  warn: {usage: "/<command> <player> [reason]", description: Warn a player}
+  unban: {usage: "/<command> <player>", description: Unban a player}
+  unmute: {usage: "/<command> <player>", description: Unmute a player}
+  history: {usage: "/<command> <player>", description: Show the history of a player}
+  ultrapunish: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultrapunish.gui: {default: op}
+  ultrapunish.ban: {default: op}
+  ultrapunish.mute: {default: op}
+  ultrapunish.kick: {default: op}
+  ultrapunish.warn: {default: op}
+  ultrapunish.revoke: {default: op}
+  ultrapunish.history: {default: op}
+  ultrapunish.notify: {default: op}
+  ultrapunish.exempt: {default: op}
+  ultrapunish.admin: {default: op}
+  ultrapunish.*:
+    default: op
+    children: {ultrapunish.gui: true, ultrapunish.ban: true, ultrapunish.mute: true, ultrapunish.kick: true, ultrapunish.warn: true, ultrapunish.revoke: true, ultrapunish.history: true, ultrapunish.notify: true, ultrapunish.exempt: true, ultrapunish.admin: true}

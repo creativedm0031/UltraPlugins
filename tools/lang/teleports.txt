@@ -1,0 +1,210 @@
+request-sent
+  Request sent to <accent><player></accent>.
+  Anfrage an <accent><player></accent> gesendet.
+  Demande envoyée à <accent><player></accent>.
+  Verzoek verstuurd naar <accent><player></accent>.
+  Richiesta inviata a <accent><player></accent>.
+request-received
+  <accent><player></accent> wants to teleport to you. <green><click:run_command:'/tpaccept'>[Accept]</click></green> <error><click:run_command:'/tpdeny'>[Deny]</click></error> <muted>(<time>)
+  <accent><player></accent> möchte sich zu dir teleportieren. <green><click:run_command:'/tpaccept'>[Annehmen]</click></green> <error><click:run_command:'/tpdeny'>[Ablehnen]</click></error> <muted>(<time>)
+  <accent><player></accent> veut se téléporter vers toi. <green><click:run_command:'/tpaccept'>[Accepter]</click></green> <error><click:run_command:'/tpdeny'>[Refuser]</click></error> <muted>(<time>)
+  <accent><player></accent> wil naar jou teleporteren. <green><click:run_command:'/tpaccept'>[Accepteren]</click></green> <error><click:run_command:'/tpdeny'>[Weigeren]</click></error> <muted>(<time>)
+  <accent><player></accent> vuole teletrasportarsi da te. <green><click:run_command:'/tpaccept'>[Accetta]</click></green> <error><click:run_command:'/tpdeny'>[Rifiuta]</click></error> <muted>(<time>)
+request-received-here
+  <accent><player></accent> asks you to teleport to them. <green><click:run_command:'/tpaccept'>[Accept]</click></green> <error><click:run_command:'/tpdeny'>[Deny]</click></error> <muted>(<time>)
+  <accent><player></accent> bittet dich, dich zu ihm zu teleportieren. <green><click:run_command:'/tpaccept'>[Annehmen]</click></green> <error><click:run_command:'/tpdeny'>[Ablehnen]</click></error> <muted>(<time>)
+  <accent><player></accent> te demande de te téléporter vers lui. <green><click:run_command:'/tpaccept'>[Accepter]</click></green> <error><click:run_command:'/tpdeny'>[Refuser]</click></error> <muted>(<time>)
+  <accent><player></accent> vraagt je om naar hem te teleporteren. <green><click:run_command:'/tpaccept'>[Accepteren]</click></green> <error><click:run_command:'/tpdeny'>[Weigeren]</click></error> <muted>(<time>)
+  <accent><player></accent> ti chiede di teletrasportarti da lui. <green><click:run_command:'/tpaccept'>[Accetta]</click></green> <error><click:run_command:'/tpdeny'>[Rifiuta]</click></error> <muted>(<time>)
+request-accepted
+  Request of <accent><player></accent> accepted.
+  Anfrage von <accent><player></accent> angenommen.
+  Demande de <accent><player></accent> acceptée.
+  Verzoek van <accent><player></accent> geaccepteerd.
+  Richiesta di <accent><player></accent> accettata.
+request-accepted-sender
+  <accent><player></accent> accepted your request.
+  <accent><player></accent> hat deine Anfrage angenommen.
+  <accent><player></accent> a accepté ta demande.
+  <accent><player></accent> heeft je verzoek geaccepteerd.
+  <accent><player></accent> ha accettato la tua richiesta.
+request-denied
+  Request of <accent><player></accent> denied.
+  Anfrage von <accent><player></accent> abgelehnt.
+  Demande de <accent><player></accent> refusée.
+  Verzoek van <accent><player></accent> geweigerd.
+  Richiesta di <accent><player></accent> rifiutata.
+request-denied-sender
+  <player> denied your teleport request.
+  <player> hat deine Teleport-Anfrage abgelehnt.
+  <player> a refusé ta demande de téléportation.
+  <player> heeft je teleportverzoek geweigerd.
+  <player> ha rifiutato la tua richiesta di teletrasporto.
+request-none
+  You have no open teleport request.
+  Du hast keine offene Teleport-Anfrage.
+  Tu n'as aucune demande de téléportation en attente.
+  Je hebt geen openstaand teleportverzoek.
+  Non hai richieste di teletrasporto in sospeso.
+request-self
+  You can't send a request to yourself.
+  Du kannst dir selbst keine Anfrage senden.
+  Tu ne peux pas t'envoyer une demande à toi-même.
+  Je kunt jezelf geen verzoek sturen.
+  Non puoi inviare una richiesta a te stesso.
+requests-disabled
+  <player> has teleport requests disabled.
+  <player> hat Teleport-Anfragen deaktiviert.
+  <player> a désactivé les demandes de téléportation.
+  <player> heeft teleportverzoeken uitgeschakeld.
+  <player> ha disattivato le richieste di teletrasporto.
+toggle-on
+  Teleport requests <accent>enabled</accent>.
+  Teleport-Anfragen <accent>aktiviert</accent>.
+  Demandes de téléportation <accent>activées</accent>.
+  Teleportverzoeken <accent>ingeschakeld</accent>.
+  Richieste di teletrasporto <accent>attivate</accent>.
+toggle-off
+  Teleport requests <accent>disabled</accent>.
+  Teleport-Anfragen <accent>deaktiviert</accent>.
+  Demandes de téléportation <accent>désactivées</accent>.
+  Teleportverzoeken <accent>uitgeschakeld</accent>.
+  Richieste di teletrasporto <accent>disattivate</accent>.
+ignore-on
+  You now ignore requests of <accent><player></accent>.
+  Du ignorierst jetzt Anfragen von <accent><player></accent>.
+  Tu ignores désormais les demandes de <accent><player></accent>.
+  Je negeert nu verzoeken van <accent><player></accent>.
+  Ora ignori le richieste di <accent><player></accent>.
+ignore-off
+  You no longer ignore <accent><player></accent>.
+  Du ignorierst <accent><player></accent> nicht mehr.
+  Tu n'ignores plus <accent><player></accent>.
+  Je negeert <accent><player></accent> niet meer.
+  Non ignori più <accent><player></accent>.
+teleported-to
+  Teleported to <accent><player></accent>.
+  Zu <accent><player></accent> teleportiert.
+  Téléporté vers <accent><player></accent>.
+  Geteleporteerd naar <accent><player></accent>.
+  Teletrasportato da <accent><player></accent>.
+back-teleport
+  Back at your last location.
+  Zurück an deinem letzten Ort.
+  De retour à ta dernière position.
+  Terug op je vorige locatie.
+  Di nuovo nella tua ultima posizione.
+back-none
+  There is no location to return to.
+  Es gibt keinen Ort, zu dem du zurückkehren kannst.
+  Il n'y a aucune position où retourner.
+  Er is geen locatie om naar terug te keren.
+  Non c'è nessuna posizione a cui tornare.
+rtp-searching
+  Searching a safe location…
+  Suche einen sicheren Ort…
+  Recherche d'un endroit sûr…
+  Veilige locatie zoeken…
+  Ricerca di un luogo sicuro…
+rtp-teleport
+  Teleported to <accent><x></accent>, <accent><z></accent>.
+  Teleportiert zu <accent><x></accent>, <accent><z></accent>.
+  Téléporté en <accent><x></accent>, <accent><z></accent>.
+  Geteleporteerd naar <accent><x></accent>, <accent><z></accent>.
+  Teletrasportato a <accent><x></accent>, <accent><z></accent>.
+rtp-failed
+  No safe location found. Please try again.
+  Kein sicherer Ort gefunden. Bitte versuche es erneut.
+  Aucun endroit sûr trouvé. Réessaie.
+  Geen veilige locatie gevonden. Probeer het opnieuw.
+  Nessun luogo sicuro trovato. Riprova.
+rtp-world-disabled
+  Random teleport is not available in this world.
+  Der Random-Teleport ist in dieser Welt nicht verfügbar.
+  La téléportation aléatoire n'est pas disponible dans ce monde.
+  Willekeurige teleportatie is niet beschikbaar in deze wereld.
+  Il teletrasporto casuale non è disponibile in questo mondo.
+staff-teleported
+  <accent><player></accent> teleported to <accent><target></accent>.
+  <accent><player></accent> zu <accent><target></accent> teleportiert.
+  <accent><player></accent> téléporté vers <accent><target></accent>.
+  <accent><player></accent> geteleporteerd naar <accent><target></accent>.
+  <accent><player></accent> teletrasportato da <accent><target></accent>.
+tpall-done
+  Teleported <accent><count></accent> players to you.
+  <accent><count></accent> Spieler zu dir teleportiert.
+  <accent><count></accent> joueurs téléportés vers toi.
+  <accent><count></accent> spelers naar jou geteleporteerd.
+  <accent><count></accent> giocatori teletrasportati da te.
+help-tpa
+  Ask to teleport to a player
+  Teleport zu einem Spieler anfragen
+  Demander à se téléporter vers un joueur
+  Vragen om naar een speler te teleporteren
+  Chiedi di teletrasportarti da un giocatore
+help-tpahere
+  Ask a player to come to you
+  Einen Spieler zu dir bitten
+  Demander à un joueur de venir vers toi
+  Een speler vragen naar jou te komen
+  Chiedi a un giocatore di venire da te
+help-tpaccept
+  Accept a request
+  Anfrage annehmen
+  Accepter une demande
+  Verzoek accepteren
+  Accetta una richiesta
+help-tpdeny
+  Deny a request
+  Anfrage ablehnen
+  Refuser une demande
+  Verzoek weigeren
+  Rifiuta una richiesta
+help-back
+  Return to your last location
+  Zum letzten Ort zurückkehren
+  Retourner à ta dernière position
+  Terug naar je vorige locatie
+  Torna alla tua ultima posizione
+help-rtp
+  Teleport to a random location
+  An einen zufälligen Ort teleportieren
+  Se téléporter à un endroit aléatoire
+  Naar een willekeurige locatie teleporteren
+  Teletrasportati in un luogo casuale
+help-tptoggle
+  Turn incoming requests on or off
+  Eingehende Anfragen an- oder ausschalten
+  Activer ou désactiver les demandes reçues
+  Inkomende verzoeken aan- of uitzetten
+  Attiva o disattiva le richieste in arrivo
+help-tpignore
+  Ignore the requests of one player
+  Anfragen eines Spielers ignorieren
+  Ignorer les demandes d'un joueur
+  Verzoeken van één speler negeren
+  Ignora le richieste di un giocatore
+help-tp
+  Teleport to a player, or one player to another
+  Zu einem Spieler teleportieren oder einen Spieler zu einem anderen
+  Se téléporter vers un joueur, ou un joueur vers un autre
+  Naar een speler teleporteren, of een speler naar een andere
+  Teletrasportati da un giocatore, o un giocatore da un altro
+help-tphere
+  Teleport a player to you
+  Einen Spieler zu dir teleportieren
+  Téléporter un joueur vers toi
+  Een speler naar jou teleporteren
+  Teletrasporta un giocatore da te
+help-tpall
+  Teleport everyone to you
+  Alle Spieler zu dir teleportieren
+  Téléporter tout le monde vers toi
+  Iedereen naar jou teleporteren
+  Teletrasporta tutti da te
+help-ultrateleports
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua

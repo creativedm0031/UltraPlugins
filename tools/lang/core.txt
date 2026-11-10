@@ -1,0 +1,127 @@
+# Shared by every Ultra plugin. Order: en, de, fr, nl, it
+no-permission
+  You don't have permission to do that.
+  Dazu hast du keine Berechtigung.
+  Tu n'as pas la permission de faire cela.
+  Je hebt hier geen toestemming voor.
+  Non hai il permesso per farlo.
+player-only
+  Only players can use this command.
+  Diesen Befehl können nur Spieler nutzen.
+  Seuls les joueurs peuvent utiliser cette commande.
+  Alleen spelers kunnen dit commando gebruiken.
+  Solo i giocatori possono usare questo comando.
+player-not-found
+  Player <player> is not online.
+  Spieler <player> ist nicht online.
+  Le joueur <player> n'est pas en ligne.
+  Speler <player> is niet online.
+  Il giocatore <player> non è online.
+usage
+  Usage: <usage>
+  Verwendung: <usage>
+  Utilisation : <usage>
+  Gebruik: <usage>
+  Uso: <usage>
+invalid-number
+  <value> is not a valid number.
+  <value> ist keine gültige Zahl.
+  <value> n'est pas un nombre valide.
+  <value> is geen geldig getal.
+  <value> non è un numero valido.
+reloaded
+  Configuration reloaded.
+  Konfiguration neu geladen.
+  Configuration rechargée.
+  Configuratie herladen.
+  Configurazione ricaricata.
+version
+  Running version <accent><version></accent>.
+  Installiert ist Version <accent><version></accent>.
+  Version installée : <accent><version></accent>.
+  Geïnstalleerde versie: <accent><version></accent>.
+  Versione installata: <accent><version></accent>.
+language-current
+  Default language: <accent><language></accent>
+  Standardsprache: <accent><language></accent>
+  Langue par défaut : <accent><language></accent>
+  Standaardtaal: <accent><language></accent>
+  Lingua predefinita: <accent><language></accent>
+language-set
+  Default language set to <accent><language></accent>.
+  Standardsprache auf <accent><language></accent> gesetzt.
+  Langue par défaut définie sur <accent><language></accent>.
+  Standaardtaal ingesteld op <accent><language></accent>.
+  Lingua predefinita impostata su <accent><language></accent>.
+language-unknown
+  Unknown language. Available: <languages>
+  Unbekannte Sprache. Verfügbar: <languages>
+  Langue inconnue. Disponibles : <languages>
+  Onbekende taal. Beschikbaar: <languages>
+  Lingua sconosciuta. Disponibili: <languages>
+teleport-warmup
+  Teleporting in <accent><time></accent> – don't move!
+  Teleport in <accent><time></accent> – nicht bewegen!
+  Téléportation dans <accent><time></accent> – ne bouge pas !
+  Teleportatie over <accent><time></accent> – niet bewegen!
+  Teletrasporto tra <accent><time></accent> – non muoverti!
+teleport-cancelled
+  Teleport cancelled because you moved or took damage.
+  Teleport abgebrochen, weil du dich bewegt oder Schaden genommen hast.
+  Téléportation annulée : tu as bougé ou subi des dégâts.
+  Teleportatie geannuleerd omdat je bewoog of schade kreeg.
+  Teletrasporto annullato: ti sei mosso o hai subito danni.
+cooldown
+  Please wait another <time>.
+  Bitte warte noch <time>.
+  Patiente encore <time>.
+  Wacht nog <time>.
+  Attendi ancora <time>.
+not-enough-money
+  You need <amount> for that.
+  Dafür brauchst du <amount>.
+  Il te faut <amount> pour cela.
+  Daarvoor heb je <amount> nodig.
+  Per questo ti servono <amount>.
+world-missing
+  The target world is not loaded.
+  Die Zielwelt ist nicht geladen.
+  Le monde de destination n'est pas chargé.
+  De doelwereld is niet geladen.
+  Il mondo di destinazione non è caricato.
+gui-previous
+  <brand>Previous page</brand>
+  <brand>Vorherige Seite</brand>
+  <brand>Page précédente</brand>
+  <brand>Vorige pagina</brand>
+  <brand>Pagina precedente</brand>
+gui-next
+  <brand>Next page</brand>
+  <brand>Nächste Seite</brand>
+  <brand>Page suivante</brand>
+  <brand>Volgende pagina</brand>
+  <brand>Pagina successiva</brand>
+gui-back
+  <brand>Back</brand>
+  <brand>Zurück</brand>
+  <brand>Retour</brand>
+  <brand>Terug</brand>
+  <brand>Indietro</brand>
+gui-close
+  <error>Close</error>
+  <error>Schließen</error>
+  <error>Fermer</error>
+  <error>Sluiten</error>
+  <error>Chiudi</error>
+gui-confirm
+  <green>Confirm</green>
+  <green>Bestätigen</green>
+  <green>Confirmer</green>
+  <green>Bevestigen</green>
+  <green>Conferma</green>
+gui-cancel
+  <error>Cancel</error>
+  <error>Abbrechen</error>
+  <error>Annuler</error>
+  <error>Annuleren</error>
+  <error>Annulla</error>
