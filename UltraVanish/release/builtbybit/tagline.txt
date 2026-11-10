@@ -1,1 +1,0 @@
-True invisibility for staff: tab list, player count, silent chests and vanish levels. 5 languages.

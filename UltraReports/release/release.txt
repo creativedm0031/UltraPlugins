@@ -1,0 +1,174 @@
+Titel:
+UltraReports [1.20.4+ - 26.3] ✦ Report GUI, Staff Inbox & Discord
+
+Versionstring:
+1.0.0
+
+Beschreibung (BBCode – SpigotMC, BuiltByBit):
+[CENTER][IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraReports/release/images/banner.png[/IMG]
+
+[SIZE=6][B]✦ UltraReports [1.20.4+] ✦[/B][/SIZE]
+[SIZE=5][I]Einfach. Schnell. Organisiert.[/I][/SIZE]
+──────── ✦ ────────[/CENTER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]English Version[/B][/SIZE]
+Give your players a simple way to report rule breakers and your team a real workflow. UltraReports collects reports through a reason GUI, sorts them in a staff inbox and lets staff claim, handle and close them – with Discord notifications and a direct link to UltraPunish.
+
+[B]⭐ Features at a glance:[/B]
+[LIST]
+[*]📝 [B]Simple Reporting:[/B] /report opens a GUI with your reasons – or players type their own reason.
+[*]📥 [B]Staff Inbox:[/B] Open, in progress and closed reports with all details at a glance.
+[*]🙋 [B]Claim Workflow:[/B] Claim a report and get teleported to the reported player.
+[*]🔨 [B]UltraPunish Link:[/B] One click opens the punish GUI for the reported player.
+[*]🔔 [B]Notifications:[/B] Clickable alerts for staff, a thank-you for the reporter when closed.
+[*]💬 [B]Discord Webhook:[/B] New reports are posted to your Discord channel.
+[*]✨ [B]Clean Layout:[/B] Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+[*]🚀 [B]Lightweight:[/B] No required dependencies; runs on Spigot, Paper and Purpur.
+[/LIST]
+
+[B]🌍 Languages:[/B] English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrareports language <code>.
+[B]📦 Requirements:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies · UltraPunish (optional, punish from a report)
+
+[SPOILER=Commands & Permissions (EN)]
+[LIST]
+[*][B]/report <player> [reason][/B] – Report a player to the staff · [I]ultrareports.report[/I] (default: everyone)
+[*][B]/reports [id][/B] – Open the staff inbox · [I]ultrareports.staff[/I] (default: OP)
+[*][B]/ultrareports <help|reload|version|language>[/B] – Help, reload, version and language · [I]ultrareports.admin[/I] (default: OP)
+[/LIST]
+[B]More permissions:[/B]
+[LIST]
+[*][I]ultrareports.notify[/I] – Receive staff notifications (default: OP)
+[*][I]ultrareports.exempt[/I] – Cannot be punished / reported (default: nobody)
+[*][I]ultrareports.bypass.cooldown[/I] – Skip cooldowns (default: OP)
+[*][I]ultrareports.*[/I] – All permissions of the plugin (default: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=View Full Configuration (EN)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrareports language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds between two reports of one player.
+cooldown: 60
+
+# Claiming a report teleports the staff member to the reported player.
+teleport-on-claim: true
+
+# Reasons offered when /report is used without a reason.
+reasons:
+  cheating: {name: "Cheating", icon: DIAMOND_SWORD}
+  griefing: {name: "Griefing", icon: TNT}
+  chat: {name: "Chat behaviour", icon: WRITABLE_BOOK}
+  bug-abuse: {name: "Bug abuse", icon: SPIDER_EYE}
+  other: {name: "Other", icon: PAPER}
+
+# Discord webhook URL for new reports. Empty = off.
+discord-webhook: ""
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]Deutsche Version[/B][/SIZE]
+Gib deinen Spielern eine einfache Möglichkeit, Regelbrecher zu melden, und deinem Team einen echten Ablauf. UltraReports sammelt Meldungen über ein Grund-GUI, sortiert sie in einem Team-Posteingang und lässt das Team sie übernehmen, bearbeiten und abschließen – mit Discord-Benachrichtigung und direkter Verbindung zu UltraPunish.
+
+[B]⚙️ Deine Vorteile:[/B]
+[LIST]
+[*]📝 [B]Einfach melden:[/B] /report öffnet ein GUI mit deinen Gründen – oder Spieler schreiben einen eigenen Grund.
+[*]📥 [B]Team-Posteingang:[/B] Offene, laufende und erledigte Reports mit allen Details auf einen Blick.
+[*]🙋 [B]Übernehmen:[/B] Report übernehmen und direkt zum gemeldeten Spieler teleportieren.
+[*]🔨 [B]UltraPunish-Anbindung:[/B] Ein Klick öffnet das Punish-GUI für den gemeldeten Spieler.
+[*]🔔 [B]Benachrichtigungen:[/B] Klickbare Meldungen fürs Team, ein Dankeschön an den Melder beim Abschluss.
+[*]💬 [B]Discord-Webhook:[/B] Neue Reports landen in deinem Discord-Kanal.
+[*]✨ [B]Sauberes Layout:[/B] Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+[*]🚀 [B]Leichtgewichtig:[/B] Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+[/LIST]
+
+[B]🌍 Sprachen:[/B] English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrareports language <code>.
+[B]📦 Voraussetzungen:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten · UltraPunish (optional, aus dem Report bestrafen)
+
+[SPOILER=Befehle & Rechte (DE)]
+[LIST]
+[*][B]/report <player> [reason][/B] – Einen Spieler beim Team melden · [I]ultrareports.report[/I] (Standard: alle)
+[*][B]/reports [id][/B] – Den Team-Posteingang öffnen · [I]ultrareports.staff[/I] (Standard: OP)
+[*][B]/ultrareports <help|reload|version|language>[/B] – Hilfe, Reload, Version und Sprache · [I]ultrareports.admin[/I] (Standard: OP)
+[/LIST]
+[B]Weitere Rechte:[/B]
+[LIST]
+[*][I]ultrareports.notify[/I] – Erhält Team-Benachrichtigungen (Standard: OP)
+[*][I]ultrareports.exempt[/I] – Kann nicht bestraft / gemeldet werden (Standard: niemand)
+[*][I]ultrareports.bypass.cooldown[/I] – Keine Cooldowns (Standard: OP)
+[*][I]ultrareports.*[/I] – Alle Rechte des Plugins (Standard: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=Vollständige Konfiguration anzeigen (DE)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrareports language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds between two reports of one player.
+cooldown: 60
+
+# Claiming a report teleports the staff member to the reported player.
+teleport-on-claim: true
+
+# Reasons offered when /report is used without a reason.
+reasons:
+  cheating: {name: "Cheating", icon: DIAMOND_SWORD}
+  griefing: {name: "Griefing", icon: TNT}
+  chat: {name: "Chat behaviour", icon: WRITABLE_BOOK}
+  bug-abuse: {name: "Bug abuse", icon: SPIDER_EYE}
+  other: {name: "Other", icon: PAPER}
+
+# Discord webhook URL for new reports. Empty = off.
+discord-webhook: ""
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+
+[CENTER][B]Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin![/B][/CENTER]

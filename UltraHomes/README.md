@@ -77,7 +77,7 @@ Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `
 | `assets/logo.svg` · `logo.png` | Logo (512 × 512, Resource-Icon auf SpigotMC) |
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
-| `release/` | Upload-Material für SpigotMC, BuiltByBit, Modrinth und Hangar (Titel, Tagline, Beschreibungen, Icons, Banner, Beispielbilder, Checkliste) |
+| `release/` | Release: `release.txt` (Titel, Versionstring, Beschreibung), Jar, Changelog, Bilder |
 | `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie

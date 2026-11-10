@@ -1,0 +1,248 @@
+Titel:
+UltraPunish [1.20.4+ - 26.3] ✦ Bans, Mutes & Punish GUI with History
+
+Versionstring:
+1.0.0
+
+Beschreibung (BBCode – SpigotMC, BuiltByBit):
+[CENTER][IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraPunish/release/images/banner.png[/IMG]
+
+[SIZE=6][B]✦ UltraPunish [1.20.4+] ✦[/B][/SIZE]
+[SIZE=5][I]Fair. Schnell. Nachvollziehbar.[/I][/SIZE]
+──────── ✦ ────────[/CENTER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]English Version[/B][/SIZE]
+Moderation without the chaos. UltraPunish covers bans, mutes, kicks and warnings – by command or through a GUI with reason templates that escalate automatically. Every punishment is stored in a clear history, and staff are informed in their own language.
+
+[B]⭐ Features at a glance:[/B]
+[LIST]
+[*]🔨 [B]All Punishments:[/B] Ban, temp-ban, IP ban, mute, temp-mute, kick and warn with durations like 30m, 7d or 1d12h.
+[*]📋 [B]Punish GUI & Templates:[/B] Click a reason – each repeat escalates automatically (e.g. Spam: 30m → 2h → 1d).
+[*]⚠️ [B]Warning Actions:[/B] Run commands automatically when a player reaches a number of warnings.
+[*]📜 [B]Full History:[/B] Every punishment with reason, staff member, date, duration and status in a GUI.
+[*]🕵️ [B]Alt Detection:[/B] Staff are alerted when someone joins from the IP of a banned account.
+[*]🛡️ [B]Exempt & Notify:[/B] Protect staff with ultrapunish.exempt; notifications reach everyone with ultrapunish.notify.
+[*]✨ [B]Clean Layout:[/B] Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+[*]🚀 [B]Lightweight:[/B] No required dependencies; runs on Spigot, Paper and Purpur.
+[/LIST]
+
+[B]🌍 Languages:[/B] English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrapunish language <code>.
+[B]📦 Requirements:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies
+
+[SPOILER=Commands & Permissions (EN)]
+[LIST]
+[*][B]/punish <player>[/B] – Open the punish GUI for a player · [I]ultrapunish.gui[/I] (default: OP)
+[*][B]/ban <player> [reason][/B] – Ban a player permanently · [I]ultrapunish.ban[/I] (default: OP)
+[*][B]/tempban <player> <duration> [reason][/B] – Ban a player for a time · [I]ultrapunish.ban[/I] (default: OP)
+[*][B]/banip <player> [reason][/B] – Ban a player and their address · [I]ultrapunish.ban[/I] (default: OP)
+[*][B]/mute <player> [reason][/B] – Mute a player permanently · [I]ultrapunish.mute[/I] (default: OP)
+[*][B]/tempmute <player> <duration> [reason][/B] – Mute a player for a time · [I]ultrapunish.mute[/I] (default: OP)
+[*][B]/kick <player> [reason][/B] – Kick a player · [I]ultrapunish.kick[/I] (default: OP)
+[*][B]/warn <player> [reason][/B] – Warn a player · [I]ultrapunish.warn[/I] (default: OP)
+[*][B]/unban <player>[/B] – Lift a ban · [I]ultrapunish.revoke[/I] (default: OP)
+[*][B]/unmute <player>[/B] – Lift a mute · [I]ultrapunish.revoke[/I] (default: OP)
+[*][B]/history <player>[/B] – Show the history of a player · [I]ultrapunish.history[/I] (default: OP)
+[*][B]/ultrapunish <help|reload|version|language>[/B] – Help, reload, version and language · [I]ultrapunish.admin[/I] (default: OP)
+[/LIST]
+[B]More permissions:[/B]
+[LIST]
+[*][I]ultrapunish.notify[/I] – Receive staff notifications (default: OP)
+[*][I]ultrapunish.exempt[/I] – Cannot be punished / reported (default: OP)
+[*][I]ultrapunish.*[/I] – All permissions of the plugin (default: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=View Full Configuration (EN)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrapunish language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Commands a muted player cannot use.
+muted-commands: [msg, tell, w, r, me, say]
+
+# Tell staff when someone joins from the same address as a banned account.
+alt-detection: true
+
+# Console commands that run when a player reaches this number of warnings. %player% = name.
+warn-actions:
+  3: "tempban %player% 1d Too many warnings"
+  5: "ban %player% Too many warnings"
+
+# Buttons of the /punish GUI.
+# type: BAN, MUTE, KICK or WARN
+# durations: each repeat of the same reason moves one step further; the last step is kept.
+#            Use "permanent" for no end. Not used for KICK and WARN.
+templates:
+  spam:
+    icon: PAPER
+    type: MUTE
+    reason: "Spam"
+    durations: [30m, 2h, 1d]
+  insult:
+    icon: WRITABLE_BOOK
+    type: MUTE
+    reason: "Insulting"
+    durations: [1h, 1d, 7d]
+  advertising:
+    icon: OAK_SIGN
+    type: MUTE
+    reason: "Advertising"
+    durations: [1d, 7d, permanent]
+  behaviour:
+    icon: YELLOW_DYE
+    type: WARN
+    reason: "Behaviour"
+  griefing:
+    icon: TNT
+    type: BAN
+    reason: "Griefing"
+    durations: [3d, 14d, permanent]
+  cheating:
+    icon: DIAMOND_SWORD
+    type: BAN
+    reason: "Cheating"
+    durations: [7d, 30d, permanent]
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]Deutsche Version[/B][/SIZE]
+Moderation ohne Chaos. UltraPunish deckt Bans, Mutes, Kicks und Verwarnungen ab – per Befehl oder über ein GUI mit Grund-Vorlagen, die automatisch eskalieren. Jede Strafe landet in einer übersichtlichen Historie, und das Team wird in seiner eigenen Sprache informiert.
+
+[B]⚙️ Deine Vorteile:[/B]
+[LIST]
+[*]🔨 [B]Alle Strafen:[/B] Ban, Tempban, IP-Ban, Mute, Tempmute, Kick und Warn mit Dauern wie 30m, 7d oder 1d12h.
+[*]📋 [B]Punish-GUI & Vorlagen:[/B] Grund anklicken – jede Wiederholung eskaliert automatisch (z. B. Spam: 30m → 2h → 1d).
+[*]⚠️ [B]Verwarnungs-Aktionen:[/B] Befehle laufen automatisch, sobald ein Spieler eine bestimmte Anzahl Verwarnungen erreicht.
+[*]📜 [B]Komplette Historie:[/B] Jede Strafe mit Grund, Teammitglied, Datum, Dauer und Status in einem GUI.
+[*]🕵️ [B]Alt-Erkennung:[/B] Das Team wird gewarnt, wenn jemand von der IP eines gebannten Accounts joint.
+[*]🛡️ [B]Schutz & Meldungen:[/B] Team mit ultrapunish.exempt schützen; Meldungen erreichen alle mit ultrapunish.notify.
+[*]✨ [B]Sauberes Layout:[/B] Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+[*]🚀 [B]Leichtgewichtig:[/B] Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+[/LIST]
+
+[B]🌍 Sprachen:[/B] English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrapunish language <code>.
+[B]📦 Voraussetzungen:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten
+
+[SPOILER=Befehle & Rechte (DE)]
+[LIST]
+[*][B]/punish <player>[/B] – Punish-GUI für einen Spieler öffnen · [I]ultrapunish.gui[/I] (Standard: OP)
+[*][B]/ban <player> [reason][/B] – Einen Spieler dauerhaft bannen · [I]ultrapunish.ban[/I] (Standard: OP)
+[*][B]/tempban <player> <duration> [reason][/B] – Einen Spieler auf Zeit bannen · [I]ultrapunish.ban[/I] (Standard: OP)
+[*][B]/banip <player> [reason][/B] – Einen Spieler samt Adresse bannen · [I]ultrapunish.ban[/I] (Standard: OP)
+[*][B]/mute <player> [reason][/B] – Einen Spieler dauerhaft muten · [I]ultrapunish.mute[/I] (Standard: OP)
+[*][B]/tempmute <player> <duration> [reason][/B] – Einen Spieler auf Zeit muten · [I]ultrapunish.mute[/I] (Standard: OP)
+[*][B]/kick <player> [reason][/B] – Einen Spieler kicken · [I]ultrapunish.kick[/I] (Standard: OP)
+[*][B]/warn <player> [reason][/B] – Einen Spieler verwarnen · [I]ultrapunish.warn[/I] (Standard: OP)
+[*][B]/unban <player>[/B] – Einen Bann aufheben · [I]ultrapunish.revoke[/I] (Standard: OP)
+[*][B]/unmute <player>[/B] – Einen Mute aufheben · [I]ultrapunish.revoke[/I] (Standard: OP)
+[*][B]/history <player>[/B] – Historie eines Spielers anzeigen · [I]ultrapunish.history[/I] (Standard: OP)
+[*][B]/ultrapunish <help|reload|version|language>[/B] – Hilfe, Reload, Version und Sprache · [I]ultrapunish.admin[/I] (Standard: OP)
+[/LIST]
+[B]Weitere Rechte:[/B]
+[LIST]
+[*][I]ultrapunish.notify[/I] – Erhält Team-Benachrichtigungen (Standard: OP)
+[*][I]ultrapunish.exempt[/I] – Kann nicht bestraft / gemeldet werden (Standard: OP)
+[*][I]ultrapunish.*[/I] – Alle Rechte des Plugins (Standard: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=Vollständige Konfiguration anzeigen (DE)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrapunish language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Commands a muted player cannot use.
+muted-commands: [msg, tell, w, r, me, say]
+
+# Tell staff when someone joins from the same address as a banned account.
+alt-detection: true
+
+# Console commands that run when a player reaches this number of warnings. %player% = name.
+warn-actions:
+  3: "tempban %player% 1d Too many warnings"
+  5: "ban %player% Too many warnings"
+
+# Buttons of the /punish GUI.
+# type: BAN, MUTE, KICK or WARN
+# durations: each repeat of the same reason moves one step further; the last step is kept.
+#            Use "permanent" for no end. Not used for KICK and WARN.
+templates:
+  spam:
+    icon: PAPER
+    type: MUTE
+    reason: "Spam"
+    durations: [30m, 2h, 1d]
+  insult:
+    icon: WRITABLE_BOOK
+    type: MUTE
+    reason: "Insulting"
+    durations: [1h, 1d, 7d]
+  advertising:
+    icon: OAK_SIGN
+    type: MUTE
+    reason: "Advertising"
+    durations: [1d, 7d, permanent]
+  behaviour:
+    icon: YELLOW_DYE
+    type: WARN
+    reason: "Behaviour"
+  griefing:
+    icon: TNT
+    type: BAN
+    reason: "Griefing"
+    durations: [3d, 14d, permanent]
+  cheating:
+    icon: DIAMOND_SWORD
+    type: BAN
+    reason: "Cheating"
+    durations: [7d, 30d, permanent]
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+
+[CENTER][B]Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin![/B][/CENTER]

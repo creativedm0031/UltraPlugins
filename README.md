@@ -69,8 +69,9 @@ python3 tools/generate.py && node tools/render.js
 
 ## Veröffentlichen
 
-Titel und Taglines aller Plugins stehen in [RELEASE.md](RELEASE.md). Pro Plugin liegt in
-`Ultra<Name>/release/` alles für SpigotMC, BuiltByBit, Modrinth und Hangar, inklusive Checkliste.
+Pro Plugin liegt in `Ultra<Name>/release/` die Datei `release.txt` mit Titel, Versionstring und
+Beschreibung (BBCode für SpigotMC und BuiltByBit), `release-markdown.txt` mit demselben Inhalt in
+Markdown (Modrinth und Hangar), die Jar und die Bilder. Übersicht: [RELEASE.md](RELEASE.md).
 
 Die Bilder in den Beschreibungen verweisen auf `raw.githubusercontent.com/.../main/...`. Sie werden
 erst angezeigt, wenn dieses Repository öffentlich ist und die Dateien auf `main` liegen. Sonst die

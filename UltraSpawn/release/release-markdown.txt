@@ -1,0 +1,198 @@
+Titel:
+UltraSpawn [1.20.4+ - 26.3] ✦ Multi-Spawn, First Join & Void Rescue
+
+Versionstring:
+1.0.0
+
+Beschreibung (Markdown – Modrinth, Hangar):
+![UltraSpawn](https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraSpawn/release/images/banner.png)
+
+# ✦ UltraSpawn [1.20.4+] ✦
+
+*Einfach. Sicher. Übersichtlich.*
+
+──────── ✦ ────────
+
+---
+
+## English Version
+
+Give your server a spawn system that just works. UltraSpawn manages one or many spawn points, sends new players to their own first-join spawn and catches everyone who falls into the void. Every message appears cleanly in the action bar – in the language of each player.
+
+### ⭐ Features at a glance:
+
+- 📍 **Multiple Spawns:** Main spawn plus as many named spawns as you like, each with exact position and view direction.
+- 👋 **First-Join Spawn:** New players start at their own spawn – perfect for a tutorial or rules area.
+- 👑 **Rank & World Spawns:** VIP spawn via permission (ultraspawn.group.<name>) and optional spawns per world.
+- 🔄 **Join & Respawn:** Teleport on join and on respawn, each toggleable – beds and respawn anchors can be respected.
+- 🕳️ **Void Rescue:** Players falling out of the world are caught and placed back at spawn instead of dying.
+- ⏱️ **Warm-up & Cooldown:** Countdown in the action bar, cancelled on movement or damage; bypass permissions for staff.
+- ✨ **Clean Layout:** Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+- 🚀 **Lightweight:** No required dependencies; runs on Spigot, Paper and Purpur.
+
+**🌍 Languages:** English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultraspawn language <code>.
+
+**📦 Requirements:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies
+
+<details><summary>Commands & Permissions (EN)</summary>
+
+- `/spawn [player]` – Teleport to spawn · `ultraspawn.spawn` (default: everyone)
+- `/setspawn [name]` – Set a spawn point (default, firstjoin, a world or a rank) · `ultraspawn.set` (default: OP)
+- `/delspawn <name>` – Delete a spawn point · `ultraspawn.delete` (default: OP)
+- `/ultraspawn <help|reload|version|language>` – Help, reload, version and language · `ultraspawn.admin` (default: OP)
+
+**More permissions:**
+
+- `ultraspawn.spawn.others` – Send other players to spawn (default: OP)
+- `ultraspawn.bypass.warmup` – Skip the teleport warm-up (default: OP)
+- `ultraspawn.bypass.cooldown` – Skip cooldowns (default: OP)
+- `ultraspawn.*` – All permissions of the plugin (default: OP)
+- `ultraspawn.group.<name>` – Spawn at the spawn <name> (e.g. a VIP spawn)
+
+</details>
+
+<details><summary>View Full Configuration (EN)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraspawn language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before /spawn teleports. 0 = instant.
+warmup: 3
+# Seconds between two uses of /spawn. 0 = none.
+cooldown: 0
+
+teleport-on-join: false
+teleport-on-respawn: true
+# true: players with a bed or respawn anchor respawn there instead.
+respect-bed-spawn: true
+
+# true: a spawn named like a world (e.g. /setspawn world_nether) is used inside that world.
+per-world-spawns: false
+
+# Players falling out of the world are sent back to spawn instead of dying.
+void-rescue:
+  enabled: true
+  # Blocks below the bottom of the world.
+  depth: 5
+  # Empty = all worlds.
+  worlds: []
+```
+
+</details>
+
+---
+
+## Deutsche Version
+
+Gib deinem Server ein Spawn-System, das einfach funktioniert. UltraSpawn verwaltet einen oder mehrere Spawnpunkte, schickt neue Spieler an ihren eigenen First-Join-Spawn und fängt jeden auf, der ins Void fällt. Alle Meldungen erscheinen sauber in der Actionbar – in der Sprache jedes Spielers.
+
+### ⚙️ Deine Vorteile:
+
+- 📍 **Mehrere Spawns:** Hauptspawn plus beliebig viele benannte Spawns, jeweils mit exakter Position und Blickrichtung.
+- 👋 **First-Join-Spawn:** Neue Spieler starten an einem eigenen Spawn – ideal für Tutorial oder Regelbereich.
+- 👑 **Rang- & Welt-Spawns:** VIP-Spawn per Permission (ultraspawn.group.<name>) und optional eigene Spawns pro Welt.
+- 🔄 **Join & Respawn:** Teleport beim Betreten und beim Respawn, einzeln schaltbar – Betten und Seelenanker werden auf Wunsch beachtet.
+- 🕳️ **Void-Rettung:** Wer aus der Welt fällt, wird aufgefangen und zurück zum Spawn gesetzt, statt zu sterben.
+- ⏱️ **Warmup & Cooldown:** Countdown in der Actionbar, Abbruch bei Bewegung oder Schaden; Bypass-Permissions fürs Team.
+- ✨ **Sauberes Layout:** Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+- 🚀 **Leichtgewichtig:** Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+
+**🌍 Sprachen:** English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultraspawn language <code>.
+
+**📦 Voraussetzungen:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten
+
+<details><summary>Befehle & Rechte (DE)</summary>
+
+- `/spawn [player]` – Zum Spawn teleportieren · `ultraspawn.spawn` (Standard: alle)
+- `/setspawn [name]` – Spawnpunkt setzen (default, firstjoin, eine Welt oder ein Rang) · `ultraspawn.set` (Standard: OP)
+- `/delspawn <name>` – Spawnpunkt löschen · `ultraspawn.delete` (Standard: OP)
+- `/ultraspawn <help|reload|version|language>` – Hilfe, Reload, Version und Sprache · `ultraspawn.admin` (Standard: OP)
+
+**Weitere Rechte:**
+
+- `ultraspawn.spawn.others` – Andere Spieler zum Spawn schicken (Standard: OP)
+- `ultraspawn.bypass.warmup` – Kein Teleport-Warmup (Standard: OP)
+- `ultraspawn.bypass.cooldown` – Keine Cooldowns (Standard: OP)
+- `ultraspawn.*` – Alle Rechte des Plugins (Standard: OP)
+- `ultraspawn.group.<name>` – Spawnt am Spawn <name> (z. B. VIP-Spawn)
+
+</details>
+
+<details><summary>Vollständige Konfiguration anzeigen (DE)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraspawn language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before /spawn teleports. 0 = instant.
+warmup: 3
+# Seconds between two uses of /spawn. 0 = none.
+cooldown: 0
+
+teleport-on-join: false
+teleport-on-respawn: true
+# true: players with a bed or respawn anchor respawn there instead.
+respect-bed-spawn: true
+
+# true: a spawn named like a world (e.g. /setspawn world_nether) is used inside that world.
+per-world-spawns: false
+
+# Players falling out of the world are sent back to spawn instead of dying.
+void-rescue:
+  enabled: true
+  # Blocks below the bottom of the world.
+  depth: 5
+  # Empty = all worlds.
+  worlds: []
+```
+
+</details>
+
+---
+
+**Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin!**
