@@ -1,0 +1,156 @@
+balance
+  Balance: <accent><balance></accent>
+  Kontostand: <accent><balance></accent>
+  Solde : <accent><balance></accent>
+  Saldo: <accent><balance></accent>
+  Saldo: <accent><balance></accent>
+balance-other
+  Balance of <accent><player></accent>: <accent><balance></accent>
+  Kontostand von <accent><player></accent>: <accent><balance></accent>
+  Solde de <accent><player></accent> : <accent><balance></accent>
+  Saldo van <accent><player></accent>: <accent><balance></accent>
+  Saldo di <accent><player></accent>: <accent><balance></accent>
+pay-sent
+  You sent <accent><amount></accent> to <accent><player></accent>.
+  Du hast <accent><amount></accent> an <accent><player></accent> gesendet.
+  Tu as envoyé <accent><amount></accent> à <accent><player></accent>.
+  Je hebt <accent><amount></accent> naar <accent><player></accent> gestuurd.
+  Hai inviato <accent><amount></accent> a <accent><player></accent>.
+pay-received
+  <accent>+ <amount></accent> from <accent><player></accent>
+  <accent>+ <amount></accent> von <accent><player></accent>
+  <accent>+ <amount></accent> de <accent><player></accent>
+  <accent>+ <amount></accent> van <accent><player></accent>
+  <accent>+ <amount></accent> da <accent><player></accent>
+pay-confirm
+  Send <accent><amount></accent> to <accent><player></accent>? <green><click:run_command:'/pay confirm'>[Confirm]</click></green> <muted>(30s)
+  <accent><amount></accent> an <accent><player></accent> senden? <green><click:run_command:'/pay confirm'>[Bestätigen]</click></green> <muted>(30s)
+  Envoyer <accent><amount></accent> à <accent><player></accent> ? <green><click:run_command:'/pay confirm'>[Confirmer]</click></green> <muted>(30s)
+  <accent><amount></accent> naar <accent><player></accent> sturen? <green><click:run_command:'/pay confirm'>[Bevestigen]</click></green> <muted>(30s)
+  Inviare <accent><amount></accent> a <accent><player></accent>? <green><click:run_command:'/pay confirm'>[Conferma]</click></green> <muted>(30s)
+eco-give
+  Gave <accent><amount></accent> to <accent><player></accent>. New balance: <accent><balance></accent>
+  <accent><amount></accent> an <accent><player></accent> gegeben. Neuer Kontostand: <accent><balance></accent>
+  <accent><amount></accent> donnés à <accent><player></accent>. Nouveau solde : <accent><balance></accent>
+  <accent><amount></accent> gegeven aan <accent><player></accent>. Nieuw saldo: <accent><balance></accent>
+  Dati <accent><amount></accent> a <accent><player></accent>. Nuovo saldo: <accent><balance></accent>
+eco-take
+  Took <accent><amount></accent> from <accent><player></accent>. New balance: <accent><balance></accent>
+  <accent><amount></accent> von <accent><player></accent> abgezogen. Neuer Kontostand: <accent><balance></accent>
+  <accent><amount></accent> retirés à <accent><player></accent>. Nouveau solde : <accent><balance></accent>
+  <accent><amount></accent> afgenomen van <accent><player></accent>. Nieuw saldo: <accent><balance></accent>
+  Tolti <accent><amount></accent> a <accent><player></accent>. Nuovo saldo: <accent><balance></accent>
+eco-set
+  Balance of <accent><player></accent> set to <accent><balance></accent>.
+  Kontostand von <accent><player></accent> auf <accent><balance></accent> gesetzt.
+  Solde de <accent><player></accent> défini sur <accent><balance></accent>.
+  Saldo van <accent><player></accent> ingesteld op <accent><balance></accent>.
+  Saldo di <accent><player></accent> impostato a <accent><balance></accent>.
+insufficient-funds
+  Insufficient funds – you're missing <amount>.
+  Nicht genug Geld – dir fehlen <amount>.
+  Fonds insuffisants – il te manque <amount>.
+  Onvoldoende saldo – je komt <amount> tekort.
+  Fondi insufficienti – ti mancano <amount>.
+pay-self
+  You can't pay yourself.
+  Du kannst dir nicht selbst Geld senden.
+  Tu ne peux pas te payer toi-même.
+  Je kunt jezelf niet betalen.
+  Non puoi pagare te stesso.
+pay-minimum
+  The smallest amount you can send is <amount>.
+  Der kleinste Betrag, den du senden kannst, ist <amount>.
+  Le montant minimal que tu peux envoyer est <amount>.
+  Het kleinste bedrag dat je kunt sturen is <amount>.
+  L'importo minimo che puoi inviare è <amount>.
+pay-nothing-to-confirm
+  There is no payment to confirm.
+  Es gibt keine Zahlung zu bestätigen.
+  Il n'y a aucun paiement à confirmer.
+  Er is geen betaling om te bevestigen.
+  Non c'è nessun pagamento da confermare.
+player-unknown
+  <player> has no account on this server.
+  <player> hat kein Konto auf diesem Server.
+  <player> n'a pas de compte sur ce serveur.
+  <player> heeft geen rekening op deze server.
+  <player> non ha un conto su questo server.
+currency-unknown
+  Currency <currency> doesn't exist.
+  Die Währung <currency> gibt es nicht.
+  La monnaie <currency> n'existe pas.
+  Valuta <currency> bestaat niet.
+  La valuta <currency> non esiste.
+log-empty
+  No transactions found for <player>.
+  Keine Transaktionen für <player> gefunden.
+  Aucune transaction trouvée pour <player>.
+  Geen transacties gevonden voor <player>.
+  Nessuna transazione trovata per <player>.
+baltop-title
+  Top · <currency>
+  Top · <currency>
+  Top · <currency>
+  Top · <currency>
+  Top · <currency>
+baltop-lore
+  Balance: <white><balance>
+  Kontostand: <white><balance>
+  Solde : <white><balance>
+  Saldo: <white><balance>
+  Saldo: <white><balance>
+currency-button
+  <brand>Currency</brand>
+  <brand>Währung</brand>
+  <brand>Monnaie</brand>
+  <brand>Valuta</brand>
+  <brand>Valuta</brand>
+currency-lore
+  Showing: <white><currency>\n\n<accent>▸</accent> Click to switch
+  Angezeigt: <white><currency>\n\n<accent>▸</accent> Klicken zum Wechseln
+  Affichée : <white><currency>\n\n<accent>▸</accent> Clique pour changer
+  Getoond: <white><currency>\n\n<accent>▸</accent> Klik om te wisselen
+  Mostrata: <white><currency>\n\n<accent>▸</accent> Clicca per cambiare
+log-title
+  Transactions · <player>
+  Transaktionen · <player>
+  Transactions · <player>
+  Transacties · <player>
+  Transazioni · <player>
+log-lore
+  From: <white><from>\nTo: <white><to>\nAmount: <white><amount>\nDate: <white><date>
+  Von: <white><from>\nAn: <white><to>\nBetrag: <white><amount>\nDatum: <white><date>
+  De : <white><from>\nÀ : <white><to>\nMontant : <white><amount>\nDate : <white><date>
+  Van: <white><from>\nNaar: <white><to>\nBedrag: <white><amount>\nDatum: <white><date>
+  Da: <white><from>\nA: <white><to>\nImporto: <white><amount>\nData: <white><date>
+help-balance
+  Show your balance
+  Deinen Kontostand anzeigen
+  Afficher ton solde
+  Je saldo tonen
+  Mostra il tuo saldo
+help-pay
+  Send money to a player
+  Einem Spieler Geld senden
+  Envoyer de l'argent à un joueur
+  Geld naar een speler sturen
+  Invia denaro a un giocatore
+help-baltop
+  Open the leaderboard
+  Die Rangliste öffnen
+  Ouvrir le classement
+  De ranglijst openen
+  Apri la classifica
+help-eco
+  Give, take or set balances
+  Kontostände geben, abziehen oder setzen
+  Donner, retirer ou définir des soldes
+  Saldo's geven, afnemen of instellen
+  Dai, togli o imposta i saldi
+help-ultraeconomy
+  Help, reload, version, language and transaction log
+  Hilfe, Reload, Version, Sprache und Transaktions-Log
+  Aide, rechargement, version, langue et journal des transactions
+  Help, herladen, versie, taal en transactielogboek
+  Aiuto, ricarica, versione, lingua e registro delle transazioni

@@ -1,0 +1,32 @@
+name: UltraChat
+version: '${project.version}'
+main: de.creativedm.ultra.chat.UltraChat
+api-version: '1.20'
+author: creativedm
+description: Formatting, channels & moderation for your chat.
+commands:
+  msg: {usage: "/<command> <player> <message>", description: Send a private message, aliases: [tell, w, whisper, pm]}
+  r: {usage: "/<command> <message>", description: Reply to the last private message, aliases: [reply]}
+  channel: {usage: "/<command> [name]", description: Switch the chat channel, aliases: [ch]}
+  chatclear: {usage: "/<command>", description: Clear the chat, aliases: [cc]}
+  mutechat: {usage: "/<command>", description: Lock or unlock the chat}
+  slowmode: {usage: "/<command> <seconds>", description: Set the slow mode}
+  socialspy: {usage: "/<command>", description: Read private messages}
+  ultrachat: {usage: "/<command> <help|reload|version|language>", description: Administration}
+permissions:
+  ultrachat.msg: {default: true}
+  ultrachat.channel: {default: true}
+  ultrachat.channel.staff: {default: op}
+  ultrachat.color: {default: op}
+  ultrachat.clear: {default: op}
+  ultrachat.mutechat: {default: op}
+  ultrachat.slowmode: {default: op}
+  ultrachat.socialspy: {default: op}
+  ultrachat.bypass.filter: {default: op}
+  ultrachat.bypass.slowmode: {default: op}
+  ultrachat.bypass.mutechat: {default: op}
+  ultrachat.bypass.clear: {default: op}
+  ultrachat.admin: {default: op}
+  ultrachat.*:
+    default: op
+    children: {ultrachat.msg: true, ultrachat.channel: true, ultrachat.channel.staff: true, ultrachat.color: true, ultrachat.clear: true, ultrachat.mutechat: true, ultrachat.slowmode: true, ultrachat.socialspy: true, ultrachat.bypass.filter: true, ultrachat.bypass.slowmode: true, ultrachat.bypass.mutechat: true, ultrachat.bypass.clear: true, ultrachat.admin: true}

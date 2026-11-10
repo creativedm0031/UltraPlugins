@@ -1,0 +1,168 @@
+channel-switched
+  Channel switched to <accent><channel></accent>.
+  Kanal gewechselt zu <accent><channel></accent>.
+  Canal changé pour <accent><channel></accent>.
+  Kanaal gewisseld naar <accent><channel></accent>.
+  Canale cambiato in <accent><channel></accent>.
+channel-current
+  You are writing in <accent><channel></accent>.
+  Du schreibst in <accent><channel></accent>.
+  Tu écris dans <accent><channel></accent>.
+  Je schrijft in <accent><channel></accent>.
+  Stai scrivendo in <accent><channel></accent>.
+chat-cleared
+  Chat cleared by <accent><player></accent>.
+  Chat von <accent><player></accent> geleert.
+  Chat vidé par <accent><player></accent>.
+  Chat geleegd door <accent><player></accent>.
+  Chat svuotata da <accent><player></accent>.
+chat-locked
+  Chat locked by <accent><player></accent>.
+  Chat von <accent><player></accent> gesperrt.
+  Chat verrouillé par <accent><player></accent>.
+  Chat vergrendeld door <accent><player></accent>.
+  Chat bloccata da <accent><player></accent>.
+chat-unlocked
+  Chat unlocked by <accent><player></accent>.
+  Chat von <accent><player></accent> freigegeben.
+  Chat déverrouillé par <accent><player></accent>.
+  Chat ontgrendeld door <accent><player></accent>.
+  Chat sbloccata da <accent><player></accent>.
+slowmode-set
+  Slow mode set to <accent><time></accent>.
+  Slow-Mode auf <accent><time></accent> gesetzt.
+  Mode lent réglé sur <accent><time></accent>.
+  Slow mode ingesteld op <accent><time></accent>.
+  Modalità lenta impostata su <accent><time></accent>.
+slowmode-off
+  Slow mode disabled.
+  Slow-Mode deaktiviert.
+  Mode lent désactivé.
+  Slow mode uitgeschakeld.
+  Modalità lenta disattivata.
+spy-on
+  Social spy <accent>enabled</accent>.
+  SocialSpy <accent>aktiviert</accent>.
+  Social spy <accent>activé</accent>.
+  Social spy <accent>ingeschakeld</accent>.
+  Social spy <accent>attivato</accent>.
+spy-off
+  Social spy <accent>disabled</accent>.
+  SocialSpy <accent>deaktiviert</accent>.
+  Social spy <accent>désactivé</accent>.
+  Social spy <accent>uitgeschakeld</accent>.
+  Social spy <accent>disattivato</accent>.
+mentioned
+  <accent><player></accent> mentioned you.
+  <accent><player></accent> hat dich erwähnt.
+  <accent><player></accent> t'a mentionné.
+  <accent><player></accent> heeft je genoemd.
+  <accent><player></accent> ti ha menzionato.
+pm-out
+  <muted>[<accent>me</accent> → <accent><player></accent>]</muted> <white><message>
+  <muted>[<accent>Ich</accent> → <accent><player></accent>]</muted> <white><message>
+  <muted>[<accent>moi</accent> → <accent><player></accent>]</muted> <white><message>
+  <muted>[<accent>ik</accent> → <accent><player></accent>]</muted> <white><message>
+  <muted>[<accent>io</accent> → <accent><player></accent>]</muted> <white><message>
+pm-in
+  <muted>[<accent><player></accent> → <accent>me</accent>]</muted> <white><message>
+  <muted>[<accent><player></accent> → <accent>mir</accent>]</muted> <white><message>
+  <muted>[<accent><player></accent> → <accent>moi</accent>]</muted> <white><message>
+  <muted>[<accent><player></accent> → <accent>mij</accent>]</muted> <white><message>
+  <muted>[<accent><player></accent> → <accent>me</accent>]</muted> <white><message>
+pm-spy
+  <muted>[Spy] <from> → <to>: <message>
+  <muted>[Spy] <from> → <to>: <message>
+  <muted>[Spy] <from> → <to> : <message>
+  <muted>[Spy] <from> → <to>: <message>
+  <muted>[Spy] <from> → <to>: <message>
+channel-unknown
+  Channel <channel> doesn't exist or you can't join it.
+  Den Kanal <channel> gibt es nicht oder du darfst ihn nicht betreten.
+  Le canal <channel> n'existe pas ou tu ne peux pas le rejoindre.
+  Kanaal <channel> bestaat niet of je mag er niet in.
+  Il canale <channel> non esiste o non puoi entrarci.
+chat-muted
+  The chat is locked at the moment.
+  Der Chat ist gerade gesperrt.
+  Le chat est verrouillé pour le moment.
+  De chat is momenteel vergrendeld.
+  La chat è bloccata al momento.
+slowmode
+  Slow down! You can chat again in <time>.
+  Nicht so schnell! Du kannst in <time> wieder schreiben.
+  Doucement ! Tu pourras écrire de nouveau dans <time>.
+  Rustig aan! Je kunt over <time> weer chatten.
+  Piano! Potrai scrivere di nuovo tra <time>.
+filter-advertising
+  Advertising is not allowed here.
+  Werbung ist hier nicht erlaubt.
+  La publicité n'est pas autorisée ici.
+  Reclame is hier niet toegestaan.
+  La pubblicità non è consentita qui.
+filter-spam
+  Please don't repeat the same message.
+  Bitte wiederhole nicht dieselbe Nachricht.
+  Ne répète pas le même message, s'il te plaît.
+  Herhaal niet hetzelfde bericht.
+  Per favore non ripetere lo stesso messaggio.
+pm-self
+  You can't message yourself.
+  Du kannst dir nicht selbst schreiben.
+  Tu ne peux pas t'écrire à toi-même.
+  Je kunt jezelf geen bericht sturen.
+  Non puoi scrivere a te stesso.
+reply-none
+  There is nobody to reply to.
+  Es gibt niemanden, dem du antworten kannst.
+  Il n'y a personne à qui répondre.
+  Er is niemand om op te antwoorden.
+  Non c'è nessuno a cui rispondere.
+help-msg
+  Send a private message
+  Eine Privatnachricht senden
+  Envoyer un message privé
+  Een privébericht sturen
+  Invia un messaggio privato
+help-r
+  Reply to the last private message
+  Auf die letzte Privatnachricht antworten
+  Répondre au dernier message privé
+  Antwoorden op het laatste privébericht
+  Rispondi all'ultimo messaggio privato
+help-channel
+  Show or switch your chat channel
+  Chat-Kanal anzeigen oder wechseln
+  Afficher ou changer ton canal de chat
+  Je chatkanaal tonen of wisselen
+  Mostra o cambia il tuo canale chat
+help-chatclear
+  Clear the chat for everyone
+  Den Chat für alle leeren
+  Vider le chat pour tout le monde
+  De chat voor iedereen legen
+  Svuota la chat per tutti
+help-mutechat
+  Lock or unlock the chat
+  Den Chat sperren oder freigeben
+  Verrouiller ou déverrouiller le chat
+  De chat vergrendelen of ontgrendelen
+  Blocca o sblocca la chat
+help-slowmode
+  Seconds between two messages (0 = off)
+  Sekunden zwischen zwei Nachrichten (0 = aus)
+  Secondes entre deux messages (0 = désactivé)
+  Seconden tussen twee berichten (0 = uit)
+  Secondi tra due messaggi (0 = disattivato)
+help-socialspy
+  Read private messages of others
+  Privatnachrichten anderer mitlesen
+  Lire les messages privés des autres
+  Privéberichten van anderen meelezen
+  Leggi i messaggi privati degli altri
+help-ultrachat
+  Help, reload, version and language
+  Hilfe, Reload, Version und Sprache
+  Aide, rechargement, version et langue
+  Help, herladen, versie en taal
+  Aiuto, ricarica, versione e lingua
