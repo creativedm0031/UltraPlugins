@@ -1,0 +1,216 @@
+Titel:
+UltraTeleports [1.20.4+ - 26.3] ✦ TPA, Random Teleport & Back
+
+Versionstring:
+1.0.0
+
+Beschreibung (Markdown – Modrinth, Hangar):
+![UltraTeleports](https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraTeleports/release/images/banner.png)
+
+# ✦ UltraTeleports [1.20.4+] ✦
+
+*Schnell. Sicher. Komfortabel.*
+
+──────── ✦ ────────
+
+---
+
+## English Version
+
+Every teleport your players need in one lightweight plugin. UltraTeleports brings TPA requests with clickable answers, a safe random teleport, /back and instant staff teleports. Warm-ups, cooldowns and optional costs keep everything fair.
+
+### ⭐ Features at a glance:
+
+- 📨 **TPA Requests:** /tpa and /tpahere with clickable [Accept] and [Deny] buttons and automatic expiry.
+- 🔒 **Privacy Controls:** Turn requests off with /tptoggle or ignore single players with /tpignore.
+- ↩️ **/back:** Return to your last location or to the place where you died.
+- 🎲 **Safe Random Teleport:** /rtp only lands on solid, harmless ground – no lava, water or cactus. Works in the Nether too.
+- 💰 **Costs & Cooldowns:** Own cooldown per teleport type and optional /rtp costs via Vault (e.g. UltraEconomy).
+- 🛡️ **Staff Teleports:** /tp, /tphere and /tpall – instant, without warm-up.
+- ✨ **Clean Layout:** Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+- 🚀 **Lightweight:** No required dependencies; runs on Spigot, Paper and Purpur.
+
+**🌍 Languages:** English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrateleports language <code>.
+
+**📦 Requirements:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies · Vault (optional, for /rtp costs)
+
+<details><summary>Commands & Permissions (EN)</summary>
+
+- `/tpa <player>` – Ask to teleport to a player · `ultrateleports.tpa` (default: everyone)
+- `/tpahere <player>` – Ask a player to come to you · `ultrateleports.tpahere` (default: everyone)
+- `/tpaccept` – Accept a request · `ultrateleports.tpa` (default: everyone)
+- `/tpdeny` – Deny a request · `ultrateleports.tpa` (default: everyone)
+- `/back` – Return to your last location · `ultrateleports.back` (default: everyone)
+- `/rtp [world]` – Teleport to a random location · `ultrateleports.rtp` (default: everyone)
+- `/tptoggle` – Turn incoming requests on or off · `ultrateleports.toggle` (default: everyone)
+- `/tpignore <player>` – Ignore the requests of one player · `ultrateleports.toggle` (default: everyone)
+- `/tp <player> [target]` – Teleport to a player, or one player to another · `ultrateleports.staff` (default: OP)
+- `/tphere <player>` – Teleport a player to you · `ultrateleports.staff` (default: OP)
+- `/tpall` – Teleport everyone to you · `ultrateleports.staff` (default: OP)
+- `/ultrateleports <help|reload|version|language>` – Help, reload, version and language · `ultrateleports.admin` (default: OP)
+
+**More permissions:**
+
+- `ultrateleports.bypass.warmup` – Skip the teleport warm-up (default: OP)
+- `ultrateleports.bypass.cooldown` – Skip cooldowns (default: OP)
+- `ultrateleports.*` – All permissions of the plugin (default: OP)
+
+</details>
+
+<details><summary>View Full Configuration (EN)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrateleports language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two teleports of the same kind. 0 = none.
+cooldown: 0
+# Overrides "cooldown" for single teleport types (tpa, back, rtp).
+cooldowns:
+  rtp: 60
+
+# Seconds until a teleport request expires.
+request-timeout: 60
+
+# /back also returns to the place of death.
+back-on-death: true
+
+rtp:
+  # Worlds /rtp may be used in.
+  worlds: [world]
+  # Distance from the centre of the world border, in blocks.
+  min-radius: 200
+  max-radius: 3000
+  max-attempts: 12
+  # Price per teleport. Needs Vault and an economy plugin such as UltraEconomy. 0 = free.
+  cost: 0
+```
+
+</details>
+
+---
+
+## Deutsche Version
+
+Alle Teleports, die deine Spieler brauchen, in einem schlanken Plugin. UltraTeleports bringt TPA-Anfragen mit klickbaren Antworten, einen sicheren Random-Teleport, /back und sofortige Team-Teleports. Warmup, Cooldowns und optionale Kosten sorgen für Fairness.
+
+### ⚙️ Deine Vorteile:
+
+- 📨 **TPA-Anfragen:** /tpa und /tpahere mit klickbaren [Annehmen]- und [Ablehnen]-Buttons und automatischem Ablauf.
+- 🔒 **Privatsphäre:** Anfragen mit /tptoggle abschalten oder einzelne Spieler mit /tpignore ignorieren.
+- ↩️ **/back:** Zurück zum letzten Ort oder zum Todespunkt.
+- 🎲 **Sicherer Random-Teleport:** /rtp landet nur auf festem, ungefährlichem Boden – keine Lava, kein Wasser, kein Kaktus. Auch im Nether.
+- 💰 **Kosten & Cooldowns:** Eigener Cooldown pro Teleport-Art und optionale /rtp-Kosten über Vault (z. B. UltraEconomy).
+- 🛡️ **Team-Teleports:** /tp, /tphere und /tpall – sofort, ohne Warmup.
+- ✨ **Sauberes Layout:** Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+- 🚀 **Leichtgewichtig:** Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+
+**🌍 Sprachen:** English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrateleports language <code>.
+
+**📦 Voraussetzungen:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten · Vault (optional, für /rtp-Kosten)
+
+<details><summary>Befehle & Rechte (DE)</summary>
+
+- `/tpa <player>` – Teleport zu einem Spieler anfragen · `ultrateleports.tpa` (Standard: alle)
+- `/tpahere <player>` – Einen Spieler zu dir bitten · `ultrateleports.tpahere` (Standard: alle)
+- `/tpaccept` – Anfrage annehmen · `ultrateleports.tpa` (Standard: alle)
+- `/tpdeny` – Anfrage ablehnen · `ultrateleports.tpa` (Standard: alle)
+- `/back` – Zum letzten Ort zurückkehren · `ultrateleports.back` (Standard: alle)
+- `/rtp [world]` – An einen zufälligen Ort teleportieren · `ultrateleports.rtp` (Standard: alle)
+- `/tptoggle` – Eingehende Anfragen an- oder ausschalten · `ultrateleports.toggle` (Standard: alle)
+- `/tpignore <player>` – Anfragen eines Spielers ignorieren · `ultrateleports.toggle` (Standard: alle)
+- `/tp <player> [target]` – Zu einem Spieler teleportieren oder einen Spieler zu einem anderen · `ultrateleports.staff` (Standard: OP)
+- `/tphere <player>` – Einen Spieler zu dir teleportieren · `ultrateleports.staff` (Standard: OP)
+- `/tpall` – Alle Spieler zu dir teleportieren · `ultrateleports.staff` (Standard: OP)
+- `/ultrateleports <help|reload|version|language>` – Hilfe, Reload, Version und Sprache · `ultrateleports.admin` (Standard: OP)
+
+**Weitere Rechte:**
+
+- `ultrateleports.bypass.warmup` – Kein Teleport-Warmup (Standard: OP)
+- `ultrateleports.bypass.cooldown` – Keine Cooldowns (Standard: OP)
+- `ultrateleports.*` – Alle Rechte des Plugins (Standard: OP)
+
+</details>
+
+<details><summary>Vollständige Konfiguration anzeigen (DE)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrateleports language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two teleports of the same kind. 0 = none.
+cooldown: 0
+# Overrides "cooldown" for single teleport types (tpa, back, rtp).
+cooldowns:
+  rtp: 60
+
+# Seconds until a teleport request expires.
+request-timeout: 60
+
+# /back also returns to the place of death.
+back-on-death: true
+
+rtp:
+  # Worlds /rtp may be used in.
+  worlds: [world]
+  # Distance from the centre of the world border, in blocks.
+  min-radius: 200
+  max-radius: 3000
+  max-attempts: 12
+  # Price per teleport. Needs Vault and an economy plugin such as UltraEconomy. 0 = free.
+  cost: 0
+```
+
+</details>
+
+---
+
+**Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin!**

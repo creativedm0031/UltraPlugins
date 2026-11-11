@@ -1,0 +1,252 @@
+Titel:
+UltraChat [1.20.4+ - 26.3] ✦ Chat Formats, Channels & Smart Filter
+
+Versionstring:
+1.0.0
+
+Beschreibung (BBCode – SpigotMC, BuiltByBit):
+[CENTER][IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraChat/release/images/banner.png[/IMG]
+
+[SIZE=6][B]✦ UltraChat [1.20.4+] ✦[/B][/SIZE]
+[SIZE=5][I]Sauber. Sicher. Stilvoll.[/I][/SIZE]
+──────── ✦ ────────[/CENTER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]English Version[/B][/SIZE]
+A clean, good-looking chat without extra plugins. UltraChat brings rank formats with gradients and hover text, chat channels, private messages and a filter against spam, caps and advertising. Mentions and [item] make the chat feel modern.
+
+[B]⭐ Features at a glance:[/B]
+[LIST]
+[*]🎨 [B]Rank Formats:[/B] MiniMessage formats with gradients and hover text; shows prefix and suffix from UltraRanks or any Vault rank plugin.
+[*]📢 [B]Channels:[/B] Global, local (radius) and staff channels plus your own – switch with /channel.
+[*]✉️ [B]Private Messages:[/B] /msg and /r with the usual aliases, /socialspy for staff.
+[*]🧹 [B]Smart Filter:[/B] Blocks advertising, spam and blocked words; caps are lowered automatically.
+[*]🔔 [B]Mentions & [item]:[/B] @Name notifies the player, [item] shows your item with tooltip.
+[*]🛠️ [B]Moderation:[/B] /chatclear, /mutechat and /slowmode for your team.
+[*]✨ [B]Clean Layout:[/B] Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+[*]🚀 [B]Lightweight:[/B] No required dependencies; runs on Spigot, Paper and Purpur.
+[/LIST]
+
+[B]🌍 Languages:[/B] English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrachat language <code>.
+[B]📦 Requirements:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies
+
+[SPOILER=Commands & Permissions (EN)]
+[LIST]
+[*][B]/msg <player> <message>[/B] (aliases: /tell, /w, /whisper, /pm) – Send a private message · [I]ultrachat.msg[/I] (default: everyone)
+[*][B]/r <message>[/B] (aliases: /reply) – Reply to the last private message · [I]ultrachat.msg[/I] (default: everyone)
+[*][B]/channel [name][/B] (aliases: /ch) – Show or switch your chat channel · [I]ultrachat.channel[/I] (default: everyone)
+[*][B]/chatclear[/B] (aliases: /cc) – Clear the chat for everyone · [I]ultrachat.clear[/I] (default: OP)
+[*][B]/mutechat[/B] – Lock or unlock the chat · [I]ultrachat.mutechat[/I] (default: OP)
+[*][B]/slowmode <seconds>[/B] – Seconds between two messages (0 = off) · [I]ultrachat.slowmode[/I] (default: OP)
+[*][B]/socialspy[/B] – Read private messages of others · [I]ultrachat.socialspy[/I] (default: OP)
+[*][B]/ultrachat <help|reload|version|language>[/B] – Help, reload, version and language · [I]ultrachat.admin[/I] (default: OP)
+[/LIST]
+[B]More permissions:[/B]
+[LIST]
+[*][I]ultrachat.channel.staff[/I] – Read and write in the staff channel (default: OP)
+[*][I]ultrachat.color[/I] – Use &-colour codes in chat (default: OP)
+[*][I]ultrachat.bypass.filter[/I] – Bypass the chat filter (default: OP)
+[*][I]ultrachat.bypass.slowmode[/I] – Bypass the slow mode (default: OP)
+[*][I]ultrachat.bypass.mutechat[/I] – Write while the chat is locked (default: OP)
+[*][I]ultrachat.bypass.clear[/I] – Keep your chat on /chatclear (default: OP)
+[*][I]ultrachat.*[/I] – All permissions of the plugin (default: OP)
+[*][I]ultrachat.format.<name>[/I] – Use the chat format <name>
+[/LIST]
+[/SPOILER]
+[SPOILER=View Full Configuration (EN)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrachat language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Chat formats in MiniMessage. A player gets the first format (top to bottom) they have
+# the permission ultrachat.format.<name> for, otherwise "default".
+# Placeholders: <player> display name, <name> account name, <world>, <message>,
+#               <prefix> <suffix> <rank> from UltraRanks (or any rank plugin through Vault)
+# Hover and click work as usual, e.g. <hover:show_text:'World: <world>'><player></hover>
+formats:
+  default: "<prefix><hover:show_text:'<muted>World: <white><world>'><white><name></white></hover><suffix> <sep>»</sep> <white><message>"
+
+# Channels. Players switch with /channel <name>.
+# prefix: shown before the format, radius: blocks (0 = everywhere), permission: needed to join and read
+channels:
+  global:
+    prefix: ""
+  local:
+    prefix: "<muted>[L]</muted> "
+    radius: 100
+  staff:
+    prefix: "<accent>[Staff]</accent> "
+    permission: ultrachat.channel.staff
+default-channel: global
+
+# Seconds between two messages of one player. 0 = off. Also set with /slowmode.
+slowmode: 0
+
+# "@Name" highlights the name and notifies the player.
+mentions: true
+# "[item]" in a message shows the item in the sender's hand.
+show-item: true
+
+filter:
+  words:
+    blocked: []
+    replacement: "***"
+  caps:
+    enabled: true
+    min-length: 8
+    # Messages with more capital letters than this are written in lower case.
+    max-percent: 60
+  spam:
+    enabled: true
+    # The same message cannot be sent again within this time.
+    repeat-seconds: 30
+  advertising:
+    enabled: true
+    # Domains that may be posted, e.g. your own.
+    allowed: []
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]Deutsche Version[/B][/SIZE]
+Ein sauberer, schöner Chat ohne Zusatz-Plugins. UltraChat bringt Rang-Formate mit Farbverläufen und Hover-Texten, Chat-Kanäle, Privatnachrichten und einen Filter gegen Spam, Caps und Werbung. Erwähnungen und [item] machen den Chat modern.
+
+[B]⚙️ Deine Vorteile:[/B]
+[LIST]
+[*]🎨 [B]Rang-Formate:[/B] MiniMessage-Formate mit Farbverläufen und Hover-Texten; zeigt Prefix und Suffix aus UltraRanks oder jedem Vault-Rang-Plugin.
+[*]📢 [B]Kanäle:[/B] Global, Lokal (Radius) und Team-Kanal plus eigene – wechseln mit /channel.
+[*]✉️ [B]Privatnachrichten:[/B] /msg und /r mit den üblichen Aliasen, /socialspy fürs Team.
+[*]🧹 [B]Smarter Filter:[/B] Blockiert Werbung, Spam und gesperrte Wörter; Caps werden automatisch klein geschrieben.
+[*]🔔 [B]Erwähnungen & [item]:[/B] @Name benachrichtigt den Spieler, [item] zeigt dein Item mit Tooltip.
+[*]🛠️ [B]Moderation:[/B] /chatclear, /mutechat und /slowmode für dein Team.
+[*]✨ [B]Sauberes Layout:[/B] Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+[*]🚀 [B]Leichtgewichtig:[/B] Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+[/LIST]
+
+[B]🌍 Sprachen:[/B] English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrachat language <code>.
+[B]📦 Voraussetzungen:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten
+
+[SPOILER=Befehle & Rechte (DE)]
+[LIST]
+[*][B]/msg <player> <message>[/B] (Aliase: /tell, /w, /whisper, /pm) – Eine Privatnachricht senden · [I]ultrachat.msg[/I] (Standard: alle)
+[*][B]/r <message>[/B] (Aliase: /reply) – Auf die letzte Privatnachricht antworten · [I]ultrachat.msg[/I] (Standard: alle)
+[*][B]/channel [name][/B] (Aliase: /ch) – Chat-Kanal anzeigen oder wechseln · [I]ultrachat.channel[/I] (Standard: alle)
+[*][B]/chatclear[/B] (Aliase: /cc) – Den Chat für alle leeren · [I]ultrachat.clear[/I] (Standard: OP)
+[*][B]/mutechat[/B] – Den Chat sperren oder freigeben · [I]ultrachat.mutechat[/I] (Standard: OP)
+[*][B]/slowmode <seconds>[/B] – Sekunden zwischen zwei Nachrichten (0 = aus) · [I]ultrachat.slowmode[/I] (Standard: OP)
+[*][B]/socialspy[/B] – Privatnachrichten anderer mitlesen · [I]ultrachat.socialspy[/I] (Standard: OP)
+[*][B]/ultrachat <help|reload|version|language>[/B] – Hilfe, Reload, Version und Sprache · [I]ultrachat.admin[/I] (Standard: OP)
+[/LIST]
+[B]Weitere Rechte:[/B]
+[LIST]
+[*][I]ultrachat.channel.staff[/I] – Team-Kanal lesen und schreiben (Standard: OP)
+[*][I]ultrachat.color[/I] – &-Farbcodes im Chat nutzen (Standard: OP)
+[*][I]ultrachat.bypass.filter[/I] – Chat-Filter umgehen (Standard: OP)
+[*][I]ultrachat.bypass.slowmode[/I] – Slow-Mode umgehen (Standard: OP)
+[*][I]ultrachat.bypass.mutechat[/I] – Schreiben trotz gesperrtem Chat (Standard: OP)
+[*][I]ultrachat.bypass.clear[/I] – Chat bleibt bei /chatclear erhalten (Standard: OP)
+[*][I]ultrachat.*[/I] – Alle Rechte des Plugins (Standard: OP)
+[*][I]ultrachat.format.<name>[/I] – Chat-Format <name> nutzen
+[/LIST]
+[/SPOILER]
+[SPOILER=Vollständige Konfiguration anzeigen (DE)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrachat language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Chat formats in MiniMessage. A player gets the first format (top to bottom) they have
+# the permission ultrachat.format.<name> for, otherwise "default".
+# Placeholders: <player> display name, <name> account name, <world>, <message>,
+#               <prefix> <suffix> <rank> from UltraRanks (or any rank plugin through Vault)
+# Hover and click work as usual, e.g. <hover:show_text:'World: <world>'><player></hover>
+formats:
+  default: "<prefix><hover:show_text:'<muted>World: <white><world>'><white><name></white></hover><suffix> <sep>»</sep> <white><message>"
+
+# Channels. Players switch with /channel <name>.
+# prefix: shown before the format, radius: blocks (0 = everywhere), permission: needed to join and read
+channels:
+  global:
+    prefix: ""
+  local:
+    prefix: "<muted>[L]</muted> "
+    radius: 100
+  staff:
+    prefix: "<accent>[Staff]</accent> "
+    permission: ultrachat.channel.staff
+default-channel: global
+
+# Seconds between two messages of one player. 0 = off. Also set with /slowmode.
+slowmode: 0
+
+# "@Name" highlights the name and notifies the player.
+mentions: true
+# "[item]" in a message shows the item in the sender's hand.
+show-item: true
+
+filter:
+  words:
+    blocked: []
+    replacement: "***"
+  caps:
+    enabled: true
+    min-length: 8
+    # Messages with more capital letters than this are written in lower case.
+    max-percent: 60
+  spam:
+    enabled: true
+    # The same message cannot be sent again within this time.
+    repeat-seconds: 30
+  advertising:
+    enabled: true
+    # Domains that may be posted, e.g. your own.
+    allowed: []
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+
+[CENTER][B]Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin![/B][/CENTER]

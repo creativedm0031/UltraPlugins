@@ -1,0 +1,14 @@
+UltraChat 1.0.0
+
+First release.
+
+- Rank Formats
+- Channels
+- Private Messages
+- Smart Filter
+- Mentions & [item]
+- Moderation
+- Clean Layout
+- Lightweight
+
+Minecraft 1.20.4 – 26.3 · Spigot, Paper, Purpur · Java 17+

@@ -1,0 +1,17 @@
+UltraRanks 1.0.0
+
+First release.
+
+- Rank Editor GUI
+- Permissions via Anvil
+- Tab List, Name Tag & Chat
+- Player Rank Overview
+- Timed Ranks
+- Inheritance & Wildcards
+- Rank Shop & Vouchers
+- Vault, PlaceholderAPI & LuckPerms
+- Change Log
+- Clean Layout
+- Lightweight
+
+Minecraft 1.20.4 – 26.3 · Spigot, Paper, Purpur · Java 17+

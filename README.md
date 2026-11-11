@@ -17,6 +17,7 @@ Nachrichten-Layout, gleiche Befehlsstruktur, gleiche Logos. Jedes Plugin hat ein
 | <img src="UltraKits/assets/logo.png" width="48"> | [**UltraKits**](UltraKits) | Kits mit Vorschau, Cooldowns & Ingame-Editor. |
 | <img src="UltraVanish/assets/logo.png" width="48"> | [**UltraVanish**](UltraVanish) | Echte Unsichtbarkeit für dein Team. |
 | <img src="UltraReports/assets/logo.png" width="48"> | [**UltraReports**](UltraReports) | Spieler-Reports mit Team-Workflow in der GUI. |
+| <img src="UltraRanks/assets/logo.png" width="48"> | [**UltraRanks**](UltraRanks) | Ränge mit GUI-Editor, Prefixen, Tabliste und Rechten. |
 
 Alle Plugins sprechen **Englisch, Deutsch, Französisch, Niederländisch und Italienisch**. Jeder
 Spieler bekommt automatisch die Sprache seines Minecraft-Clients; die Standardsprache stellt man mit
@@ -69,8 +70,9 @@ python3 tools/generate.py && node tools/render.js
 
 ## Veröffentlichen
 
-Titel und Taglines aller Plugins stehen in [RELEASE.md](RELEASE.md). Pro Plugin liegt in
-`Ultra<Name>/release/` alles für SpigotMC, BuiltByBit, Modrinth und Hangar, inklusive Checkliste.
+Pro Plugin liegt in `Ultra<Name>/release/` die Datei `release.txt` mit Titel, Versionstring und
+Beschreibung (BBCode für SpigotMC und BuiltByBit), `release-markdown.txt` mit demselben Inhalt in
+Markdown (Modrinth und Hangar), die Jar und die Bilder. Übersicht: [RELEASE.md](RELEASE.md).
 
 Die Bilder in den Beschreibungen verweisen auf `raw.githubusercontent.com/.../main/...`. Sie werden
 erst angezeigt, wenn dieses Repository öffentlich ist und die Dateien auf `main` liegen. Sonst die

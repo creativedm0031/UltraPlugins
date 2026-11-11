@@ -1,0 +1,21 @@
+name: UltraRanks
+version: '${project.version}'
+main: de.creativedm.ultra.ranks.UltraRanks
+api-version: '1.20'
+author: creativedm
+description: Ranks with GUI editor, prefixes, tab list, name tags and permissions.
+softdepend: [Vault, PlaceholderAPI, LuckPerms]
+loadbefore: [UltraChat]
+commands:
+  ranks: {usage: "/<command>", description: Show your rank and all ranks}
+  rankadmin: {usage: "/<command>", description: Open the rank editor, aliases: [ranksadmin]}
+  rank: {usage: "/<command> <set|info|list|create|delete|perm|parent|voucher> ...", description: Manage ranks by command}
+  ultraranks: {usage: "/<command> <help|reload|version|language|import>", description: Administration}
+permissions:
+  ultraranks.use: {default: true}
+  ultraranks.manage: {default: op}
+  ultraranks.chat.color: {default: op}
+  ultraranks.admin: {default: op}
+  ultraranks.*:
+    default: op
+    children: {ultraranks.use: true, ultraranks.manage: true, ultraranks.chat.color: true, ultraranks.admin: true}

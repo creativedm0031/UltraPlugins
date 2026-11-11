@@ -124,13 +124,33 @@ public final class UltraChat extends UltraPlugin implements Listener {
 
         String format = (settings == null ? "" : settings.getString("prefix", "")) + format(player);
         Component line = msg().parse(format, "player", de.creativedm.ultra.core.Messages.fromLegacy(player.getDisplayName()),
-                "name", player.getName(), "world", player.getWorld().getName(), "message", message);
+                "name", player.getName(), "world", player.getWorld().getName(), "message", message,
+                "prefix", rankText(player, "prefix"), "suffix", rankText(player, "suffix"), "rank", rankText(player, "rank"));
         // Spigot's chat cannot carry hover/click text, so we deliver the formatted line ourselves.
         // The event stays alive (with no recipients) so the console log and other plugins still see it.
         for (Player receiver : receivers) msg().send(receiver, line);
         event.getRecipients().clear();
         event.setMessage(text);
         event.setFormat("[" + channel + "] %1$s: %2$s");
+    }
+
+    /**
+     * Prefix, suffix or rank name: from UltraRanks (player metadata, MiniMessage) or any other rank plugin through Vault.
+     */
+    private Component rankText(Player player, String type) {
+        for (var value : player.getMetadata("ultraranks_" + type)) return msg().parse(value.asString());
+        if (type.equals("rank") || getServer().getPluginManager().getPlugin("Vault") == null) return Component.empty();
+        return VaultChat.text(player, type);
+    }
+
+    /** Only loaded when Vault is installed. */
+    private static final class VaultChat {
+        static Component text(Player player, String type) {
+            var provider = org.bukkit.Bukkit.getServicesManager().getRegistration(net.milkbowl.vault.chat.Chat.class);
+            if (provider == null) return Component.empty();
+            String value = type.equals("prefix") ? provider.getProvider().getPlayerPrefix(player) : provider.getProvider().getPlayerSuffix(player);
+            return de.creativedm.ultra.core.Messages.fromLegacy(value == null ? "" : value.replace('&', '§'));
+        }
     }
 
     /** "[Name ×amount]" with the item tooltip on hover. */
