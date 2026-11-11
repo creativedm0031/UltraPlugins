@@ -26,7 +26,7 @@ MC_VERSIONS = f"{MC_MIN} – {MC_MAX}"
 # Every Minecraft release in that range, for the version pickers on Modrinth and Hangar.
 MC_LIST = ["1.20.4", "1.20.5", "1.20.6", "1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7",
            "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2", "26.2", "26.3"]
-# Paper servers the release jars were started on (all ten plugins), and how far the test went.
+# Paper servers the release jars were started on (all plugins), and how far the test went.
 TESTED = [("1.20.4", "bot test"), ("1.20.6", "bot test"), ("1.21.1", "bot test"), ("1.21.4", "full bot test"),
           ("1.21.8", "bot test"), ("1.21.11", "bot test"), ("26.1.2", "bot test"), ("26.3", "start + console")]
 JAVA = "Java 17+ (Minecraft 1.20.5+ needs Java 21, 26.x needs Java 25 – that is a server requirement)"
@@ -45,6 +45,7 @@ CATEGORIES = {
     "Kits":      ("Tools and Utilities", "equipment, utility", "Gameplay"),
     "Vanish":    ("Tools and Utilities", "management, utility", "Admin Tools"),
     "Reports":   ("Tools and Utilities", "management, social", "Admin Tools"),
+    "Ranks":     ("Tools and Utilities", "management, utility, social", "Admin Tools"),
 }
 
 # One message per plugin, shown in all five languages on the language gallery image.
@@ -59,6 +60,7 @@ LANG_SAMPLE = {
     "Kits": ("kit-received", {"name": "starter"}),
     "Vanish": ("vanish-status", {"count": "12"}),
     "Reports": ("report-sent", {"player": "Steve"}),
+    "Ranks": ("rank-received", {"rank": "<gradient:#FACC15:#F97316>VIP</gradient>", "duration": "30d"}),
 }
 
 # Plugins with a main GUI: title key + vars, hovered item name, lore key + vars, number of filled slots.
@@ -69,6 +71,7 @@ GUI_SAMPLE = {
     "Economy": (("baltop-title", {"currency": "coins"}), "#1 Steve", ("baltop-lore", {"balance": "$48,250.00"}), 12),
     "Kits": (("kits-title", {}), "starter", ("kit-lore", {"status": "ready", "items": "9", "cost": "free"}), 5),
     "Reports": (("inbox-title", {"state": "open"}), "#42 Steve", ("report-lore", {"reason": "Cheating", "reporter": "Alex", "date": "2026-11-10 18:04", "handler": "–", "online": "online"}), 4),
+    "Ranks": (("perms-title", {"rank": "VIP"}), "ultrahomes.limit.5", ("perm-lore", {"state": "allowed"}), 7),
 }
 
 
@@ -311,7 +314,7 @@ Klammern annimmt, `{full}` eintragen – der vollständige Titel steht ohnehin o
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

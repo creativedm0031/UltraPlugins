@@ -20,3 +20,4 @@ Alle Plugins nutzen denselben Aufbau. Neu bauen und die Jars kopieren: `tools/pa
 | [UltraKits](UltraKits/release) | UltraKits [1.20.4+ - 26.3] ✦ Kit GUI with Preview & In-Game Editor | `1.0.0` | [UltraKits-1.0.0.jar](UltraKits/release/UltraKits-1.0.0.jar) |
 | [UltraVanish](UltraVanish/release) | UltraVanish [1.20.4+ - 26.3] ✦ True Staff Vanish with Silent Chests | `1.0.0` | [UltraVanish-1.0.0.jar](UltraVanish/release/UltraVanish-1.0.0.jar) |
 | [UltraReports](UltraReports/release) | UltraReports [1.20.4+ - 26.3] ✦ Report GUI, Staff Inbox & Discord | `1.0.0` | [UltraReports-1.0.0.jar](UltraReports/release/UltraReports-1.0.0.jar) |
+| [UltraRanks](UltraRanks/release) | UltraRanks [1.20.4+ - 26.3] ✦ Rank GUI, Prefixes, Tab List & Permissions | `1.0.0` | [UltraRanks-1.0.0.jar](UltraRanks/release/UltraRanks-1.0.0.jar) |

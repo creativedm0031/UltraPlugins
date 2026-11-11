@@ -100,15 +100,18 @@ def header_svg(title):
 """
 
 
+COUNT_WORDS = {10: "Ten", 11: "Eleven", 12: "Twelve"}
+
+
 def series_svg():
     tiles = "".join(
-        f'<g transform="translate({120 + i * 172} 300) scale(.28125)">{logo_body(p["name"]).replace("tile", "tile%d" % i)}</g>'
+        f'<g transform="translate({120 + i * (1920 - 240 - 144) / max(1, len(PLUGINS) - 1):.1f} 300) scale(.28125)">{logo_body(p["name"]).replace("tile", "tile%d" % i)}</g>'
         for i, p in enumerate(PLUGINS))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 520" width="1920" height="520">
 {DEFS}
 {backdrop(1920, 520)}
 <text x="120" y="170" font-family="{FONT}" font-size="124" font-weight="800" letter-spacing="-3" fill="{WHITE}">Ultra<tspan fill="url(#word)">Plugins</tspan></text>
-<text x="124" y="236" font-family="{FONT}" font-size="40" font-weight="500" fill="{GRAY}">Ten plugins. One look. One feel.</text>
+<text x="124" y="236" font-family="{FONT}" font-size="40" font-weight="500" fill="{GRAY}">{COUNT_WORDS.get(len(PLUGINS), len(PLUGINS))} plugins. One look. One feel.</text>
 {tiles}
 </svg>
 """

@@ -4,6 +4,7 @@ main: de.creativedm.ultra.chat.UltraChat
 api-version: '1.20'
 author: creativedm
 description: Formatting, channels & moderation for your chat.
+softdepend: [Vault]
 commands:
   msg: {usage: "/<command> <player> <message>", description: Send a private message, aliases: [tell, w, whisper, pm]}
   r: {usage: "/<command> <message>", description: Reply to the last private message, aliases: [reply]}

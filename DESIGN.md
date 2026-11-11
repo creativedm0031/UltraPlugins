@@ -109,6 +109,9 @@ plugins/Ultra<Name>/
 - Itemnamen, Lore, Inventar-Titel und Kick-Screens verlangen auf Spigot Text statt Komponenten; sie
   werden aus MiniMessage in Farbcodes mit Hex-Farben umgewandelt (`Messages.legacy`). Vault für Kosten (Teleports, Warps, Kits) und als Schnittstelle von UltraEconomy.
 - Daten liegen in YAML-Dateien, die asynchron geschrieben werden.
+- UltraRanks setzt bei jedem Spieler die Metadaten `ultraranks_prefix`, `ultraranks_suffix` und
+  `ultraranks_rank` (MiniMessage). UltraChat liest sie für die Platzhalter `<prefix>`, `<suffix>` und
+  `<rank>`; ohne UltraRanks kommen Prefix und Suffix über Vault von jedem anderen Rang-Plugin.
 - Gemeinsamer Code (Nachrichten, Sprachen, Theme, GUI-Baukasten, Warmup/Cooldown, Datendateien)
   liegt im Modul **UltraCore** und wird in jedes Plugin eingebettet und umbenannt (Shading). So ist
   jedes Plugin einzeln installierbar, und das Layout kann nicht auseinanderlaufen.

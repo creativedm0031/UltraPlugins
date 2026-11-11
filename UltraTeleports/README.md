@@ -86,4 +86,4 @@ Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `
 
 ## Serie
 
-[UltraSpawn](../UltraSpawn) · [UltraPunish](../UltraPunish) · [UltraHomes](../UltraHomes) · [UltraWarps](../UltraWarps) · [UltraChat](../UltraChat) · [UltraEconomy](../UltraEconomy) · [UltraKits](../UltraKits) · [UltraVanish](../UltraVanish) · [UltraReports](../UltraReports)
+[UltraSpawn](../UltraSpawn) · [UltraPunish](../UltraPunish) · [UltraHomes](../UltraHomes) · [UltraWarps](../UltraWarps) · [UltraChat](../UltraChat) · [UltraEconomy](../UltraEconomy) · [UltraKits](../UltraKits) · [UltraVanish](../UltraVanish) · [UltraReports](../UltraReports) · [UltraRanks](../UltraRanks)

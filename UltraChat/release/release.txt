@@ -17,7 +17,7 @@ A clean, good-looking chat without extra plugins. UltraChat brings rank formats 
 
 [B]⭐ Features at a glance:[/B]
 [LIST]
-[*]🎨 [B]Rank Formats:[/B] MiniMessage formats with gradients, hover and click actions per permission.
+[*]🎨 [B]Rank Formats:[/B] MiniMessage formats with gradients and hover text; shows prefix and suffix from UltraRanks or any Vault rank plugin.
 [*]📢 [B]Channels:[/B] Global, local (radius) and staff channels plus your own – switch with /channel.
 [*]✉️ [B]Private Messages:[/B] /msg and /r with the usual aliases, /socialspy for staff.
 [*]🧹 [B]Smart Filter:[/B] Blocks advertising, spam and blocked words; caps are lowered automatically.
@@ -82,12 +82,11 @@ sounds:
 
 # Chat formats in MiniMessage. A player gets the first format (top to bottom) they have
 # the permission ultrachat.format.<name> for, otherwise "default".
-# Placeholders: <player> display name, <name> account name, <world>, <message>
+# Placeholders: <player> display name, <name> account name, <world>, <message>,
+#               <prefix> <suffix> <rank> from UltraRanks (or any rank plugin through Vault)
 # Hover and click work as usual, e.g. <hover:show_text:'World: <world>'><player></hover>
 formats:
-  admin: "<error><bold>ADMIN</bold></error> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  vip: "<accent><bold>VIP</bold></accent> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  default: "<hover:show_text:'<muted>World: <white><world>'><muted><player></muted></hover> <sep>»</sep> <white><message>"
+  default: "<prefix><hover:show_text:'<muted>World: <white><world>'><white><name></white></hover><suffix> <sep>»</sep> <white><message>"
 
 # Channels. Players switch with /channel <name>.
 # prefix: shown before the format, radius: blocks (0 = everywhere), permission: needed to join and read
@@ -136,7 +135,7 @@ Ein sauberer, schöner Chat ohne Zusatz-Plugins. UltraChat bringt Rang-Formate m
 
 [B]⚙️ Deine Vorteile:[/B]
 [LIST]
-[*]🎨 [B]Rang-Formate:[/B] MiniMessage-Formate mit Farbverläufen, Hover- und Klick-Aktionen per Permission.
+[*]🎨 [B]Rang-Formate:[/B] MiniMessage-Formate mit Farbverläufen und Hover-Texten; zeigt Prefix und Suffix aus UltraRanks oder jedem Vault-Rang-Plugin.
 [*]📢 [B]Kanäle:[/B] Global, Lokal (Radius) und Team-Kanal plus eigene – wechseln mit /channel.
 [*]✉️ [B]Privatnachrichten:[/B] /msg und /r mit den üblichen Aliasen, /socialspy fürs Team.
 [*]🧹 [B]Smarter Filter:[/B] Blockiert Werbung, Spam und gesperrte Wörter; Caps werden automatisch klein geschrieben.
@@ -201,12 +200,11 @@ sounds:
 
 # Chat formats in MiniMessage. A player gets the first format (top to bottom) they have
 # the permission ultrachat.format.<name> for, otherwise "default".
-# Placeholders: <player> display name, <name> account name, <world>, <message>
+# Placeholders: <player> display name, <name> account name, <world>, <message>,
+#               <prefix> <suffix> <rank> from UltraRanks (or any rank plugin through Vault)
 # Hover and click work as usual, e.g. <hover:show_text:'World: <world>'><player></hover>
 formats:
-  admin: "<error><bold>ADMIN</bold></error> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  vip: "<accent><bold>VIP</bold></accent> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  default: "<hover:show_text:'<muted>World: <white><world>'><muted><player></muted></hover> <sep>»</sep> <white><message>"
+  default: "<prefix><hover:show_text:'<muted>World: <white><world>'><white><name></white></hover><suffix> <sep>»</sep> <white><message>"
 
 # Channels. Players switch with /channel <name>.
 # prefix: shown before the format, radius: blocks (0 = everywhere), permission: needed to join and read

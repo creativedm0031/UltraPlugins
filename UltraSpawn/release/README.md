@@ -41,7 +41,7 @@ Klammern annimmt, `UltraSpawn` eintragen – der vollständige Titel steht ohneh
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

@@ -41,7 +41,7 @@ Klammern annimmt, `UltraTeleports` eintragen – der vollständige Titel steht o
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

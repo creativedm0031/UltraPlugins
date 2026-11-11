@@ -1,0 +1,224 @@
+Titel:
+UltraRanks [1.20.4+ - 26.3] ✦ Rank GUI, Prefixes, Tab List & Permissions
+
+Versionstring:
+1.0.0
+
+Beschreibung (BBCode – SpigotMC, BuiltByBit):
+[CENTER][IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraRanks/release/images/banner.png[/IMG]
+
+[SIZE=6][B]✦ UltraRanks [1.20.4+] ✦[/B][/SIZE]
+[SIZE=5][I]Übersichtlich. Mächtig. Ohne Config.[/I][/SIZE]
+──────── ✦ ────────[/CENTER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]English Version[/B][/SIZE]
+A complete rank and permission system you manage entirely in-game. Create ranks in a GUI, give them a prefix, suffix and weight, type permissions into an anvil and let UltraRanks style the tab list, the name above the head and the chat. Players see their own rank, every other rank and exactly what each one can do.
+
+[B]⭐ Features at a glance:[/B]
+[LIST]
+[*]🛠️ [B]Rank Editor GUI:[/B] Create, edit and delete ranks in /rankadmin – display name, prefix, suffix, weight, name colour, icon and description.
+[*]🔑 [B]Permissions via Anvil:[/B] Click the plus button, type the permission into an anvil – enable, deny or delete it with one click.
+[*]📋 [B]Tab List, Name Tag & Chat:[/B] Tab list sorted by weight, prefix and colour above the head, rank prefix in chat – all formats configurable.
+[*]👀 [B]Player Rank Overview:[/B] /ranks shows your rank, every other rank and exactly which permissions each one has.
+[*]⏳ [B]Timed Ranks:[/B] Give ranks for 30 days or any time – players fall back to their previous rank automatically.
+[*]🧬 [B]Inheritance & Wildcards:[/B] Ranks inherit from each other; grant whole groups with essentials.* or everything with *.
+[*]🛒 [B]Rank Shop & Vouchers:[/B] Players buy ranks in the GUI (Vault) or redeem voucher items – perfect for shops and crates.
+[*]🔌 [B]Vault, PlaceholderAPI & LuckPerms:[/B] Works with every Vault plugin, offers %ultraranks_prefix% and more, imports LuckPerms with one command.
+[*]🧾 [B]Change Log:[/B] Every change – who, what and when – in a log you can browse in the GUI.
+[*]✨ [B]Clean Layout:[/B] Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+[*]🚀 [B]Lightweight:[/B] No required dependencies; runs on Spigot, Paper and Purpur.
+[/LIST]
+
+[B]🌍 Languages:[/B] English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultraranks language <code>.
+[B]📦 Requirements:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies · Vault, PlaceholderAPI, LuckPerms, UltraEconomy (all optional)
+
+[SPOILER=Commands & Permissions (EN)]
+[LIST]
+[*][B]/ranks[/B] – Your rank and all ranks · [I]ultraranks.use[/I] (default: everyone)
+[*][B]/rankadmin[/B] (aliases: /ranksadmin) – Open the rank editor · [I]ultraranks.manage[/I] (default: OP)
+[*][B]/rank <set|info|list|create|delete|perm|parent|voucher> ...[/B] – Set ranks, permissions, inheritance and vouchers by command · [I]ultraranks.manage[/I] (default: OP)
+[*][B]/ultraranks <help|reload|version|language|import>[/B] – Help, reload, version, language and LuckPerms import · [I]ultraranks.admin[/I] (default: OP)
+[/LIST]
+[B]More permissions:[/B]
+[LIST]
+[*][I]ultraranks.chat.color[/I] – Use &-colour codes in chat (when UltraChat is not installed) (default: OP)
+[*][I]ultraranks.*[/I] – All permissions of the plugin (default: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=View Full Configuration (EN)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraranks language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Rank every new player gets. Can also be set in the GUI (nether star).
+default-rank: default
+
+# Ranks themselves are stored in ranks.yml and edited with /rankadmin.
+# Permissions there: "node" grants, "-node" denies.
+
+# Allow wildcards like essentials.* or * (covers every permission the plugins declare).
+wildcards: true
+
+# Tab list. Placeholders: <prefix> <suffix> <rank> <player>
+tablist:
+  enabled: true
+  format: "<prefix><white><player></white><suffix>"
+  # Optional header/footer (empty = off). Placeholders: <online> <max> <player>, \n = new line
+  header: ""
+  footer: ""
+
+# Name above the head (scoreboard teams). The name colour is set per rank in the GUI.
+nametag:
+  enabled: true
+  prefix: "<prefix>"
+  suffix: "<suffix>"
+
+# Chat format. Only used when UltraChat is NOT installed – UltraChat then shows <prefix>/<suffix> itself.
+# Placeholders: <prefix> <suffix> <rank> <player> <message>
+chat:
+  enabled: true
+  format: "<prefix><white><player></white><suffix> <sep>»</sep> <white><message>"
+
+# Players can buy ranks with a price in /ranks (needs Vault and an economy plugin such as UltraEconomy).
+purchase:
+  enabled: true
+
+# Item used for rank vouchers (/rank voucher).
+voucher:
+  material: PAPER
+
+# How often temporary ranks are checked for expiry.
+expiry-check-seconds: 30
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]Deutsche Version[/B][/SIZE]
+Ein komplettes Rang- und Rechte-System, das du vollständig im Spiel verwaltest. Ränge im GUI erstellen, Prefix, Suffix und Rangstärke vergeben, Rechte in einen Amboss tippen – UltraRanks gestaltet Tabliste, Name über dem Kopf und Chat. Spieler sehen ihren Rang, alle anderen Ränge und genau, was jeder Rang kann.
+
+[B]⚙️ Deine Vorteile:[/B]
+[LIST]
+[*]🛠️ [B]Rang-Editor-GUI:[/B] Ränge in /rankadmin erstellen, bearbeiten und löschen – Anzeigename, Prefix, Suffix, Rangstärke, Namensfarbe, Icon und Beschreibung.
+[*]🔑 [B]Rechte per Amboss:[/B] Plus-Button anklicken, Recht in den Amboss tippen – mit einem Klick aktivieren, verbieten oder löschen.
+[*]📋 [B]Tabliste, Nametag & Chat:[/B] Tabliste nach Rangstärke sortiert, Prefix und Farbe über dem Kopf, Rang-Prefix im Chat – alle Formate anpassbar.
+[*]👀 [B]Rang-Übersicht für Spieler:[/B] /ranks zeigt deinen Rang, alle anderen Ränge und genau, welche Rechte jeder hat.
+[*]⏳ [B]Zeitränge:[/B] Ränge für 30 Tage oder beliebig lange vergeben – danach automatisch zurück zum vorherigen Rang.
+[*]🧬 [B]Vererbung & Wildcards:[/B] Ränge erben voneinander; ganze Gruppen mit essentials.* oder alles mit * vergeben.
+[*]🛒 [B]Rang-Shop & Gutscheine:[/B] Spieler kaufen Ränge im GUI (Vault) oder lösen Gutschein-Items ein – ideal für Shops und Crates.
+[*]🔌 [B]Vault, PlaceholderAPI & LuckPerms:[/B] Funktioniert mit jedem Vault-Plugin, bietet %ultraranks_prefix% und mehr, importiert LuckPerms mit einem Befehl.
+[*]🧾 [B]Änderungs-Log:[/B] Jede Änderung – wer, was, wann – in einem Log, das im GUI einsehbar ist.
+[*]✨ [B]Sauberes Layout:[/B] Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+[*]🚀 [B]Leichtgewichtig:[/B] Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+[/LIST]
+
+[B]🌍 Sprachen:[/B] English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultraranks language <code>.
+[B]📦 Voraussetzungen:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten · Vault, PlaceholderAPI, LuckPerms, UltraEconomy (alle optional)
+
+[SPOILER=Befehle & Rechte (DE)]
+[LIST]
+[*][B]/ranks[/B] – Dein Rang und alle Ränge · [I]ultraranks.use[/I] (Standard: alle)
+[*][B]/rankadmin[/B] (Aliase: /ranksadmin) – Rang-Editor öffnen · [I]ultraranks.manage[/I] (Standard: OP)
+[*][B]/rank <set|info|list|create|delete|perm|parent|voucher> ...[/B] – Ränge, Rechte, Vererbung und Gutscheine per Befehl · [I]ultraranks.manage[/I] (Standard: OP)
+[*][B]/ultraranks <help|reload|version|language|import>[/B] – Hilfe, Reload, Version, Sprache und LuckPerms-Import · [I]ultraranks.admin[/I] (Standard: OP)
+[/LIST]
+[B]Weitere Rechte:[/B]
+[LIST]
+[*][I]ultraranks.chat.color[/I] – &-Farbcodes im Chat (wenn UltraChat nicht installiert ist) (Standard: OP)
+[*][I]ultraranks.*[/I] – Alle Rechte des Plugins (Standard: OP)
+[/LIST]
+[/SPOILER]
+[SPOILER=Vollständige Konfiguration anzeigen (DE)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraranks language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Rank every new player gets. Can also be set in the GUI (nether star).
+default-rank: default
+
+# Ranks themselves are stored in ranks.yml and edited with /rankadmin.
+# Permissions there: "node" grants, "-node" denies.
+
+# Allow wildcards like essentials.* or * (covers every permission the plugins declare).
+wildcards: true
+
+# Tab list. Placeholders: <prefix> <suffix> <rank> <player>
+tablist:
+  enabled: true
+  format: "<prefix><white><player></white><suffix>"
+  # Optional header/footer (empty = off). Placeholders: <online> <max> <player>, \n = new line
+  header: ""
+  footer: ""
+
+# Name above the head (scoreboard teams). The name colour is set per rank in the GUI.
+nametag:
+  enabled: true
+  prefix: "<prefix>"
+  suffix: "<suffix>"
+
+# Chat format. Only used when UltraChat is NOT installed – UltraChat then shows <prefix>/<suffix> itself.
+# Placeholders: <prefix> <suffix> <rank> <player> <message>
+chat:
+  enabled: true
+  format: "<prefix><white><player></white><suffix> <sep>»</sep> <white><message>"
+
+# Players can buy ranks with a price in /ranks (needs Vault and an economy plugin such as UltraEconomy).
+purchase:
+  enabled: true
+
+# Item used for rank vouchers (/rank voucher).
+voucher:
+  material: PAPER
+
+# How often temporary ranks are checked for expiry.
+expiry-check-seconds: 30
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+
+[CENTER][B]Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin![/B][/CENTER]

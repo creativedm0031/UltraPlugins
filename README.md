@@ -17,6 +17,7 @@ Nachrichten-Layout, gleiche Befehlsstruktur, gleiche Logos. Jedes Plugin hat ein
 | <img src="UltraKits/assets/logo.png" width="48"> | [**UltraKits**](UltraKits) | Kits mit Vorschau, Cooldowns & Ingame-Editor. |
 | <img src="UltraVanish/assets/logo.png" width="48"> | [**UltraVanish**](UltraVanish) | Echte Unsichtbarkeit für dein Team. |
 | <img src="UltraReports/assets/logo.png" width="48"> | [**UltraReports**](UltraReports) | Spieler-Reports mit Team-Workflow in der GUI. |
+| <img src="UltraRanks/assets/logo.png" width="48"> | [**UltraRanks**](UltraRanks) | Ränge mit GUI-Editor, Prefixen, Tabliste und Rechten. |
 
 Alle Plugins sprechen **Englisch, Deutsch, Französisch, Niederländisch und Italienisch**. Jeder
 Spieler bekommt automatisch die Sprache seines Minecraft-Clients; die Standardsprache stellt man mit

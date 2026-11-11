@@ -42,7 +42,7 @@ Klammern annimmt, `UltraWarps` eintragen – der vollständige Titel steht ohneh
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

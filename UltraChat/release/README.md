@@ -41,7 +41,7 @@ Klammern annimmt, `UltraChat` eintragen – der vollständige Titel steht ohnehi
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

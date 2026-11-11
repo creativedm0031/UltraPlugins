@@ -43,6 +43,7 @@ PERM_DESC = {
     "vanish.others": ("Vanish other players", "Andere Spieler unsichtbar machen"),
     "see": ("See vanished players (same or lower level)", "Unsichtbare Spieler sehen (gleiches oder niedrigeres Level)"),
     "level.<number>": ("Vanish level", "Vanish-Level"),
+    "chat.color": ("Use &-colour codes in chat (when UltraChat is not installed)", "&-Farbcodes im Chat (wenn UltraChat nicht installiert ist)"),
 }
 # Permissions that only exist as patterns, not in plugin.yml.
 PATTERN_PERMS = {
@@ -55,6 +56,7 @@ OPTIONAL = {
     "Kits": ("Vault (optional, for kit prices)", "Vault (optional, für Kit-Preise)"),
     "Economy": ("Vault (optional, to provide the economy to other plugins)", "Vault (optional, um die Economy anderen Plugins bereitzustellen)"),
     "Reports": ("UltraPunish (optional, punish from a report)", "UltraPunish (optional, aus dem Report bestrafen)"),
+    "Ranks": ("Vault, PlaceholderAPI, LuckPerms, UltraEconomy (all optional)", "Vault, PlaceholderAPI, LuckPerms, UltraEconomy (alle optional)"),
 }
 DEFAULTS = {True: ("everyone", "alle"), "op": ("OP", "OP"), False: ("nobody", "niemand"), "not op": ("non-OPs", "Nicht-OPs")}
 

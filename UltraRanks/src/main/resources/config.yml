@@ -1,0 +1,64 @@
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultraranks language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Rank every new player gets. Can also be set in the GUI (nether star).
+default-rank: default
+
+# Ranks themselves are stored in ranks.yml and edited with /rankadmin.
+# Permissions there: "node" grants, "-node" denies.
+
+# Allow wildcards like essentials.* or * (covers every permission the plugins declare).
+wildcards: true
+
+# Tab list. Placeholders: <prefix> <suffix> <rank> <player>
+tablist:
+  enabled: true
+  format: "<prefix><white><player></white><suffix>"
+  # Optional header/footer (empty = off). Placeholders: <online> <max> <player>, \n = new line
+  header: ""
+  footer: ""
+
+# Name above the head (scoreboard teams). The name colour is set per rank in the GUI.
+nametag:
+  enabled: true
+  prefix: "<prefix>"
+  suffix: "<suffix>"
+
+# Chat format. Only used when UltraChat is NOT installed – UltraChat then shows <prefix>/<suffix> itself.
+# Placeholders: <prefix> <suffix> <rank> <player> <message>
+chat:
+  enabled: true
+  format: "<prefix><white><player></white><suffix> <sep>»</sep> <white><message>"
+
+# Players can buy ranks with a price in /ranks (needs Vault and an economy plugin such as UltraEconomy).
+purchase:
+  enabled: true
+
+# Item used for rank vouchers (/rank voucher).
+voucher:
+  material: PAPER
+
+# How often temporary ranks are checked for expiry.
+expiry-check-seconds: 30

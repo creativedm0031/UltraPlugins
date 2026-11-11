@@ -42,7 +42,7 @@ Klammern annimmt, `UltraEconomy` eintragen – der vollständige Titel steht ohn
 
 ## Getestet
 
-Alle zehn Plugins auf Paper gestartet:
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |

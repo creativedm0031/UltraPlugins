@@ -303,6 +303,36 @@ PLUGINS = [
         "messages": [("report-sent", "Thanks! Your report on <c>Steve</c> was submitted."), ("report-claimed", "You claimed report <c>#42</c>.")],
         "error": ("already-reported", "You already reported Steve – staff is on it."),
     },
+    {
+        "name": "Ranks",
+        "tagline": ("Ränge mit GUI-Editor, Prefixen, Tabliste und Rechten.", "Ranks with GUI editor, prefixes, tab list & permissions."),
+        "chips": ["Rank GUI", "Permissions", "Tab & Nametag"],
+        "intro": (
+            "UltraRanks ist das Rang- und Rechte-System der Serie: Ränge im GUI erstellen und bearbeiten, Prefix, Suffix und Rangstärke "
+            "festlegen, Rechte per Amboss eintippen und Tabliste, Nametag und Chat einheitlich gestalten.",
+            "UltraRanks is the rank and permission system of the series: create and edit ranks in a GUI, set prefix, suffix and weight, "
+            "type permissions into an anvil and style tab list, name tags and chat in one place.",
+        ),
+        "features": [
+            ("Admin-GUI zum Erstellen, Bearbeiten und Löschen von Rängen", "Admin GUI to create, edit and delete ranks"),
+            ("Prefix, Suffix, Rangstärke, Namensfarbe und Icon pro Rang", "Prefix, suffix, weight, name colour and icon per rank"),
+            ("Rechte per Plus-Button und Amboss-Eingabe, aktivieren, verbieten, löschen", "Permissions via plus button and anvil input: enable, deny, delete"),
+            ("Tabliste sortiert nach Rangstärke, Nametag über dem Kopf und Chat-Format", "Tab list sorted by weight, name tag above the head and chat format"),
+            ("Spieler-GUI: eigener Rang, alle Ränge und deren Rechte", "Player GUI: own rank, all ranks and what they can do"),
+            ("Zeitränge, Vererbung, Rang-Kauf, Gutscheine, Vault, PlaceholderAPI, LuckPerms-Import", "Timed ranks, inheritance, rank shop, vouchers, Vault, PlaceholderAPI, LuckPerms import"),
+        ],
+        "commands": [
+            ("/ranks", "ultraranks.use", ("Eigener Rang und alle Ränge", "Your rank and all ranks")),
+            ("/rankadmin", "ultraranks.manage", ("Rang-Editor öffnen", "Open the rank editor")),
+            ("/rank set <spieler> <rang> [dauer]", "ultraranks.manage", ("Rang vergeben, optional auf Zeit", "Set a rank, optionally timed")),
+            ("/rank perm <rang> <recht> [true|false|remove]", "ultraranks.manage", ("Rechte per Befehl", "Permissions by command")),
+            ("/rank voucher <rang> [dauer] [spieler]", "ultraranks.manage", ("Rang-Gutschein erstellen", "Create a rank voucher")),
+            ("/ultraranks <help|reload|version|language|import>", "ultraranks.admin", ("Verwaltung und LuckPerms-Import", "Administration and LuckPerms import")),
+        ],
+        "extra_perms": [("ultraranks.chat.color", ("&-Farbcodes im Chat", "&-colour codes in chat"))],
+        "messages": [("rank-received", "Your new rank: <c>VIP</c> (30d)."), ("perm-added", "<c>essentials.fly</c> added to VIP.")],
+        "error": ("rank-expired", "Your temporary rank has expired – you are now Player."),
+    },
 ]
 
 # 24x24 stroke icons, drawn for this series.
@@ -317,4 +347,5 @@ ICONS = {
     "Kits": '<path d="M3 9h18v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19zM5 9V6.5A2.5 2.5 0 0 1 7.500 4h9A2.5 2.5 0 0 1 19 6.5V9M3 13h7M14 13h7"/><rect x="10" y="11.2" width="4" height="3.6" rx=".6"/>',
     "Vanish": '<path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.600 6.500-10 6.500S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4.500 3.500l15 17"/>',
     "Reports": '<path d="M5 21.500V3.500M5 4.500h13l-2.500 4.500 2.500 4.500H5"/>',
+    "Ranks": '<path d="M3 18.5h18M4.200 18.5L3 7.500l5 4 4-6.500 4 6.500 5-4-1.200 11"/><path d="M12 14.500v.01"/>',
 }
