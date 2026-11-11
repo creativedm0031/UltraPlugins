@@ -1,0 +1,174 @@
+Titel:
+UltraHomes [1.20.4+ - 26.3] ✦ Homes GUI with Limits & Public Homes
+
+Versionstring:
+1.0.0
+
+Beschreibung (BBCode – SpigotMC, BuiltByBit):
+[CENTER][IMG]https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraHomes/release/images/banner.png[/IMG]
+
+[SIZE=6][B]✦ UltraHomes [1.20.4+] ✦[/B][/SIZE]
+[SIZE=5][I]Einfach. Übersichtlich. Flexibel.[/I][/SIZE]
+──────── ✦ ────────[/CENTER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]English Version[/B][/SIZE]
+Homes the way players expect them. UltraHomes shows every home in a clean GUI with icons and coordinates, lets players edit, move or publish their homes and limits the number per rank. Switching from EssentialsX takes a single command.
+
+[B]⭐ Features at a glance:[/B]
+[LIST]
+[*]🏠 [B]Homes GUI:[/B] All homes with world and coordinates – left-click to teleport, right-click to edit.
+[*]🎨 [B]Custom Icons:[/B] Use the item in your hand as the icon of a home.
+[*]🌍 [B]Public Homes:[/B] Make a home public so others can visit it with /home <player>:<home>.
+[*]🔢 [B]Limits per Rank:[/B] Default limit plus ultrahomes.limit.<number> for more homes.
+[*]🚫 [B]Blocked Worlds:[/B] Prevent homes in event or minigame worlds.
+[*]📦 [B]EssentialsX Import:[/B] Take over all existing homes with /ultrahomes import.
+[*]✨ [B]Clean Layout:[/B] Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+[*]🚀 [B]Lightweight:[/B] No required dependencies; runs on Spigot, Paper and Purpur.
+[/LIST]
+
+[B]🌍 Languages:[/B] English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrahomes language <code>.
+[B]📦 Requirements:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies
+
+[SPOILER=Commands & Permissions (EN)]
+[LIST]
+[*][B]/home [name|player:name][/B] – Teleport to one of your homes · [I]ultrahomes.home[/I] (default: everyone)
+[*][B]/homes[/B] – Open your homes · [I]ultrahomes.home[/I] (default: everyone)
+[*][B]/sethome [name][/B] – Set a home at your position · [I]ultrahomes.set[/I] (default: everyone)
+[*][B]/delhome <name>[/B] – Delete a home · [I]ultrahomes.delete[/I] (default: everyone)
+[*][B]/ultrahomes <help|reload|version|language|import>[/B] – Help, reload, version, language and Essentials import · [I]ultrahomes.admin[/I] (default: OP)
+[/LIST]
+[B]More permissions:[/B]
+[LIST]
+[*][I]ultrahomes.others[/I] – Visit any home (default: OP)
+[*][I]ultrahomes.bypass.warmup[/I] – Skip the teleport warm-up (default: OP)
+[*][I]ultrahomes.bypass.cooldown[/I] – Skip cooldowns (default: OP)
+[*][I]ultrahomes.*[/I] – All permissions of the plugin (default: OP)
+[*][I]ultrahomes.limit.<number>[/I] – Maximum number of homes
+[/LIST]
+[/SPOILER]
+[SPOILER=View Full Configuration (EN)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrahomes language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two home teleports. 0 = none.
+cooldown: 0
+
+# Homes for players without an ultrahomes.limit.<number> permission.
+default-limit: 3
+
+# Icon of a home until the player picks another one.
+default-icon: RED_BED
+
+# Worlds in which no home can be set.
+blocked-worlds: []
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+[SIZE=5][B]Deutsche Version[/B][/SIZE]
+Homes, wie Spieler sie erwarten. UltraHomes zeigt jedes Home in einem übersichtlichen GUI mit Icons und Koordinaten, lässt Spieler ihre Homes bearbeiten, verschieben oder veröffentlichen und begrenzt die Anzahl pro Rang. Der Umstieg von EssentialsX dauert einen Befehl.
+
+[B]⚙️ Deine Vorteile:[/B]
+[LIST]
+[*]🏠 [B]Homes-GUI:[/B] Alle Homes mit Welt und Koordinaten – Linksklick teleportiert, Rechtsklick bearbeitet.
+[*]🎨 [B]Eigene Icons:[/B] Das Item in der Hand wird zum Icon des Homes.
+[*]🌍 [B]Öffentliche Homes:[/B] Home öffentlich machen, damit andere es mit /home <spieler>:<home> besuchen.
+[*]🔢 [B]Limits pro Rang:[/B] Standard-Limit plus ultrahomes.limit.<anzahl> für mehr Homes.
+[*]🚫 [B]Gesperrte Welten:[/B] Keine Homes in Event- oder Minigame-Welten.
+[*]📦 [B]EssentialsX-Import:[/B] Alle bestehenden Homes mit /ultrahomes import übernehmen.
+[*]✨ [B]Sauberes Layout:[/B] Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+[*]🚀 [B]Leichtgewichtig:[/B] Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+[/LIST]
+
+[B]🌍 Sprachen:[/B] English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrahomes language <code>.
+[B]📦 Voraussetzungen:[/B] Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten
+
+[SPOILER=Befehle & Rechte (DE)]
+[LIST]
+[*][B]/home [name|player:name][/B] – Zu einem deiner Homes teleportieren · [I]ultrahomes.home[/I] (Standard: alle)
+[*][B]/homes[/B] – Deine Homes öffnen · [I]ultrahomes.home[/I] (Standard: alle)
+[*][B]/sethome [name][/B] – Ein Home an deiner Position setzen · [I]ultrahomes.set[/I] (Standard: alle)
+[*][B]/delhome <name>[/B] – Ein Home löschen · [I]ultrahomes.delete[/I] (Standard: alle)
+[*][B]/ultrahomes <help|reload|version|language|import>[/B] – Hilfe, Reload, Version, Sprache und Essentials-Import · [I]ultrahomes.admin[/I] (Standard: OP)
+[/LIST]
+[B]Weitere Rechte:[/B]
+[LIST]
+[*][I]ultrahomes.others[/I] – Jedes Home besuchen (Standard: OP)
+[*][I]ultrahomes.bypass.warmup[/I] – Kein Teleport-Warmup (Standard: OP)
+[*][I]ultrahomes.bypass.cooldown[/I] – Keine Cooldowns (Standard: OP)
+[*][I]ultrahomes.*[/I] – Alle Rechte des Plugins (Standard: OP)
+[*][I]ultrahomes.limit.<number>[/I] – Maximale Anzahl Homes
+[/LIST]
+[/SPOILER]
+[SPOILER=Vollständige Konfiguration anzeigen (DE)]
+[CODE]
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrahomes language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two home teleports. 0 = none.
+cooldown: 0
+
+# Homes for players without an ultrahomes.limit.<number> permission.
+default-limit: 3
+
+# Icon of a home until the player picks another one.
+default-icon: RED_BED
+
+# Worlds in which no home can be set.
+blocked-worlds: []
+[/CODE]
+[/SPOILER]
+
+--------------------------------------------------------------------------------------------------
+
+[CENTER][B]Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin![/B][/CENTER]

@@ -1,1 +1,0 @@
-Player reports with a reason GUI, staff inbox, Discord webhook and UltraPunish link. 5 languages.

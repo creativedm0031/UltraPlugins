@@ -1,0 +1,186 @@
+Titel:
+UltraKits [1.20.4+ - 26.3] ✦ Kit GUI with Preview & In-Game Editor
+
+Versionstring:
+1.0.0
+
+Beschreibung (Markdown – Modrinth, Hangar):
+![UltraKits](https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraKits/release/images/banner.png)
+
+# ✦ UltraKits [1.20.4+] ✦
+
+*Einfach. Flexibel. Ohne Config.*
+
+──────── ✦ ────────
+
+---
+
+## English Version
+
+Kits without editing a single config line. Fill your inventory, run one command and the kit is ready. UltraKits shows every kit in a GUI with preview, handles cooldowns, prices and one-time kits and gives new players their starter kit automatically.
+
+### ⭐ Features at a glance:
+
+- 🧰 **In-Game Creation:** Create a kit from your inventory with /createkit – enchantments and names included.
+- 👀 **GUI with Preview:** Left-click to claim, right-click to preview every item.
+- ⏳ **Cooldowns & Prices:** Cooldowns like 12h, prices via Vault and one-time kits.
+- 🎁 **First-Join Kit:** New players receive their starter kit automatically.
+- 🛡️ **Auto Equip:** Armour is put on automatically, overflow is dropped safely.
+- ⚡ **Command Rewards:** Kits can run commands, e.g. give money or a rank.
+- ✨ **Clean Layout:** Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+- 🚀 **Lightweight:** No required dependencies; runs on Spigot, Paper and Purpur.
+
+**🌍 Languages:** English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrakits language <code>.
+
+**📦 Requirements:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies · Vault (optional, for kit prices)
+
+<details><summary>Commands & Permissions (EN)</summary>
+
+- `/kit [name] [player]` – Claim a kit or give it to a player · `ultrakits.kit` (default: everyone)
+- `/kits` – Open the kit list · `ultrakits.kit` (default: everyone)
+- `/createkit <name>` – Create a kit from your inventory · `ultrakits.create` (default: OP)
+- `/editkit <name> <items|cooldown|cost|onetime|firstjoin|icon> [value]` – Change items, cooldown, price, one-time, first join or icon · `ultrakits.edit` (default: OP)
+- `/delkit <name>` – Delete a kit · `ultrakits.delete` (default: OP)
+- `/ultrakits <help|reload|version|language>` – Help, reload, version and language · `ultrakits.admin` (default: OP)
+
+**More permissions:**
+
+- `ultrakits.give` – Give kits to other players (default: OP)
+- `ultrakits.bypass.cooldown` – Skip cooldowns (default: OP)
+- `ultrakits.*` – All permissions of the plugin (default: OP)
+- `ultrakits.kit.<name>` – Claim the kit <name>
+
+</details>
+
+<details><summary>View Full Configuration (EN)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrakits language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Cooldown of new kits in seconds (change per kit with /editkit <kit> cooldown 12h).
+default-cooldown: 86400
+
+# Armour in a kit is put on automatically if the slot is empty.
+auto-equip: true
+
+# true: kits a player has no permission for are not shown in /kits.
+hide-locked-kits: false
+
+# Kits are stored in kits.yml. Besides the in-game editor you can add console
+# commands there that run when the kit is claimed, e.g.
+#   commands: ["eco give %player% 100"]
+# and set "permission: false" to make a kit available without ultrakits.kit.<name>.
+```
+
+</details>
+
+---
+
+## Deutsche Version
+
+Kits, ohne eine einzige Config-Zeile anzufassen. Inventar füllen, einen Befehl ausführen – fertig ist das Kit. UltraKits zeigt jedes Kit in einem GUI mit Vorschau, kümmert sich um Cooldowns, Preise und Einmal-Kits und gibt neuen Spielern ihr Starter-Kit automatisch.
+
+### ⚙️ Deine Vorteile:
+
+- 🧰 **Erstellen im Spiel:** Kit aus dem Inventar mit /createkit erstellen – inklusive Verzauberungen und Namen.
+- 👀 **GUI mit Vorschau:** Linksklick zum Abholen, Rechtsklick für die Vorschau aller Items.
+- ⏳ **Cooldowns & Preise:** Cooldowns wie 12h, Preise über Vault und Einmal-Kits.
+- 🎁 **First-Join-Kit:** Neue Spieler bekommen ihr Starter-Kit automatisch.
+- 🛡️ **Auto-Ausrüsten:** Rüstung wird automatisch angezogen, Überschuss sicher gedroppt.
+- ⚡ **Befehls-Belohnungen:** Kits können Befehle ausführen, z. B. Geld oder einen Rang vergeben.
+- ✨ **Sauberes Layout:** Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+- 🚀 **Leichtgewichtig:** Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+
+**🌍 Sprachen:** English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrakits language <code>.
+
+**📦 Voraussetzungen:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten · Vault (optional, für Kit-Preise)
+
+<details><summary>Befehle & Rechte (DE)</summary>
+
+- `/kit [name] [player]` – Ein Kit abholen oder einem Spieler geben · `ultrakits.kit` (Standard: alle)
+- `/kits` – Die Kit-Liste öffnen · `ultrakits.kit` (Standard: alle)
+- `/createkit <name>` – Ein Kit aus deinem Inventar erstellen · `ultrakits.create` (Standard: OP)
+- `/editkit <name> <items|cooldown|cost|onetime|firstjoin|icon> [value]` – Items, Cooldown, Preis, Einmalig, First Join oder Icon ändern · `ultrakits.edit` (Standard: OP)
+- `/delkit <name>` – Ein Kit löschen · `ultrakits.delete` (Standard: OP)
+- `/ultrakits <help|reload|version|language>` – Hilfe, Reload, Version und Sprache · `ultrakits.admin` (Standard: OP)
+
+**Weitere Rechte:**
+
+- `ultrakits.give` – Kits an andere Spieler geben (Standard: OP)
+- `ultrakits.bypass.cooldown` – Keine Cooldowns (Standard: OP)
+- `ultrakits.*` – Alle Rechte des Plugins (Standard: OP)
+- `ultrakits.kit.<name>` – Kit <name> abholen
+
+</details>
+
+<details><summary>Vollständige Konfiguration anzeigen (DE)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrakits language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Cooldown of new kits in seconds (change per kit with /editkit <kit> cooldown 12h).
+default-cooldown: 86400
+
+# Armour in a kit is put on automatically if the slot is empty.
+auto-equip: true
+
+# true: kits a player has no permission for are not shown in /kits.
+hide-locked-kits: false
+
+# Kits are stored in kits.yml. Besides the in-game editor you can add console
+# commands there that run when the kit is claimed, e.g.
+#   commands: ["eco give %player% 100"]
+# and set "permission: false" to make a kit available without ultrakits.kit.<name>.
+```
+
+</details>
+
+---
+
+**Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin!**

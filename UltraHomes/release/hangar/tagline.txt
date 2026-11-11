@@ -1,1 +1,0 @@
-Set, manage and publish homes in a clean GUI with permission limits. Available in 5 languages.

@@ -1,0 +1,14 @@
+UltraHomes 1.0.0
+
+First release.
+
+- Homes GUI
+- Custom Icons
+- Public Homes
+- Limits per Rank
+- Blocked Worlds
+- EssentialsX Import
+- Clean Layout
+- Lightweight
+
+Minecraft 1.20.4 – 26.3 · Spigot, Paper, Purpur · Java 17+

@@ -25,12 +25,11 @@ sounds:
 
 # Chat formats in MiniMessage. A player gets the first format (top to bottom) they have
 # the permission ultrachat.format.<name> for, otherwise "default".
-# Placeholders: <player> display name, <name> account name, <world>, <message>
+# Placeholders: <player> display name, <name> account name, <world>, <message>,
+#               <prefix> <suffix> <rank> from UltraRanks (or any rank plugin through Vault)
 # Hover and click work as usual, e.g. <hover:show_text:'World: <world>'><player></hover>
 formats:
-  admin: "<error><bold>ADMIN</bold></error> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  vip: "<accent><bold>VIP</bold></accent> <hover:show_text:'<muted>World: <white><world>'><white><player></white></hover> <sep>»</sep> <white><message>"
-  default: "<hover:show_text:'<muted>World: <white><world>'><muted><player></muted></hover> <sep>»</sep> <white><message>"
+  default: "<prefix><hover:show_text:'<muted>World: <white><world>'><white><name></white></hover><suffix> <sep>»</sep> <white><message>"
 
 # Channels. Players switch with /channel <name>.
 # prefix: shown before the format, radius: blocks (0 = everywhere), permission: needed to join and read

@@ -1,1 +1,0 @@
-Multiple spawns, first-join spawn and void rescue. Clean action-bar messages in 5 languages.

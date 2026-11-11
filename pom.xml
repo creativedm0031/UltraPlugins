@@ -21,6 +21,7 @@
     <module>UltraKits</module>
     <module>UltraVanish</module>
     <module>UltraReports</module>
+    <module>UltraRanks</module>
   </modules>
 
   <properties>

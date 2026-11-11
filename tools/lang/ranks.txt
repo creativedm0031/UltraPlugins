@@ -1,0 +1,810 @@
+admin-title
+  Ranks
+  Ränge
+  Rangs
+  Rangen
+  Ranghi
+admin-rank-lore
+  ID: <white><id>\nWeight: <white><weight>\nPrefix: <prefix>\nSuffix: <suffix>\nMembers: <white><members>\nPermissions: <white><perms>\nInherits: <white><parents>\nDefault rank: <white><default>\n\n<accent>▸</accent> Click to edit
+  ID: <white><id>\nRangstärke: <white><weight>\nPrefix: <prefix>\nSuffix: <suffix>\nMitglieder: <white><members>\nRechte: <white><perms>\nErbt von: <white><parents>\nStandardrang: <white><default>\n\n<accent>▸</accent> Klicken zum Bearbeiten
+  ID : <white><id>\nPoids : <white><weight>\nPréfixe : <prefix>\nSuffixe : <suffix>\nMembres : <white><members>\nPermissions : <white><perms>\nHérite de : <white><parents>\nRang par défaut : <white><default>\n\n<accent>▸</accent> Clique pour modifier
+  ID: <white><id>\nGewicht: <white><weight>\nPrefix: <prefix>\nSuffix: <suffix>\nLeden: <white><members>\nRechten: <white><perms>\nErft van: <white><parents>\nStandaardrang: <white><default>\n\n<accent>▸</accent> Klik om te bewerken
+  ID: <white><id>\nPeso: <white><weight>\nPrefisso: <prefix>\nSuffisso: <suffix>\nMembri: <white><members>\nPermessi: <white><perms>\nEredita da: <white><parents>\nRango predefinito: <white><default>\n\n<accent>▸</accent> Clicca per modificare
+yes
+  yes
+  ja
+  oui
+  ja
+  sì
+no
+  no
+  nein
+  non
+  nee
+  no
+permanent
+  permanent
+  permanent
+  permanent
+  permanent
+  permanente
+online
+  online
+  online
+  en ligne
+  online
+  online
+offline
+  offline
+  offline
+  hors ligne
+  offline
+  offline
+btn-create
+  <green>+ Create rank</green>
+  <green>+ Rang erstellen</green>
+  <green>+ Créer un rang</green>
+  <green>+ Rang maken</green>
+  <green>+ Crea rango</green>
+btn-create-lore
+  Opens an input for the rank ID.
+  Öffnet eine Eingabe für die Rang-ID.
+  Ouvre une saisie pour l'ID du rang.
+  Opent een invoer voor de rang-ID.
+  Apre un campo per l'ID del rango.
+btn-log
+  <brand>Change log</brand>
+  <brand>Änderungs-Log</brand>
+  <brand>Journal des modifications</brand>
+  <brand>Wijzigingslogboek</brand>
+  <brand>Registro modifiche</brand>
+btn-log-lore
+  Who changed what and when.
+  Wer hat wann was geändert.
+  Qui a modifié quoi et quand.
+  Wie heeft wat wanneer gewijzigd.
+  Chi ha modificato cosa e quando.
+prompt-rank-id
+  Rank ID (e.g. vip)
+  Rang-ID (z. B. vip)
+  ID du rang (ex. vip)
+  Rang-ID (bijv. vip)
+  ID del rango (es. vip)
+prompt-display
+  Display name (MiniMessage)
+  Anzeigename (MiniMessage)
+  Nom affiché (MiniMessage)
+  Weergavenaam (MiniMessage)
+  Nome visualizzato (MiniMessage)
+prompt-prefix
+  Prefix (MiniMessage)
+  Prefix (MiniMessage)
+  Préfixe (MiniMessage)
+  Prefix (MiniMessage)
+  Prefisso (MiniMessage)
+prompt-suffix
+  Suffix (MiniMessage)
+  Suffix (MiniMessage)
+  Suffixe (MiniMessage)
+  Suffix (MiniMessage)
+  Suffisso (MiniMessage)
+prompt-description
+  Description (| = new line)
+  Beschreibung (| = neue Zeile)
+  Description (| = nouvelle ligne)
+  Beschrijving (| = nieuwe regel)
+  Descrizione (| = nuova riga)
+prompt-permission
+  Permission (-node = deny)
+  Recht (-node = verbieten)
+  Permission (-node = refuser)
+  Recht (-node = weigeren)
+  Permesso (-node = nega)
+prompt-price
+  Price (0 = not for sale)
+  Preis (0 = nicht käuflich)
+  Prix (0 = pas à vendre)
+  Prijs (0 = niet te koop)
+  Prezzo (0 = non in vendita)
+prompt-duration
+  Duration after purchase (30d / permanent)
+  Dauer nach Kauf (30d / permanent)
+  Durée après achat (30d / permanent)
+  Duur na aankoop (30d / permanent)
+  Durata dopo l'acquisto (30d / permanent)
+prompt-player
+  Player name
+  Spielername
+  Nom du joueur
+  Spelernaam
+  Nome del giocatore
+input-chat
+  Type <accent><prompt></accent> in the chat – or <accent>cancel</accent>.
+  Schreibe <accent><prompt></accent> in den Chat – oder <accent>abbrechen</accent>.
+  Écris <accent><prompt></accent> dans le chat – ou <accent>cancel</accent>.
+  Typ <accent><prompt></accent> in de chat – of <accent>cancel</accent>.
+  Scrivi <accent><prompt></accent> in chat – oppure <accent>cancel</accent>.
+edit-title
+  Rank · <rank>
+  Rang · <rank>
+  Rang · <rank>
+  Rang · <rank>
+  Rango · <rank>
+edit-preview-lore
+  Preview: <preview>\nID: <white><id>
+  Vorschau: <preview>\nID: <white><id>
+  Aperçu : <preview>\nID : <white><id>
+  Voorbeeld: <preview>\nID: <white><id>
+  Anteprima: <preview>\nID: <white><id>
+btn-display
+  <brand>Display name</brand>
+  <brand>Anzeigename</brand>
+  <brand>Nom affiché</brand>
+  <brand>Weergavenaam</brand>
+  <brand>Nome visualizzato</brand>
+btn-prefix
+  <brand>Prefix</brand>
+  <brand>Prefix</brand>
+  <brand>Préfixe</brand>
+  <brand>Prefix</brand>
+  <brand>Prefisso</brand>
+btn-suffix
+  <brand>Suffix</brand>
+  <brand>Suffix</brand>
+  <brand>Suffixe</brand>
+  <brand>Suffix</brand>
+  <brand>Suffisso</brand>
+btn-text-lore
+  Now: <value>\n\n<accent>▸</accent> Click to change
+  Aktuell: <value>\n\n<accent>▸</accent> Klicken zum Ändern
+  Actuel : <value>\n\n<accent>▸</accent> Clique pour changer
+  Nu: <value>\n\n<accent>▸</accent> Klik om te wijzigen
+  Attuale: <value>\n\n<accent>▸</accent> Clicca per cambiare
+btn-text-clear-lore
+  Now: <value>\n\n<accent>▸</accent> Left click: change\n<accent>▸</accent> Right click: remove
+  Aktuell: <value>\n\n<accent>▸</accent> Linksklick: ändern\n<accent>▸</accent> Rechtsklick: entfernen
+  Actuel : <value>\n\n<accent>▸</accent> Clic gauche : changer\n<accent>▸</accent> Clic droit : retirer
+  Nu: <value>\n\n<accent>▸</accent> Linkermuisknop: wijzigen\n<accent>▸</accent> Rechtermuisknop: verwijderen
+  Attuale: <value>\n\n<accent>▸</accent> Clic sinistro: cambia\n<accent>▸</accent> Clic destro: rimuovi
+btn-weight
+  <brand>Weight</brand>
+  <brand>Rangstärke</brand>
+  <brand>Poids</brand>
+  <brand>Gewicht</brand>
+  <brand>Peso</brand>
+btn-weight-lore
+  Now: <white><value>\nHigher = further up in the tab list.\n\n<accent>▸</accent> Left/right click: +1 / -1\n<accent>▸</accent> Shift: +10 / -10
+  Aktuell: <white><value>\nHöher = weiter oben in der Tabliste.\n\n<accent>▸</accent> Links-/Rechtsklick: +1 / -1\n<accent>▸</accent> Shift: +10 / -10
+  Actuel : <white><value>\nPlus haut = plus haut dans la liste.\n\n<accent>▸</accent> Clic gauche/droit : +1 / -1\n<accent>▸</accent> Maj : +10 / -10
+  Nu: <white><value>\nHoger = hoger in de tablijst.\n\n<accent>▸</accent> Links-/rechtsklik: +1 / -1\n<accent>▸</accent> Shift: +10 / -10
+  Attuale: <white><value>\nPiù alto = più in alto nella lista.\n\n<accent>▸</accent> Clic sinistro/destro: +1 / -1\n<accent>▸</accent> Shift: +10 / -10
+btn-color
+  <brand>Name colour</brand>
+  <brand>Namensfarbe</brand>
+  <brand>Couleur du nom</brand>
+  <brand>Naamkleur</brand>
+  <brand>Colore del nome</brand>
+btn-color-lore
+  Now: <white><value>\nColour of the name above the head.\n\n<accent>▸</accent> Click to cycle
+  Aktuell: <white><value>\nFarbe des Namens über dem Kopf.\n\n<accent>▸</accent> Klicken zum Wechseln
+  Actuel : <white><value>\nCouleur du nom au-dessus de la tête.\n\n<accent>▸</accent> Clique pour changer
+  Nu: <white><value>\nKleur van de naam boven het hoofd.\n\n<accent>▸</accent> Klik om te wisselen
+  Attuale: <white><value>\nColore del nome sopra la testa.\n\n<accent>▸</accent> Clicca per cambiare
+btn-icon
+  <brand>Icon</brand>
+  <brand>Icon</brand>
+  <brand>Icône</brand>
+  <brand>Icoon</brand>
+  <brand>Icona</brand>
+btn-icon-lore
+  Uses the item in your hand.
+  Nimmt das Item in deiner Hand.
+  Utilise l'objet dans ta main.
+  Gebruikt het item in je hand.
+  Usa l'oggetto che hai in mano.
+icon-empty-hand
+  Hold the item you want as icon in your hand.
+  Halte das Item, das du als Icon möchtest, in der Hand.
+  Tiens en main l'objet que tu veux comme icône.
+  Houd het item dat je als icoon wilt in je hand.
+  Tieni in mano l'oggetto che vuoi come icona.
+btn-description
+  <brand>Description</brand>
+  <brand>Beschreibung</brand>
+  <brand>Description</brand>
+  <brand>Beschrijving</brand>
+  <brand>Descrizione</brand>
+btn-perms
+  <brand>Permissions</brand>
+  <brand>Rechte</brand>
+  <brand>Permissions</brand>
+  <brand>Rechten</brand>
+  <brand>Permessi</brand>
+btn-perms-lore
+  Own permissions: <white><count>\n\n<accent>▸</accent> Click to manage
+  Eigene Rechte: <white><count>\n\n<accent>▸</accent> Klicken zum Verwalten
+  Permissions propres : <white><count>\n\n<accent>▸</accent> Clique pour gérer
+  Eigen rechten: <white><count>\n\n<accent>▸</accent> Klik om te beheren
+  Permessi propri: <white><count>\n\n<accent>▸</accent> Clicca per gestire
+btn-parents
+  <brand>Inheritance</brand>
+  <brand>Vererbung</brand>
+  <brand>Héritage</brand>
+  <brand>Overerving</brand>
+  <brand>Ereditarietà</brand>
+btn-parents-lore
+  Inherits from: <white><value>\n\n<accent>▸</accent> Click to change
+  Erbt von: <white><value>\n\n<accent>▸</accent> Klicken zum Ändern
+  Hérite de : <white><value>\n\n<accent>▸</accent> Clique pour changer
+  Erft van: <white><value>\n\n<accent>▸</accent> Klik om te wijzigen
+  Eredita da: <white><value>\n\n<accent>▸</accent> Clicca per cambiare
+btn-members
+  <brand>Members</brand>
+  <brand>Mitglieder</brand>
+  <brand>Membres</brand>
+  <brand>Leden</brand>
+  <brand>Membri</brand>
+btn-members-lore
+  Players: <white><count>\n\n<accent>▸</accent> Click to manage
+  Spieler: <white><count>\n\n<accent>▸</accent> Klicken zum Verwalten
+  Joueurs : <white><count>\n\n<accent>▸</accent> Clique pour gérer
+  Spelers: <white><count>\n\n<accent>▸</accent> Klik om te beheren
+  Giocatori: <white><count>\n\n<accent>▸</accent> Clicca per gestire
+btn-price
+  <brand>Price</brand>
+  <brand>Preis</brand>
+  <brand>Prix</brand>
+  <brand>Prijs</brand>
+  <brand>Prezzo</brand>
+btn-price-lore
+  Now: <white><value>\n\n<accent>▸</accent> Left click: change\n<accent>▸</accent> Right click: not for sale
+  Aktuell: <white><value>\n\n<accent>▸</accent> Linksklick: ändern\n<accent>▸</accent> Rechtsklick: nicht käuflich
+  Actuel : <white><value>\n\n<accent>▸</accent> Clic gauche : changer\n<accent>▸</accent> Clic droit : pas à vendre
+  Nu: <white><value>\n\n<accent>▸</accent> Linkermuisknop: wijzigen\n<accent>▸</accent> Rechtermuisknop: niet te koop
+  Attuale: <white><value>\n\n<accent>▸</accent> Clic sinistro: cambia\n<accent>▸</accent> Clic destro: non in vendita
+not-for-sale
+  not for sale
+  nicht käuflich
+  pas à vendre
+  niet te koop
+  non in vendita
+btn-duration
+  <brand>Duration after purchase</brand>
+  <brand>Dauer nach Kauf</brand>
+  <brand>Durée après achat</brand>
+  <brand>Duur na aankoop</brand>
+  <brand>Durata dopo l'acquisto</brand>
+btn-duration-lore
+  Now: <white><value>\n\n<accent>▸</accent> Click to change
+  Aktuell: <white><value>\n\n<accent>▸</accent> Klicken zum Ändern
+  Actuel : <white><value>\n\n<accent>▸</accent> Clique pour changer
+  Nu: <white><value>\n\n<accent>▸</accent> Klik om te wijzigen
+  Attuale: <white><value>\n\n<accent>▸</accent> Clicca per cambiare
+btn-default
+  <brand>Default rank</brand>
+  <brand>Standardrang</brand>
+  <brand>Rang par défaut</brand>
+  <brand>Standaardrang</brand>
+  <brand>Rango predefinito</brand>
+btn-default-yes
+  This is the rank every new player gets.
+  Diesen Rang bekommt jeder neue Spieler.
+  C'est le rang de chaque nouveau joueur.
+  Elke nieuwe speler krijgt deze rang.
+  Ogni nuovo giocatore riceve questo rango.
+btn-default-no
+  <accent>▸</accent> Click to make this the default rank
+  <accent>▸</accent> Klicken, um ihn zum Standardrang zu machen
+  <accent>▸</accent> Clique pour en faire le rang par défaut
+  <accent>▸</accent> Klik om dit de standaardrang te maken
+  <accent>▸</accent> Clicca per renderlo il rango predefinito
+btn-voucher
+  <brand>Get voucher</brand>
+  <brand>Gutschein holen</brand>
+  <brand>Obtenir un bon</brand>
+  <brand>Waardebon halen</brand>
+  <brand>Ottieni buono</brand>
+btn-voucher-lore
+  A permanent voucher for this rank.\nTimed vouchers: /rank voucher <rank> 30d
+  Ein dauerhafter Gutschein für diesen Rang.\nZeitlich begrenzt: /rank voucher <rank> 30d
+  Un bon permanent pour ce rang.\nBon temporaire : /rank voucher <rank> 30d
+  Een permanente waardebon voor deze rang.\nTijdelijk: /rank voucher <rank> 30d
+  Un buono permanente per questo rango.\nTemporaneo: /rank voucher <rank> 30d
+btn-delete
+  <error>Delete rank</error>
+  <error>Rang löschen</error>
+  <error>Supprimer le rang</error>
+  <error>Rang verwijderen</error>
+  <error>Elimina rango</error>
+btn-delete-lore
+  Members fall back to the default rank.
+  Mitglieder fallen auf den Standardrang zurück.
+  Les membres reviennent au rang par défaut.
+  Leden vallen terug naar de standaardrang.
+  I membri tornano al rango predefinito.
+delete-title
+  Delete <rank>?
+  <rank> löschen?
+  Supprimer <rank> ?
+  <rank> verwijderen?
+  Eliminare <rank>?
+perms-title
+  Permissions · <rank>
+  Rechte · <rank>
+  Permissions · <rank>
+  Rechten · <rank>
+  Permessi · <rank>
+perm-lore
+  Status: <white><state>\n\n<accent>▸</accent> Click: enable / disable\n<accent>▸</accent> Shift + right click: delete
+  Status: <white><state>\n\n<accent>▸</accent> Klick: aktivieren / deaktivieren\n<accent>▸</accent> Shift + Rechtsklick: löschen
+  Statut : <white><state>\n\n<accent>▸</accent> Clic : activer / désactiver\n<accent>▸</accent> Maj + clic droit : supprimer
+  Status: <white><state>\n\n<accent>▸</accent> Klik: aan / uit\n<accent>▸</accent> Shift + rechtsklik: verwijderen
+  Stato: <white><state>\n\n<accent>▸</accent> Clic: attiva / disattiva\n<accent>▸</accent> Shift + clic destro: elimina
+perm-inherited-lore
+  Inherited from <white><rank></white> · <white><state>\nChange it in that rank.
+  Geerbt von <white><rank></white> · <white><state>\nÄndern im jeweiligen Rang.
+  Hérité de <white><rank></white> · <white><state>\nÀ modifier dans ce rang.
+  Geërfd van <white><rank></white> · <white><state>\nWijzig het in die rang.
+  Ereditato da <white><rank></white> · <white><state>\nModificalo in quel rango.
+perm-on
+  allowed
+  erlaubt
+  autorisée
+  toegestaan
+  consentito
+perm-off
+  denied
+  verboten
+  refusée
+  geweigerd
+  negato
+btn-add-perm
+  <green>+ Add permission</green>
+  <green>+ Recht hinzufügen</green>
+  <green>+ Ajouter une permission</green>
+  <green>+ Recht toevoegen</green>
+  <green>+ Aggiungi permesso</green>
+btn-add-perm-lore
+  Type the permission in the anvil.\nStart with - to deny it.
+  Recht im Amboss eintippen.\nMit - davor wird es verboten.
+  Tape la permission dans l'enclume.\nCommence par - pour la refuser.
+  Typ het recht in het aambeeld.\nBegin met - om het te weigeren.
+  Scrivi il permesso nell'incudine.\nInizia con - per negarlo.
+perm-added
+  <accent><perm></accent> added to <rank>.
+  <accent><perm></accent> zu <rank> hinzugefügt.
+  <accent><perm></accent> ajoutée à <rank>.
+  <accent><perm></accent> toegevoegd aan <rank>.
+  <accent><perm></accent> aggiunto a <rank>.
+perm-negated
+  <accent><perm></accent> is now denied for <rank>.
+  <accent><perm></accent> ist für <rank> jetzt verboten.
+  <accent><perm></accent> est maintenant refusée pour <rank>.
+  <accent><perm></accent> is nu geweigerd voor <rank>.
+  <accent><perm></accent> è ora negato per <rank>.
+perm-removed
+  <accent><perm></accent> removed from <rank>.
+  <accent><perm></accent> von <rank> entfernt.
+  <accent><perm></accent> retirée de <rank>.
+  <accent><perm></accent> verwijderd uit <rank>.
+  <accent><perm></accent> rimosso da <rank>.
+parents-title
+  Inheritance · <rank>
+  Vererbung · <rank>
+  Héritage · <rank>
+  Overerving · <rank>
+  Ereditarietà · <rank>
+parent-lore
+  Inherited: <white><state>\nWeight: <white><weight>\n\n<accent>▸</accent> Click to toggle
+  Wird geerbt: <white><state>\nRangstärke: <white><weight>\n\n<accent>▸</accent> Klicken zum Umschalten
+  Hérité : <white><state>\nPoids : <white><weight>\n\n<accent>▸</accent> Clique pour basculer
+  Geërfd: <white><state>\nGewicht: <white><weight>\n\n<accent>▸</accent> Klik om te wisselen
+  Ereditato: <white><state>\nPeso: <white><weight>\n\n<accent>▸</accent> Clicca per cambiare
+parent-loop
+  That would create a loop with <rank>.
+  Das würde eine Schleife mit <rank> erzeugen.
+  Cela créerait une boucle avec <rank>.
+  Dat zou een lus met <rank> maken.
+  Si creerebbe un ciclo con <rank>.
+members-title
+  Members · <rank>
+  Mitglieder · <rank>
+  Membres · <rank>
+  Leden · <rank>
+  Membri · <rank>
+member-lore
+  Expires: <white><expires>\nStatus: <white><online>\n\n<accent>▸</accent> Click to remove from this rank
+  Läuft ab: <white><expires>\nStatus: <white><online>\n\n<accent>▸</accent> Klicken zum Entfernen aus dem Rang
+  Expire : <white><expires>\nStatut : <white><online>\n\n<accent>▸</accent> Clique pour retirer de ce rang
+  Verloopt: <white><expires>\nStatus: <white><online>\n\n<accent>▸</accent> Klik om uit deze rang te halen
+  Scade: <white><expires>\nStato: <white><online>\n\n<accent>▸</accent> Clicca per rimuovere dal rango
+remove-member-title
+  Remove <player>?
+  <player> entfernen?
+  Retirer <player> ?
+  <player> verwijderen?
+  Rimuovere <player>?
+btn-add-member
+  <green>+ Add player</green>
+  <green>+ Spieler hinzufügen</green>
+  <green>+ Ajouter un joueur</green>
+  <green>+ Speler toevoegen</green>
+  <green>+ Aggiungi giocatore</green>
+btn-add-member-lore
+  Gives this rank permanently.
+  Gibt diesen Rang dauerhaft.
+  Donne ce rang de façon permanente.
+  Geeft deze rang permanent.
+  Assegna questo rango in modo permanente.
+log-title
+  Change log
+  Änderungs-Log
+  Journal
+  Logboek
+  Registro
+log-lore
+  By: <white><actor>\nDate: <white><date>
+  Von: <white><actor>\nDatum: <white><date>
+  Par : <white><actor>\nDate : <white><date>
+  Door: <white><actor>\nDatum: <white><date>
+  Da: <white><actor>\nData: <white><date>
+log-empty
+  No changes recorded yet.
+  Noch keine Änderungen protokolliert.
+  Aucune modification enregistrée.
+  Nog geen wijzigingen vastgelegd.
+  Nessuna modifica registrata.
+log-create
+  Rank <a> created
+  Rang <a> erstellt
+  Rang <a> créé
+  Rang <a> gemaakt
+  Rango <a> creato
+log-delete
+  Rank <a> deleted
+  Rang <a> gelöscht
+  Rang <a> supprimé
+  Rang <a> verwijderd
+  Rango <a> eliminato
+log-edit
+  <a>: <b>
+  <a>: <b>
+  <a> : <b>
+  <a>: <b>
+  <a>: <b>
+log-default
+  <a> is now the default rank
+  <a> ist jetzt Standardrang
+  <a> est maintenant le rang par défaut
+  <a> is nu de standaardrang
+  <a> è ora il rango predefinito
+log-perm-add
+  <a>: +<b>
+  <a>: +<b>
+  <a> : +<b>
+  <a>: +<b>
+  <a>: +<b>
+log-perm-negate
+  <a>: -<b>
+  <a>: -<b>
+  <a> : -<b>
+  <a>: -<b>
+  <a>: -<b>
+log-perm-on
+  <a>: <b> allowed
+  <a>: <b> erlaubt
+  <a> : <b> autorisée
+  <a>: <b> toegestaan
+  <a>: <b> consentito
+log-perm-off
+  <a>: <b> denied
+  <a>: <b> verboten
+  <a> : <b> refusée
+  <a>: <b> geweigerd
+  <a>: <b> negato
+log-perm-remove
+  <a>: <b> removed
+  <a>: <b> entfernt
+  <a> : <b> retirée
+  <a>: <b> verwijderd
+  <a>: <b> rimosso
+log-parent-add
+  <a> inherits from <b>
+  <a> erbt von <b>
+  <a> hérite de <b>
+  <a> erft van <b>
+  <a> eredita da <b>
+log-parent-remove
+  <a> no longer inherits from <b>
+  <a> erbt nicht mehr von <b>
+  <a> n'hérite plus de <b>
+  <a> erft niet meer van <b>
+  <a> non eredita più da <b>
+log-set
+  <a> → <b>
+  <a> → <b>
+  <a> → <b>
+  <a> → <b>
+  <a> → <b>
+log-expire
+  <a>: rank expired → <b>
+  <a>: Rang abgelaufen → <b>
+  <a> : rang expiré → <b>
+  <a>: rang verlopen → <b>
+  <a>: rango scaduto → <b>
+log-voucher
+  Voucher <a> (<b>)
+  Gutschein <a> (<b>)
+  Bon <a> (<b>)
+  Waardebon <a> (<b>)
+  Buono <a> (<b>)
+log-redeem
+  Voucher <a> redeemed (<b>)
+  Gutschein <a> eingelöst (<b>)
+  Bon <a> utilisé (<b>)
+  Waardebon <a> ingewisseld (<b>)
+  Buono <a> riscattato (<b>)
+log-buy
+  <a> bought for <b>
+  <a> gekauft für <b>
+  <a> acheté pour <b>
+  <a> gekocht voor <b>
+  <a> acquistato per <b>
+log-import
+  LuckPerms import: <a> ranks, <b> players
+  LuckPerms-Import: <a> Ränge, <b> Spieler
+  Import LuckPerms : <a> rangs, <b> joueurs
+  LuckPerms-import: <a> rangen, <b> spelers
+  Importazione LuckPerms: <a> ranghi, <b> giocatori
+rank-invalid-id
+  IDs may only contain letters, numbers, - and _.
+  IDs dürfen nur Buchstaben, Zahlen, - und _ enthalten.
+  Les ID ne peuvent contenir que des lettres, des chiffres, - et _.
+  ID's mogen alleen letters, cijfers, - en _ bevatten.
+  Gli ID possono contenere solo lettere, numeri, - e _.
+rank-exists
+  Rank <rank> already exists.
+  Den Rang <rank> gibt es bereits.
+  Le rang <rank> existe déjà.
+  Rang <rank> bestaat al.
+  Il rango <rank> esiste già.
+rank-unknown
+  Rank <rank> doesn't exist.
+  Den Rang <rank> gibt es nicht.
+  Le rang <rank> n'existe pas.
+  Rang <rank> bestaat niet.
+  Il rango <rank> non esiste.
+rank-created
+  Rank <accent><rank></accent> created.
+  Rang <accent><rank></accent> erstellt.
+  Rang <accent><rank></accent> créé.
+  Rang <accent><rank></accent> gemaakt.
+  Rango <accent><rank></accent> creato.
+rank-updated
+  <rank> saved.
+  <rank> gespeichert.
+  <rank> enregistré.
+  <rank> opgeslagen.
+  <rank> salvato.
+rank-deleted
+  Rank <accent><rank></accent> deleted.
+  Rang <accent><rank></accent> gelöscht.
+  Rang <accent><rank></accent> supprimé.
+  Rang <accent><rank></accent> verwijderd.
+  Rango <accent><rank></accent> eliminato.
+rank-delete-default
+  The default rank can't be deleted.
+  Der Standardrang kann nicht gelöscht werden.
+  Le rang par défaut ne peut pas être supprimé.
+  De standaardrang kan niet worden verwijderd.
+  Il rango predefinito non può essere eliminato.
+rank-default-set
+  <rank> is now the default rank.
+  <rank> ist jetzt der Standardrang.
+  <rank> est maintenant le rang par défaut.
+  <rank> is nu de standaardrang.
+  <rank> è ora il rango predefinito.
+rank-set
+  <accent><player></accent> is now <rank> (<duration>).
+  <accent><player></accent> ist jetzt <rank> (<duration>).
+  <accent><player></accent> est maintenant <rank> (<duration>).
+  <accent><player></accent> is nu <rank> (<duration>).
+  <accent><player></accent> è ora <rank> (<duration>).
+rank-received
+  Your new rank: <rank> (<duration>).
+  Dein neuer Rang: <rank> (<duration>).
+  Ton nouveau rang : <rank> (<duration>).
+  Je nieuwe rang: <rank> (<duration>).
+  Il tuo nuovo rango: <rank> (<duration>).
+rank-expired
+  Your temporary rank has expired – you are now <rank>.
+  Dein Zeitrang ist abgelaufen – du bist jetzt <rank>.
+  Ton rang temporaire a expiré – tu es maintenant <rank>.
+  Je tijdelijke rang is verlopen – je bent nu <rank>.
+  Il tuo rango temporaneo è scaduto – ora sei <rank>.
+rank-info
+  <accent><player></accent>: <rank> (<duration>)
+  <accent><player></accent>: <rank> (<duration>)
+  <accent><player></accent> : <rank> (<duration>)
+  <accent><player></accent>: <rank> (<duration>)
+  <accent><player></accent>: <rank> (<duration>)
+rank-list
+  Ranks: <accent><ranks></accent>
+  Ränge: <accent><ranks></accent>
+  Rangs : <accent><ranks></accent>
+  Rangen: <accent><ranks></accent>
+  Ranghi: <accent><ranks></accent>
+rank-already-higher
+  You already have <rank>, which is equal or higher.
+  Du hast bereits <rank>, das ist gleich hoch oder höher.
+  Tu as déjà <rank>, qui est égal ou supérieur.
+  Je hebt al <rank>, dat is gelijk of hoger.
+  Hai già <rank>, che è uguale o superiore.
+rank-already-have
+  You already have <rank> permanently.
+  Du hast <rank> bereits dauerhaft.
+  Tu as déjà <rank> de façon permanente.
+  Je hebt <rank> al permanent.
+  Hai già <rank> in modo permanente.
+rank-not-buyable
+  This rank can't be bought right now.
+  Dieser Rang kann gerade nicht gekauft werden.
+  Ce rang ne peut pas être acheté pour le moment.
+  Deze rang kan nu niet worden gekocht.
+  Questo rango non può essere acquistato ora.
+rank-no-perms
+  <rank> has no permissions yet.
+  <rank> hat noch keine Rechte.
+  <rank> n'a encore aucune permission.
+  <rank> heeft nog geen rechten.
+  <rank> non ha ancora permessi.
+player-never-joined
+  <player> has never been on this server.
+  <player> war noch nie auf diesem Server.
+  <player> n'est jamais venu sur ce serveur.
+  <player> is nog nooit op deze server geweest.
+  <player> non è mai stato su questo server.
+invalid-duration
+  <value> is not a duration. Examples: 1h, 7d, 30d, permanent
+  <value> ist keine Dauer. Beispiele: 1h, 7d, 30d, permanent
+  <value> n'est pas une durée. Exemples : 1h, 7d, 30d, permanent
+  <value> is geen duur. Voorbeelden: 1h, 7d, 30d, permanent
+  <value> non è una durata. Esempi: 1h, 7d, 30d, permanent
+voucher-name
+  <brand>Rank voucher:</brand> <rank>
+  <brand>Rang-Gutschein:</brand> <rank>
+  <brand>Bon de rang :</brand> <rank>
+  <brand>Rang-waardebon:</brand> <rank>
+  <brand>Buono rango:</brand> <rank>
+voucher-lore
+  Duration: <white><duration>\n\n<accent>▸</accent> Right click to redeem
+  Dauer: <white><duration>\n\n<accent>▸</accent> Rechtsklick zum Einlösen
+  Durée : <white><duration>\n\n<accent>▸</accent> Clic droit pour utiliser
+  Duur: <white><duration>\n\n<accent>▸</accent> Rechtsklik om in te wisselen
+  Durata: <white><duration>\n\n<accent>▸</accent> Clic destro per riscattare
+voucher-given
+  Voucher for <rank> given to <accent><player></accent>.
+  Gutschein für <rank> an <accent><player></accent> gegeben.
+  Bon pour <rank> donné à <accent><player></accent>.
+  Waardebon voor <rank> gegeven aan <accent><player></accent>.
+  Buono per <rank> dato a <accent><player></accent>.
+user-title
+  Ranks
+  Ränge
+  Rangs
+  Rangen
+  Ranghi
+user-head
+  <brand>Your rank:</brand> <rank>
+  <brand>Dein Rang:</brand> <rank>
+  <brand>Ton rang :</brand> <rank>
+  <brand>Jouw rang:</brand> <rank>
+  <brand>Il tuo rango:</brand> <rank>
+user-head-lore
+  Expires: <white><expires>\nPermissions: <white><perms>
+  Läuft ab: <white><expires>\nRechte: <white><perms>
+  Expire : <white><expires>\nPermissions : <white><perms>
+  Verloopt: <white><expires>\nRechten: <white><perms>
+  Scade: <white><expires>\nPermessi: <white><perms>
+user-rank-lore
+  \nPrefix: <prefix>\nWeight: <white><weight>\nPermissions: <white><perms>\nInherits: <white><parents>
+  \nPrefix: <prefix>\nRangstärke: <white><weight>\nRechte: <white><perms>\nErbt von: <white><parents>
+  \nPréfixe : <prefix>\nPoids : <white><weight>\nPermissions : <white><perms>\nHérite de : <white><parents>
+  \nPrefix: <prefix>\nGewicht: <white><weight>\nRechten: <white><perms>\nErft van: <white><parents>
+  \nPrefisso: <prefix>\nPeso: <white><weight>\nPermessi: <white><perms>\nEredita da: <white><parents>
+user-rank-actions
+  \n<accent>▸</accent> Click: show permissions
+  \n<accent>▸</accent> Klick: Rechte anzeigen
+  \n<accent>▸</accent> Clic : voir les permissions
+  \n<accent>▸</accent> Klik: rechten tonen
+  \n<accent>▸</accent> Clic: mostra i permessi
+user-rank-actions-buy
+  \n<accent>▸</accent> Left click: show permissions\n<accent>▸</accent> Right click: buy
+  \n<accent>▸</accent> Linksklick: Rechte anzeigen\n<accent>▸</accent> Rechtsklick: kaufen
+  \n<accent>▸</accent> Clic gauche : voir les permissions\n<accent>▸</accent> Clic droit : acheter
+  \n<accent>▸</accent> Linkermuisknop: rechten tonen\n<accent>▸</accent> Rechtermuisknop: kopen
+  \n<accent>▸</accent> Clic sinistro: mostra i permessi\n<accent>▸</accent> Clic destro: acquista
+status-yours
+  ✔ Your rank
+  ✔ Dein Rang
+  ✔ Ton rang
+  ✔ Jouw rang
+  ✔ Il tuo rango
+status-yours-temp
+  ✔ Your rank – <time> left
+  ✔ Dein Rang – noch <time>
+  ✔ Ton rang – encore <time>
+  ✔ Jouw rang – nog <time>
+  ✔ Il tuo rango – ancora <time>
+status-buy
+  Buy for <price> (<duration>)
+  Kaufen für <price> (<duration>)
+  Acheter pour <price> (<duration>)
+  Kopen voor <price> (<duration>)
+  Acquista per <price> (<duration>)
+user-perms-title
+  Permissions · <rank>
+  Rechte · <rank>
+  Permissions · <rank>
+  Rechten · <rank>
+  Permessi · <rank>
+user-perm-lore
+  From: <white><rank></white> · <white><state>
+  Von: <white><rank></white> · <white><state>
+  De : <white><rank></white> · <white><state>
+  Van: <white><rank></white> · <white><state>
+  Da: <white><rank></white> · <white><state>
+buy-title
+  Buy <rank> for <price>?
+  <rank> für <price> kaufen?
+  Acheter <rank> pour <price> ?
+  <rank> kopen voor <price>?
+  Acquistare <rank> per <price>?
+import-no-luckperms
+  LuckPerms is not installed.
+  LuckPerms ist nicht installiert.
+  LuckPerms n'est pas installé.
+  LuckPerms is niet geïnstalleerd.
+  LuckPerms non è installato.
+import-started
+  Importing from LuckPerms…
+  Importiere aus LuckPerms…
+  Import depuis LuckPerms…
+  Importeren uit LuckPerms…
+  Importazione da LuckPerms…
+import-done
+  Imported <accent><groups></accent> ranks and <accent><players></accent> players from LuckPerms.
+  <accent><groups></accent> Ränge und <accent><players></accent> Spieler aus LuckPerms importiert.
+  <accent><groups></accent> rangs et <accent><players></accent> joueurs importés depuis LuckPerms.
+  <accent><groups></accent> rangen en <accent><players></accent> spelers geïmporteerd uit LuckPerms.
+  Importati <accent><groups></accent> ranghi e <accent><players></accent> giocatori da LuckPerms.
+import-failed
+  LuckPerms import failed: <error>
+  LuckPerms-Import fehlgeschlagen: <error>
+  L'import LuckPerms a échoué : <error>
+  LuckPerms-import mislukt: <error>
+  Importazione LuckPerms non riuscita: <error>
+help-ranks
+  Your rank and all ranks
+  Dein Rang und alle Ränge
+  Ton rang et tous les rangs
+  Jouw rang en alle rangen
+  Il tuo rango e tutti i ranghi
+help-rankadmin
+  Open the rank editor
+  Rang-Editor öffnen
+  Ouvrir l'éditeur de rangs
+  Rang-editor openen
+  Apri l'editor dei ranghi
+help-rank
+  Set ranks, permissions, inheritance and vouchers by command
+  Ränge, Rechte, Vererbung und Gutscheine per Befehl
+  Rangs, permissions, héritage et bons par commande
+  Rangen, rechten, overerving en waardebonnen via commando
+  Ranghi, permessi, ereditarietà e buoni via comando
+help-ultraranks
+  Help, reload, version, language and LuckPerms import
+  Hilfe, Reload, Version, Sprache und LuckPerms-Import
+  Aide, rechargement, version, langue et import LuckPerms
+  Help, herladen, versie, taal en LuckPerms-import
+  Aiuto, ricarica, versione, lingua e importazione LuckPerms

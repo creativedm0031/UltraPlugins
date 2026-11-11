@@ -1,0 +1,196 @@
+Titel:
+UltraWarps [1.20.4+ - 26.3] ✦ Warp GUI, Categories & Player Warps
+
+Versionstring:
+1.0.0
+
+Beschreibung (Markdown – Modrinth, Hangar):
+![UltraWarps](https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main/UltraWarps/release/images/banner.png)
+
+# ✦ UltraWarps [1.20.4+] ✦
+
+*Übersichtlich. Flexibel. Beliebt.*
+
+──────── ✦ ────────
+
+---
+
+## English Version
+
+Turn your warps into a real overview. UltraWarps lists server and player warps in a GUI with categories, custom icons and a visit counter. Players can create their own warps for shops or bases – with limits and an optional fee.
+
+### ⭐ Features at a glance:
+
+- 🗺️ **Warp GUI:** Filter by category and sort by name, popularity or newest.
+- 🏷️ **Categories & Icons:** Create warps with a category – the item in your hand becomes the icon.
+- 👥 **Player Warps:** Players create their own warps with /pwarp, limited per rank, optional fee via Vault.
+- 📈 **Visit Counter:** Every visit is counted – popular warps rise to the top.
+- 🔐 **Per-Warp Permissions:** Optional permission per warp for VIP or staff warps.
+- 📦 **EssentialsX Import:** Take over all existing warps with /ultrawarps import.
+- ✨ **Clean Layout:** Feedback in the action bar, only errors in the chat – the same look in every Ultra plugin.
+- 🚀 **Lightweight:** No required dependencies; runs on Spigot, Paper and Purpur.
+
+**🌍 Languages:** English, Deutsch, Français, Nederlands, Italiano – every player automatically gets the language of their Minecraft client. Change the default with /ultrawarps language <code>.
+
+**📦 Requirements:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · no required dependencies · Vault (optional, for player warp fees)
+
+<details><summary>Commands & Permissions (EN)</summary>
+
+- `/warp [name]` – Teleport to a warp · `ultrawarps.warp` (default: everyone)
+- `/warps` – Open the warp list · `ultrawarps.warp` (default: everyone)
+- `/setwarp <name> [category]` – Create a server warp (item in hand = icon) · `ultrawarps.set` (default: OP)
+- `/delwarp <name>` – Delete a warp · `ultrawarps.delete` (default: OP)
+- `/pwarp <create|delete|list> [name]` – Create, delete or list player warps · `ultrawarps.player` (default: everyone)
+- `/ultrawarps <help|reload|version|language|import>` – Help, reload, version, language and Essentials import · `ultrawarps.admin` (default: OP)
+
+**More permissions:**
+
+- `ultrawarps.bypass.warmup` – Skip the teleport warm-up (default: OP)
+- `ultrawarps.bypass.cooldown` – Skip cooldowns (default: OP)
+- `ultrawarps.*` – All permissions of the plugin (default: OP)
+- `ultrawarps.warp.<name>` – Access a warp when per-warp-permission is on
+- `ultrawarps.player.limit.<number>` – Maximum number of player warps
+
+</details>
+
+<details><summary>View Full Configuration (EN)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrawarps language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two warps. 0 = none.
+cooldown: 0
+
+# true: server warps need the permission ultrawarps.warp.<name>.
+per-warp-permission: false
+
+# Warps created by players with /pwarp.
+player-warps:
+  enabled: true
+  # Category they are listed in.
+  category: player
+  # Warps for players without an ultrawarps.player.limit.<number> permission.
+  default-limit: 1
+  # Price for creating one. Needs Vault and an economy plugin such as UltraEconomy. 0 = free.
+  cost: 0
+```
+
+</details>
+
+---
+
+## Deutsche Version
+
+Mach aus deinen Warps eine echte Übersicht. UltraWarps listet Server- und Spieler-Warps in einem GUI mit Kategorien, eigenen Icons und Besucherzähler. Spieler können eigene Warps für Shops oder Basen erstellen – mit Limit und optionaler Gebühr.
+
+### ⚙️ Deine Vorteile:
+
+- 🗺️ **Warp-GUI:** Nach Kategorie filtern und nach Name, Beliebtheit oder Datum sortieren.
+- 🏷️ **Kategorien & Icons:** Warps mit Kategorie erstellen – das Item in der Hand wird zum Icon.
+- 👥 **Spieler-Warps:** Spieler erstellen eigene Warps mit /pwarp, Limit pro Rang, optionale Gebühr über Vault.
+- 📈 **Besucherzähler:** Jeder Besuch wird gezählt – beliebte Warps landen oben.
+- 🔐 **Rechte pro Warp:** Optionale Permission pro Warp für VIP- oder Team-Warps.
+- 📦 **EssentialsX-Import:** Alle bestehenden Warps mit /ultrawarps import übernehmen.
+- ✨ **Sauberes Layout:** Rückmeldungen in der Actionbar, nur Fehler im Chat – gleicher Look in jedem Ultra-Plugin.
+- 🚀 **Leichtgewichtig:** Keine Pflicht-Abhängigkeiten; läuft auf Spigot, Paper und Purpur.
+
+**🌍 Sprachen:** English, Deutsch, Français, Nederlands, Italiano – jeder Spieler bekommt automatisch die Sprache seines Minecraft-Clients. Standardsprache ändern mit /ultrawarps language <code>.
+
+**📦 Voraussetzungen:** Spigot, Paper, Purpur · Minecraft 1.20.4 – 26.3 · Java 17+ · keine Pflicht-Abhängigkeiten · Vault (optional, für Spieler-Warp-Gebühren)
+
+<details><summary>Befehle & Rechte (DE)</summary>
+
+- `/warp [name]` – Zu einem Warp teleportieren · `ultrawarps.warp` (Standard: alle)
+- `/warps` – Warp-Liste öffnen · `ultrawarps.warp` (Standard: alle)
+- `/setwarp <name> [category]` – Server-Warp erstellen (Item in der Hand = Icon) · `ultrawarps.set` (Standard: OP)
+- `/delwarp <name>` – Einen Warp löschen · `ultrawarps.delete` (Standard: OP)
+- `/pwarp <create|delete|list> [name]` – Spieler-Warps erstellen, löschen oder auflisten · `ultrawarps.player` (Standard: alle)
+- `/ultrawarps <help|reload|version|language|import>` – Hilfe, Reload, Version, Sprache und Essentials-Import · `ultrawarps.admin` (Standard: OP)
+
+**Weitere Rechte:**
+
+- `ultrawarps.bypass.warmup` – Kein Teleport-Warmup (Standard: OP)
+- `ultrawarps.bypass.cooldown` – Keine Cooldowns (Standard: OP)
+- `ultrawarps.*` – Alle Rechte des Plugins (Standard: OP)
+- `ultrawarps.warp.<name>` – Zugriff auf einen Warp bei per-warp-permission
+- `ultrawarps.player.limit.<number>` – Maximale Anzahl Spieler-Warps
+
+</details>
+
+<details><summary>Vollständige Konfiguration anzeigen (DE)</summary>
+
+```yaml
+# Default language: en, de, fr, nl, it
+# Change it here or in-game with /ultrawarps language <code>.
+language: en
+
+# true: every player gets the plugin in the language of their Minecraft client,
+# as long as it is one of the five above. Everyone else gets "language".
+use-client-language: true
+
+# Colours used in every message and GUI.
+theme:
+  primary: "#8B5CF6"
+  accent: "#22D3EE"
+  muted: "#94A3B8"
+  separator: "#64748B"
+  error: "#F87171"
+  error-text: "#FCA5A5"
+
+sounds:
+  enabled: true
+  success: {key: "entity.experience_orb.pickup", pitch: 1.4}
+  error: {key: "block.note_block.bass", pitch: 0.6}
+  tick: {key: "block.note_block.hat", pitch: 1.0}
+  teleport: {key: "entity.enderman.teleport", pitch: 1.0}
+  click: {key: "ui.button.click", pitch: 1.2}
+
+# Seconds a player has to stand still before a teleport. 0 = instant.
+warmup: 3
+# Seconds between two warps. 0 = none.
+cooldown: 0
+
+# true: server warps need the permission ultrawarps.warp.<name>.
+per-warp-permission: false
+
+# Warps created by players with /pwarp.
+player-warps:
+  enabled: true
+  # Category they are listed in.
+  category: player
+  # Warps for players without an ultrawarps.player.limit.<number> permission.
+  default-limit: 1
+  # Price for creating one. Needs Vault and an economy plugin such as UltraEconomy. 0 = free.
+  cost: 0
+```
+
+</details>
+
+---
+
+**Please leave a ⭐⭐⭐⭐⭐ rating if you like the plugin!**

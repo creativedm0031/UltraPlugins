@@ -1,1 +1,0 @@
-Bans, mutes, kicks and warnings with a template GUI and full history. Available in 5 languages.

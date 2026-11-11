@@ -100,15 +100,18 @@ def header_svg(title):
 """
 
 
+COUNT_WORDS = {10: "Ten", 11: "Eleven", 12: "Twelve"}
+
+
 def series_svg():
     tiles = "".join(
-        f'<g transform="translate({120 + i * 172} 300) scale(.28125)">{logo_body(p["name"]).replace("tile", "tile%d" % i)}</g>'
+        f'<g transform="translate({120 + i * (1920 - 240 - 144) / max(1, len(PLUGINS) - 1):.1f} 300) scale(.28125)">{logo_body(p["name"]).replace("tile", "tile%d" % i)}</g>'
         for i, p in enumerate(PLUGINS))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 520" width="1920" height="520">
 {DEFS}
 {backdrop(1920, 520)}
 <text x="120" y="170" font-family="{FONT}" font-size="124" font-weight="800" letter-spacing="-3" fill="{WHITE}">Ultra<tspan fill="url(#word)">Plugins</tspan></text>
-<text x="124" y="236" font-family="{FONT}" font-size="40" font-weight="500" fill="{GRAY}">Ten plugins. One look. One feel.</text>
+<text x="124" y="236" font-family="{FONT}" font-size="40" font-weight="500" fill="{GRAY}">{COUNT_WORDS.get(len(PLUGINS), len(PLUGINS))} plugins. One look. One feel.</text>
 {tiles}
 </svg>
 """
@@ -226,7 +229,7 @@ Bauen aus dem Quellcode: im Hauptordner `mvn package`, die Jar liegt danach in `
 | `assets/logo.svg` · `logo.png` | Logo (512 × 512, Resource-Icon auf SpigotMC) |
 | `assets/banner.svg` · `banner.png` | Banner (1920 × 480) |
 | `assets/preview.png` | Mock-up des Ingame-Layouts |
-| `release/` | Upload-Material für SpigotMC, BuiltByBit, Modrinth und Hangar (Titel, Tagline, Beschreibungen, Icons, Banner, Beispielbilder, Checkliste) |
+| `release/` | Release: `release.txt` (Titel, Versionstring, Beschreibung), Jar, Changelog, Bilder |
 | `src/` | Quellcode, Konfiguration und Sprachdateien |
 
 ## Serie
@@ -372,8 +375,9 @@ python3 tools/generate.py && node tools/render.js
 
 ## Veröffentlichen
 
-Titel und Taglines aller Plugins stehen in [RELEASE.md](RELEASE.md). Pro Plugin liegt in
-`Ultra<Name>/release/` alles für SpigotMC, BuiltByBit, Modrinth und Hangar, inklusive Checkliste.
+Pro Plugin liegt in `Ultra<Name>/release/` die Datei `release.txt` mit Titel, Versionstring und
+Beschreibung (BBCode für SpigotMC und BuiltByBit), `release-markdown.txt` mit demselben Inhalt in
+Markdown (Modrinth und Hangar), die Jar und die Bilder. Übersicht: [RELEASE.md](RELEASE.md).
 
 Die Bilder in den Beschreibungen verweisen auf `raw.githubusercontent.com/.../main/...`. Sie werden
 erst angezeigt, wenn dieses Repository öffentlich ist und die Dateien auf `main` liegen. Sonst die

@@ -15,7 +15,9 @@ import re
 
 import yaml
 
+from details import COMMON_FEATURES, DETAILS
 from plugins import ICONS, PLUGINS
+import storepage
 
 RAW = "https://raw.githubusercontent.com/creativedm0031/UltraPlugins/main"
 VERSION = "1.0.0"
@@ -24,7 +26,7 @@ MC_VERSIONS = f"{MC_MIN} – {MC_MAX}"
 # Every Minecraft release in that range, for the version pickers on Modrinth and Hangar.
 MC_LIST = ["1.20.4", "1.20.5", "1.20.6", "1.21", "1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7",
            "1.21.8", "1.21.9", "1.21.10", "1.21.11", "26.1", "26.1.1", "26.1.2", "26.2", "26.3"]
-# Paper servers the release jars were started on (all ten plugins), and how far the test went.
+# Paper servers the release jars were started on (all plugins), and how far the test went.
 TESTED = [("1.20.4", "bot test"), ("1.20.6", "bot test"), ("1.21.1", "bot test"), ("1.21.4", "full bot test"),
           ("1.21.8", "bot test"), ("1.21.11", "bot test"), ("26.1.2", "bot test"), ("26.3", "start + console")]
 JAVA = "Java 17+ (Minecraft 1.20.5+ needs Java 21, 26.x needs Java 25 – that is a server requirement)"
@@ -43,21 +45,7 @@ CATEGORIES = {
     "Kits":      ("Tools and Utilities", "equipment, utility", "Gameplay"),
     "Vanish":    ("Tools and Utilities", "management, utility", "Admin Tools"),
     "Reports":   ("Tools and Utilities", "management, social", "Admin Tools"),
-}
-
-# Store titles (SpigotMC, BuiltByBit) and the tagline used on all four sites.
-# Titles stay under 40 characters and taglines under 100, so they fit every site's field.
-TITLES = {
-    "Spawn": ("UltraSpawn | Multi-Spawn & Void Rescue", "Multiple spawns, first-join spawn and void rescue. Clean action-bar messages in 5 languages."),
-    "Teleports": ("UltraTeleports | TPA, RTP & Back", "TPA requests, safe random teleport and /back with warm-ups. Action-bar messages in 5 languages."),
-    "Punish": ("UltraPunish | Bans, Mutes & Punish GUI", "Bans, mutes, kicks and warnings with a template GUI and full history. Available in 5 languages."),
-    "Homes": ("UltraHomes | Homes GUI with Limits", "Set, manage and publish homes in a clean GUI with permission limits. Available in 5 languages."),
-    "Warps": ("UltraWarps | Warp GUI & Player Warps", "Server and player warps with categories, icons and visit counter in one GUI. 5 languages."),
-    "Chat": ("UltraChat | Formats, Channels & Filter", "Rank formats, channels, private messages and a spam, caps and ad filter. Available in 5 languages."),
-    "Economy": ("UltraEconomy | Vault Multi-Currency", "Vault economy with multiple currencies, baltop GUI and transaction log. Available in 5 languages."),
-    "Kits": ("UltraKits | Kit GUI, Preview & Editor", "Kits with GUI preview, cooldowns, prices and an in-game editor. Available in 5 languages."),
-    "Vanish": ("UltraVanish | Full Vanish for Staff", "True invisibility for staff: tab list, player count, silent chests and vanish levels. 5 languages."),
-    "Reports": ("UltraReports | Report GUI & Staff Inbox", "Player reports with a reason GUI, staff inbox, Discord webhook and UltraPunish link. 5 languages."),
+    "Ranks":     ("Tools and Utilities", "management, utility, social", "Admin Tools"),
 }
 
 # One message per plugin, shown in all five languages on the language gallery image.
@@ -72,6 +60,7 @@ LANG_SAMPLE = {
     "Kits": ("kit-received", {"name": "starter"}),
     "Vanish": ("vanish-status", {"count": "12"}),
     "Reports": ("report-sent", {"player": "Steve"}),
+    "Ranks": ("rank-received", {"rank": "<gradient:#FACC15:#F97316>VIP</gradient>", "duration": "30d"}),
 }
 
 # Plugins with a main GUI: title key + vars, hovered item name, lore key + vars, number of filled slots.
@@ -82,6 +71,7 @@ GUI_SAMPLE = {
     "Economy": (("baltop-title", {"currency": "coins"}), "#1 Steve", ("baltop-lore", {"balance": "$48,250.00"}), 12),
     "Kits": (("kits-title", {}), "starter", ("kit-lore", {"status": "ready", "items": "9", "cost": "free"}), 5),
     "Reports": (("inbox-title", {"state": "open"}), "#42 Steve", ("report-lore", {"reason": "Cheating", "reporter": "Alex", "date": "2026-11-10 18:04", "handler": "–", "online": "online"}), 4),
+    "Ranks": (("perms-title", {"rank": "VIP"}), "ultrahomes.limit.5", ("perm-lore", {"state": "allowed"}), 7),
 }
 
 
@@ -278,224 +268,90 @@ def gallery_names(p):
     return [f"gallery-{i + 1}-{n}" for i, n in enumerate(names)]
 
 
-def markdown(p, site):
-    name, full, low = p["name"], "Ultra" + p["name"], "ultra" + p["name"].lower()
-    img = f"{RAW}/{full}/release/images"
-    feats = "\n".join(f"- {f[1]}" for f in p["features"])
-    cmds = "\n".join(f"| `{c}` | {d[1]} | `{perm}` |" for c, perm, d in p["commands"])
-    perms = "\n".join(f"| `{perm}` | {d[1]} |" for perm, d in p["extra_perms"]) + f"\n| `{low}.*` | Everything |"
-    series = "\n".join(f"- **Ultra{o['name']}** – {o['tagline'][1]}" for o in PLUGINS if o is not p)
-    gallery = "" if site == "modrinth" else "\n".join(f"![{n}]({img}/{n}.png)" for n in gallery_names(p)[1:]) + "\n"
-    platforms = ("Paper and Purpur" if site == "hangar" else "Spigot, Paper and Purpur")
-    return f"""![{full}]({img}/banner.png)
-
-## {p["tagline"][1]}
-
-{p["intro"][1]}
-
-{full} is part of the **UltraPlugins** series: every plugin shares the same colours, the same message layout and the same command structure.
-
-## Features
-
-{feats}
-
-## In-game layout
-
-No chat spam. Every confirmation, countdown and status appears in the **action bar**. Only **errors** are sent to the chat, so players never miss them. All messages use MiniMessage and can be edited in the language files.
-
-![In-game layout]({img}/{gallery_names(p)[0]}.png)
-
-## Languages
-
-**English · Deutsch · Français · Nederlands · Italiano**
-
-Every player sees {full} in the language of their Minecraft client – automatically. Players with any other language get your default language, which you set in the config or with `/{low} language <code>`. All texts live in `lang/<code>.yml` and can be edited freely.
-
-{gallery}
-## Commands
-
-| Command | Description | Permission |
-| --- | --- | --- |
-{cmds}
-
-## Permissions
-
-| Permission | Description |
-| --- | --- |
-{perms}
-
-## Supported versions
-
-| | |
-| --- | --- |
-| Minecraft | **{MC_VERSIONS}** |
-| Server | {platforms} |
-| Java | 17+ (whatever your Minecraft version needs) |
-
-## Installation
-
-1. Drop `{full}-{VERSION}.jar` into your `plugins` folder. Works on {platforms} **{MC_VERSIONS}**, no dependencies needed.
-2. Restart your server.
-3. Adjust `config.yml` and the files in `lang/`, then run `/{low} reload`.
-
-## The Ultra series
-
-{series}
-
-## Support
-
-Found a bug or have an idea? Please open a report instead of leaving a bad review – we answer every request.
-"""
-
-
 def checklist(p):
     name, full = p["name"], "Ultra" + p["name"]
     spigot_cat, modrinth_cat, hangar_cat = CATEGORIES[name]
-    title, tagline = TITLES[name]
     mc_list = ", ".join(f"`{v}`" for v in MC_LIST)
     tested = "\n".join(f"| {v} | {t} |" for v, t in TESTED)
-    gallery = "\n".join(f"   - `images/{n}.png`" for n in gallery_names(p))
-    return f"""# {full} – Release-Material
+    gallery = "\n".join(f"- `images/{n}.png`" for n in ["cover"] + gallery_names(p))
+    return f"""# {full} – Release
 
-Alles, was zum Hochladen auf den vier Seiten gebraucht wird.
-
-**Datei zum Hochladen:** [`{full}-{VERSION}.jar`]({full}-{VERSION}.jar) (liegt in diesem Ordner).
-Neu bauen mit `tools/package.sh` im Hauptordner.
-
-## Version
-
-| Feld | Wert |
+| Datei | Inhalt |
 | --- | --- |
-| Versionsnummer | `{VERSION}` |
-| Version String (SpigotMC, BuiltByBit) | `{VERSION}` |
-| Versionsname (Modrinth, Hangar) | `{full} {VERSION}` |
-| Kanal / Release-Typ | Release |
-| Changelog | [`changelog.md`](changelog.md) |
+| [`release.txt`](release.txt) | **Titel, Versionstring, Beschreibung** (BBCode) – für SpigotMC und BuiltByBit |
+| [`release-markdown.txt`](release-markdown.txt) | dasselbe mit Beschreibung in Markdown – für Modrinth und Hangar |
+| [`{full}-{VERSION}.jar`]({full}-{VERSION}.jar) | die Plugin-Datei zum Hochladen |
+| [`changelog.txt`](changelog.txt) | Changelog dieser Version |
+| `images/` | Icon, Banner, Cover und Beispielbilder |
 
-Versionsnummer, Version String und Minecraft-Versionen stehen auch in `version.txt` zum Kopieren.
+Titel, Versionstring und Beschreibung sind auf allen vier Seiten gleich. Es gibt nur zwei Dateien,
+weil SpigotMC und BuiltByBit BBCode verstehen, Modrinth und Hangar dagegen Markdown.
 
-## Unterstützte Minecraft-Versionen
+## Bilder
 
-**{MC_VERSIONS}** auf Spigot, Paper und Purpur, Java 17+ (Minecraft 1.20.5+ braucht ohnehin Java 21,
-26.x Java 25).
+| Datei | Wofür |
+| --- | --- |
+| `icon-512.png` | Icon auf SpigotMC, BuiltByBit, Hangar |
+| `icon-256.png` | Icon auf Modrinth (max. 256 KiB) |
+| `banner.png` | steht oben in der Beschreibung |
+| `cover.png` | Cover auf BuiltByBit, erstes Galeriebild auf Modrinth |
+| `gallery-*.png` | Galerie auf Modrinth / BuiltByBit |
 
-Zum Ankreuzen in den Versionsfeldern:
+Galerie-Reihenfolge:
+{gallery}
 
-{mc_list}
+## Felder auf den Seiten
 
-Getestet (alle zehn Plugins auf Paper gestartet):
+| Feld | SpigotMC | BuiltByBit | Modrinth | Hangar |
+| --- | --- | --- | --- | --- |
+| Kategorie | {spigot_cat} | Plugins → Spigot | {modrinth_cat} | {hangar_cat} |
+| Loader / Plattform | Spigot | Spigot, Paper | Bukkit, Spigot, Paper, Purpur | Paper |
+
+Minecraft-Versionen zum Ankreuzen ({MC_VERSIONS}): {mc_list}
+
+Hangar macht aus dem Projektnamen die URL. Falls das Namensfeld dort keine Sonderzeichen oder
+Klammern annimmt, `{full}` eintragen – der vollständige Titel steht ohnehin oben in der Beschreibung.
+
+## Getestet
+
+Alle Plugins auf Paper gestartet:
 
 | Minecraft | Test |
 | --- | --- |
 {tested}
-
-Auf einem echten Spigot-Server wurde noch nicht getestet; gebaut wird gegen die Spigot-API 1.20.4.
-
-## Projekt
-
-| Feld | Wert |
-| --- | --- |
-| Titel SpigotMC / BuiltByBit | {title.replace("|", chr(92) + "|")} |
-| Name Modrinth / Hangar | {full} |
-| Tagline / Summary (alle vier) | {tagline} |
-| Abhängigkeiten | keine (Vault optional) |
-| Quellcode | https://github.com/creativedm0031/UltraPlugins |
-
-## Bilder (`images/`)
-
-| Datei | Größe | Wofür |
-| --- | --- | --- |
-| `icon-512.png` | 512 × 512 | Icon auf SpigotMC, BuiltByBit, Hangar |
-| `icon-256.png` | 256 × 256, < 256 KiB | Icon auf Modrinth |
-| `banner.png` | 1920 × 480 | Oben in jeder Beschreibung |
-| `cover.png` | 1280 × 720 | Cover/Vorschaubild auf BuiltByBit, erstes Galeriebild auf Modrinth |
-| `gallery-*.png` | 1600 × 900 | Beispielbilder (Galerie bzw. in der Beschreibung) |
-
-## SpigotMC
-
-1. Resource-Typ: kostenlos, Datei hochladen: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
-2. Title: `spigotmc/title.txt`, Tag Line: `spigotmc/tagline.txt`
-3. Kategorie: **Spigot → {spigot_cat}**
-4. Unterstützte Versionen ankreuzen: **1.20, 1.21** und **26.x**, falls SpigotMC sie anbietet
-5. Icon: `images/icon-512.png`
-6. Beschreibung: Inhalt von `spigotmc/description.bbcode` einfügen (BBCode-Modus).
-7. Source-Code-Link: GitHub-Repo.
-
-## BuiltByBit
-
-1. Neue Ressource, Kategorie **Plugins → Spigot** (Unterkategorie passend zu *{spigot_cat}*), Preis kostenlos.
-2. Title: `builtbybit/title.txt`, Tag Line: `builtbybit/tagline.txt`
-3. Icon: `images/icon-512.png`, Cover/Banner: `images/cover.png`
-4. Beschreibung: Inhalt von `builtbybit/description.bbcode` einfügen.
-5. Unterstützte Versionen: **1.20 – 1.21 und 26.x** ({MC_VERSIONS}), Plattformen Spigot und Paper.
-6. Datei: `{full}-{VERSION}.jar`, Version String: `{VERSION}`.
-
-## Modrinth
-
-1. Neues Projekt, Typ **Plugin**. Name: `modrinth/title.txt`, Summary: `modrinth/tagline.txt`
-2. Icon: `images/icon-256.png`
-3. Kategorien: **{modrinth_cat}**; Umgebung: nur Server.
-4. Beschreibung: Inhalt von `modrinth/description.md`.
-5. Galerie (in dieser Reihenfolge, das erste als „Featured“):
-   - `images/cover.png`
-{gallery}
-6. Version hochladen: Datei `{full}-{VERSION}.jar`, Versionsnummer `{VERSION}`, Name `{full} {VERSION}`, Typ Release, Changelog aus `changelog.md`. Loader **Bukkit, Spigot, Paper, Purpur**, Spielversionen: alle aus der Liste oben ({MC_VERSIONS}).
-7. Lizenz und Source-Link (GitHub) eintragen.
-
-## Hangar
-
-1. Neues Projekt, Plattform **Paper**, Kategorie **{hangar_cat}**. Name: `hangar/title.txt`, Summary: `hangar/tagline.txt`
-2. Icon (Avatar): `images/icon-512.png`
-3. Beschreibung (Hauptseite): Inhalt von `hangar/description.md`.
-4. Version: Datei `{full}-{VERSION}.jar`, Version `{VERSION}`, Changelog aus `changelog.md`, Plattform **Paper**, Versionen: alle aus der Liste oben ({MC_VERSIONS}), Kanal **Release**.
-5. Source-Link (GitHub) eintragen.
-
-> Hangar listet nur Paper-Plugins – UltraPlugins laufen auf Paper, deshalb passt es. Spigot wird dort nicht angegeben.
-
-## Bilder in den Beschreibungen
-
-Alle Beschreibungen laden ihre Bilder von `raw.githubusercontent.com/creativedm0031/UltraPlugins/main/…`.
-Sie erscheinen erst, wenn das Repository öffentlich ist und dieser Stand auf `main` liegt. Alternativ
-die PNGs bei einem Bildhoster hochladen und die Links ersetzen.
-"""
-
-
-def version_txt(p):
-    return f"""Version String: {VERSION}
-Minecraft: {MC_VERSIONS}
-Minecraft (alle): {", ".join(MC_LIST)}
-Server: Spigot, Paper, Purpur
-Java: 17+
 """
 
 
 def changelog(p):
     full = "Ultra" + p["name"]
-    feats = "\n".join(f"- {f[1]}" for f in p["features"])
-    return f"""## {full} {VERSION}
+    d = DETAILS[p["name"]]
+    feats = "\n".join(f"- {f[1][0]}" for f in d["features"] + COMMON_FEATURES)
+    return f"""{full} {VERSION}
 
 First release.
 
 {feats}
-- English, German, French, Dutch and Italian – picked automatically from each player's client language
-- Supports Minecraft {MC_VERSIONS} on Spigot, Paper and Purpur, no dependencies
+
+Minecraft {MC_VERSIONS} · Spigot, Paper, Purpur · Java 17+
 """
 
 
 def overview():
-    rows = "\n".join(f"| [Ultra{p['name']}](Ultra{p['name']}/release) | `{VERSION}` | [Ultra{p['name']}-{VERSION}.jar](Ultra{p['name']}/release/Ultra{p['name']}-{VERSION}.jar) | {TITLES[p['name']][0].replace('|', chr(92) + '|')} | Ultra{p['name']} | {TITLES[p['name']][1]} |" for p in PLUGINS)
+    rows = "\n".join(
+        f"| [Ultra{p['name']}](Ultra{p['name']}/release) | {storepage.title(p['name'], MC_MIN, MC_MAX).replace('|', chr(92) + '|')} | `{VERSION}` | [Ultra{p['name']}-{VERSION}.jar](Ultra{p['name']}/release/Ultra{p['name']}-{VERSION}.jar) |"
+        for p in PLUGINS)
     return f"""# Release-Übersicht
 
-Titel und Taglines aller Plugins für SpigotMC, BuiltByBit, Modrinth und Hangar. Pro Plugin liegt in
-`Ultra<Name>/release/` alles zum Hochladen: Beschreibungen, Bilder und eine Checkliste
-(`release/README.md`), die fertige Jar, `version.txt` und `changelog.md`. Jede Seite hat dort
-einen eigenen Ordner mit `title.txt`, `tagline.txt` und der Beschreibung.
+Pro Plugin liegt in `Ultra<Name>/release/`:
 
-Version String für alle Plugins und Seiten: **`{VERSION}`** · Minecraft: **{MC_VERSIONS}** (Spigot, Paper, Purpur). Neu bauen und die Jars in die
-`release/`-Ordner kopieren: `tools/package.sh`.
+- `release.txt` – Titel, Versionstring und Beschreibung (BBCode) für SpigotMC und BuiltByBit
+- `release-markdown.txt` – derselbe Inhalt mit Markdown-Beschreibung für Modrinth und Hangar
+- die Jar, `changelog.txt`, Bilder und eine Checkliste (`README.md`)
 
-| Plugin | Version | Jar | Titel SpigotMC / BuiltByBit | Name Modrinth / Hangar | Tagline (alle vier Seiten) |
-| --- | --- | --- | --- | --- | --- |
+Alle Plugins nutzen denselben Aufbau. Neu bauen und die Jars kopieren: `tools/package.sh`.
+
+| Plugin | Titel | Versionstring | Jar |
+| --- | --- | --- | --- |
 {rows}
 """
 
@@ -505,26 +361,14 @@ def build(write, jobs, bbcode, logo_svg, defs, logo_body):
     for p in PLUGINS:
         full = "Ultra" + p["name"]
         base = f"{full}/release"
-        spigot = bbcode(p).replace(f"{RAW}/{full}/assets/banner.png", f"{RAW}/{base}/images/banner.png") \
-                          .replace(f"{RAW}/{full}/assets/preview.png", f"{RAW}/{base}/images/{gallery_names(p)[0]}.png")
-        # The language image says more than words; put it under the language section.
-        spigot = spigot.replace("can be edited freely.\n", f"can be edited freely.\n\n[IMG]{RAW}/{base}/images/{gallery_names(p)[1]}.png[/IMG]\n", 1)
-        if p["name"] in GUI_SAMPLE:
-            spigot = spigot.replace(f"[IMG]{RAW}/shared/assets/header-commands.png[/IMG]",
-                                    f"[IMG]{RAW}/{base}/images/{gallery_names(p)[2]}.png[/IMG]\n\n[IMG]{RAW}/shared/assets/header-commands.png[/IMG]", 1)
-        write(f"{base}/spigotmc/description.bbcode", spigot)
-        write(f"{base}/builtbybit/description.bbcode", spigot.replace(
-            "Please use the discussion tab or send a private message instead of leaving a bad review.",
-            "Please use the discussion tab or open a conversation instead of leaving a bad review."))
-        write(f"{base}/modrinth/description.md", markdown(p, "modrinth"))
-        write(f"{base}/hangar/description.md", markdown(p, "hangar"))
+        banner = f"{RAW}/{base}/images/banner.png"
+        name = p["name"]
+        write(f"{base}/release.txt", storepage.release_file(
+            name, VERSION, storepage.bbcode(name, banner, MC_MIN, MC_VERSIONS), "BBCode – SpigotMC, BuiltByBit", MC_MIN, MC_MAX))
+        write(f"{base}/release-markdown.txt", storepage.release_file(
+            name, VERSION, storepage.markdown(name, banner, MC_MIN, MC_VERSIONS), "Markdown – Modrinth, Hangar", MC_MIN, MC_MAX))
         write(f"{base}/README.md", checklist(p))
-        write(f"{base}/version.txt", version_txt(p))
-        write(f"{base}/changelog.md", changelog(p))
-        title, tagline = TITLES[p["name"]]
-        for site, site_title in (("spigotmc", title), ("builtbybit", title), ("modrinth", full), ("hangar", full)):
-            write(f"{base}/{site}/title.txt", site_title + "\n")
-            write(f"{base}/{site}/tagline.txt", tagline + "\n")
+        write(f"{base}/changelog.txt", changelog(p))
 
         svg512 = logo_svg(p["name"])
         write(f"tools/.build/{full}-icon-256.svg", svg512.replace('width="512" height="512"', 'width="256" height="256"'))

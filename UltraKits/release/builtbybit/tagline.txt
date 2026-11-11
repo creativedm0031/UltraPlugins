@@ -1,1 +1,0 @@
-Kits with GUI preview, cooldowns, prices and an in-game editor. Available in 5 languages.

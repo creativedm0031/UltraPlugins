@@ -1,0 +1,14 @@
+UltraWarps 1.0.0
+
+First release.
+
+- Warp GUI
+- Categories & Icons
+- Player Warps
+- Visit Counter
+- Per-Warp Permissions
+- EssentialsX Import
+- Clean Layout
+- Lightweight
+
+Minecraft 1.20.4 – 26.3 · Spigot, Paper, Purpur · Java 17+
