@@ -30,3 +30,6 @@ target/
 
 # Release jars are committed on purpose
 !Ultra*/release/*.jar
+UltraChat/release/.DS_Store
+UltraChat/.DS_Store
+.DS_Store
